@@ -5,16 +5,16 @@ import NewPostupleniya from "../../components/newPostupleniya/index.jsx";
 import Hero from "../../components/hero/hero";
 import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 function Home() {
-    return (
-        <>
-            <Header />
-            <Hero />
-            <Cardhero />
-            <SwipeBasket />
-            <NewPostupleniya />
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <Hero />
+      <Cardhero />
+      <SwipeBasket />
+      <NewPostupleniya />
+      <Footer />
+    </>
+  );
 }
 
 export default Home;
