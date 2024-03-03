@@ -3,13 +3,15 @@ import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import NewPostupleniya from "../../components/newPostupleniya/index.jsx";
 import Hero from "../../components/hero/hero";
+import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 function Home() {
     return (
         <>
             <Header />
             <Hero />
             <Cardhero />
-            <NewPostupleniya/>
+            <SwipeBasket />
+            <NewPostupleniya />
             <Footer />
         </>
     );
