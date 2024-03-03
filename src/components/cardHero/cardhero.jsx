@@ -19,7 +19,6 @@ function Cardhero() {
                     <div className="cards__wrap">
                         <div className="cards__wrap__apple">
                             <img src={apple} alt="" className="apple" />
-
                             <button className="Button">Apple</button>
                         </div>
                         <div className="cards__wrap__samsung">
