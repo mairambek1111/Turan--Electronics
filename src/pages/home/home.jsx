@@ -3,6 +3,7 @@ import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import NewPostupleniya from "../../components/newPostupleniya/index.jsx";
 import Hero from "../../components/hero/hero";
+import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 function Home() {
     return (
@@ -10,8 +11,9 @@ function Home() {
             <Header />
             <Hero />
             <Cardhero />
+            <NewPostupleniya/>
+            <Recomendation/>
             <SwipeBasket />
-            <NewPostupleniya />
             <Footer />
         </>
     );
