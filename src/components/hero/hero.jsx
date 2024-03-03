@@ -22,6 +22,17 @@ function Hero() {
                     modules={[Navigation, Pagination, Mousewheel, Keyboard]}
                     className="mySwiper"
                 >
+                    <SwiperSlide className="swipe">
+                        <h1 className="desc">
+                            Квадракоптеры, Стабилизаторы, Микрофоны и многое
+                            другое
+                        </h1>
+                        <img src={heroTuran} alt="" />
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <img src={heroTuran} alt="" />
+                    </SwiperSlide>
                     <SwiperSlide>
                         <img src={heroTuran} alt="" />
                     </SwiperSlide>
