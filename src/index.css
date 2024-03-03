@@ -6,7 +6,8 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
+  /*background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);*/
+  background: rgba(227, 237, 247, 1);
 }
 
 .container {
