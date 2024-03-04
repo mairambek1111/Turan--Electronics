@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -8,7 +7,6 @@ import "./swipeBasket.css";
 import basketIcon from "../../assets/basket.png";
 import img from "../../assets/image.png";
 import { RiStarSFill } from "react-icons/ri";
-import { Pagination } from "swiper/modules";
 import Slider from "react-slick/lib/slider";
 
 function SwipeBasket() {
