@@ -4,6 +4,7 @@ import Header from "../../components/header/header";
 import NewPostupleniya from "../../components/newPostupleniya/index.jsx";
 import Hero from "../../components/hero/hero";
 import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
+import Register from "../../components/Register/index.jsx";
 function Home() {
   return (
     <>
@@ -13,6 +14,7 @@ function Home() {
       <SwipeBasket />
       <NewPostupleniya />
       <Footer />
+      <Register />
     </>
   );
 }
