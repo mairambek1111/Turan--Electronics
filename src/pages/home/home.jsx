@@ -6,17 +6,17 @@ import Hero from "../../components/hero/hero";
 import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 function Home() {
-    return (
-        <>
-            <Header />
-            <Hero />
-            <Cardhero />
-            <NewPostupleniya/>
-            <Recomendation/>
-            <SwipeBasket />
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      {/* <Hero />
+      <Cardhero />
+      <SwipeBasket />
+      <NewPostupleniya />
+      <Recomendation />
+      <Footer /> */}
+    </>
+  );
 }
 
 export default Home;

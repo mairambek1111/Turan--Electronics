@@ -1,0 +1,110 @@
+.header__content {
+  border-radius: 24px;
+  border: 1px solid white;
+  margin-top: 21px;
+  overflow: hidden;
+}
+
+.header__info {
+  display: flex;
+}
+
+.logo {
+  margin: 10px 0 0 280px;
+}
+
+.header__nav__btns {
+  display: flex;
+  background: #e3edf7;
+  border-radius: 16px;
+  height: 40px;
+  border: 1px solid white;
+  overflow: hidden;
+  margin: 15px 35px 0 223px;
+}
+.header__nav__btn {
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: none;
+  cursor: pointer;
+  border: none;
+  box-shadow: 3px 3px 7px 0px rgba(136, 165, 191, 0.4784313725) inset;
+  box-shadow: -3px -3px 7px 0px #ffffff inset;
+}
+
+.header__nav__btn__help {
+  width: 60px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  background: none;
+  cursor: pointer;
+  box-shadow: 4px 2px 16px 0px rgba(136, 165, 191, 0.4784313725);
+  box-shadow: -4px -2px 16px 0px #ffffff;
+}
+
+.header__nav__btn__profile {
+  width: 60px;
+  height: 40px;
+  border-radius: 16px, 0px, 0px, 16px;
+  background: none;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  box-shadow: 4px 2px 16px 0px rgba(136, 165, 191, 0.4784313725);
+  box-shadow: -4px -2px 16px 0px #ffffff;
+}
+
+.input {
+  width: 168px;
+  height: 40px;
+  border-radius: 16px;
+  border: none;
+  margin: 15px 0 0 0;
+  background: #e5edf7;
+  padding-left: 10px;
+  box-shadow: 3px 3px 7px 0px rgba(136, 165, 191, 0.4784313725) inset;
+  box-shadow: -3px -3px 7px 0px #ffffff inset;
+  border: 1px solid #ffffff;
+  margin: 15px 35px 0 220px;
+  position: relative;
+  outline: none;
+}
+.input__icon__btn {
+  border: none;
+  width: 24px;
+  height: 24px;
+  top: 101px;
+  left: 1300px;
+  padding: 2px, 1.69px, 1.69px, 2px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.header__nav__link {
+  text-decoration: none;
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px, 37px, 8px, 38px;
+  border-radius: 16px;
+  border: 1px solid #ffffff;
+  box-shadow: 4px 2px 16px 0px rgba(136, 165, 191, 0.4784313725);
+  box-shadow: -4px -2px 16px 0px #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000;
+}
+
+.header__nav__link:hover {
+  border: 1px solid #ffffff;
+  box-shadow: 3px -3px 7px 0px #ffffff inset;
+  box-shadow: 3px 3px 7px 0px rgba(136, 165, 191, 0.4784313725) inset;
+} /*# sourceMappingURL=header.css.map */

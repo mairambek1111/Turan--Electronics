@@ -19,21 +19,29 @@ function Header() {
               <a href="#" className="logo">
                 <img src={Headerlogo} alt="" />
               </a>
-              <div className="header__nav__btns">
-                <button className="header__nav__btn__help">
-                  <img src={iconhelp} alt="" />
-                </button>
-                <button className="header__nav__btn">
-                  <img src={iconbasket} alt="" />
-                </button>
-                <button className="header__nav__btn__profile">
-                  <img src={iconprofile} alt="" />
-                </button>
+              <div className="header-info__btns">
+                <div className="header__nav__btns">
+                  <button className="header__nav__btn__help">
+                    <img src={iconhelp} alt="" />
+                  </button>
+                  <button className="header__nav__btn">
+                    <img src={iconbasket} alt="" />
+                  </button>
+                  <button className="header__nav__btn__profile">
+                    <img src={iconprofile} alt="" />
+                  </button>
+                </div>
+                <form action="#" className="">
+                  <input
+                    type="text"
+                    placeholder="search..."
+                    className="input"
+                  />
+                  <button className="input__icon__btn">
+                    <img src={iconsearch} alt="" className="input__icon" />
+                  </button>
+                </form>
               </div>
-              <form action="" className="search">
-                <input type="text" placeholder="search..." className="input" />
-                <img src={iconsearch} alt="" className="input__icon" />
-              </form>
             </div>
 
             <div className="header__info__link">
