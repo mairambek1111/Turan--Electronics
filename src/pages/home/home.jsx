@@ -9,12 +9,12 @@ function Home() {
   return (
     <>
       <Header />
-      {/* <Hero />
+      <Hero />
       <Cardhero />
       <SwipeBasket />
       <NewPostupleniya />
       <Recomendation />
-      <Footer /> */}
+      <Footer />
     </>
   );
 }
