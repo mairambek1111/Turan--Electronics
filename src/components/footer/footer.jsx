@@ -50,13 +50,13 @@ function Footer() {
             </div>
             <div className="footer__info__social">
               <div className="footer__wrap__img">
-                <img src={facebookicon} alt="" className="footer__img" />
+                <img src={facebookicon} alt="" className="footer-social-img" />
               </div>
               <div className="footer__wrap__img">
-                <img src={twittericon} alt="" className="footer__img" />
+                <img src={twittericon} alt="" className="footer-social-img" />
               </div>
               <div className="footer__wrap__img">
-                <img src={instagramicon} alt="" className="footer__img" />
+                <img src={instagramicon} alt="" className="footer-social-img" />
               </div>
             </div>
             <div className="footer-info__text">
