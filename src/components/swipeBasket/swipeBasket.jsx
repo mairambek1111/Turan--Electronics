@@ -14,10 +14,10 @@ import Slider from "react-slick/lib/slider";
 function SwipeBasket() {
     const settings = {
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 1000,
+        speed: 4000,
         autoplaySpeed: 1000,
         cssEase: "linear",
         responsive: [

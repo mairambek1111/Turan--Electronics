@@ -11,9 +11,9 @@ function Home() {
             <Header />
             <Hero />
             <Cardhero />
-            <NewPostupleniya/>
-            <Recomendation/>
             <SwipeBasket />
+            <NewPostupleniya />
+            <Recomendation />
             <Footer />
         </>
     );
