@@ -1,0 +1,284 @@
+.userData {
+    padding: 50px;
+    &__title {
+        color: black;
+        font-family: "Montserrat", "sans-serif";
+        font-weight: 400;
+        font-size: 30px;
+    }
+    &__account {
+        cursor: pointer;
+        padding: 40px 0;
+        border-radius: 20px;
+        text-align: start;
+        font-family: "Montserrat", "sans-serif";
+        font-weight: 500;
+        font-size: 20px;
+        color: rgba(1, 30, 184, 1);
+        background: none;
+        border: none;
+    }
+}
+
+.userInput {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1200px;
+
+    &__firstInput {
+        font-family: "Montserrat", "sans-serif";
+        font-weight: 500;
+        padding: 20px 820px 20px 20px;
+        font-size: 20px;
+        outline: none;
+        background: none;
+        border-radius: 5px;
+        border: 1px solid rgba(212, 212, 212, 1);
+    }
+    &__phone {
+        outline: none;
+        width: 490px;
+        padding: 20px 38px 20px 20px;
+        font-family: "Montserrat", "sans-serif";
+        font-weight: 500;
+        font-size: 20px;
+        background: none;
+        border-radius: 5px;
+        border: 1px solid rgba(212, 212, 212, 1);
+    }
+    &__email {
+        outline: none;
+        width: 490px;
+        padding: 20px 38px 20px 20px;
+        font-family: "Montserrat", "sans-serif";
+        font-weight: 500;
+        font-size: 20px;
+        background: none;
+        border-radius: 5px;
+        border: 1px solid rgba(212, 212, 212, 1);
+    }
+    &__secondInput {
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 30px;
+    }
+}
+.registration__btn {
+    cursor: pointer;
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(1, 30, 184, 1);
+    background: none;
+    border: none;
+    padding: 70px;
+    margin-left: 870px;
+}
+.btn__request {
+    cursor: pointer;
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(1, 30, 184, 1);
+    background: none;
+    border: none;
+    padding: 70px;
+    display: none;
+}
+.userData {
+    &__card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 100px 0 100px 0;
+        max-width: 1200px;
+        &__inputs {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        &__one {
+            border: 3px solid white;
+            border-radius: 24px;
+            padding: 50px;
+            background: linear-gradient(
+                210.55deg,
+                #ebf2f9 19.14%,
+                #c6d7eb 154.68%
+            );
+            box-shadow: 0px 0px 0px 0px #7c9bb7;
+            box-shadow: -0px -0px 30px 5px #afc3d5;
+        }
+        &__two {
+            background: linear-gradient(
+                210.55deg,
+                #ebf2f9 19.14%,
+                #c6d7eb 154.68%
+            );
+            box-shadow: 0px 0px 0px 0px #7c9bb7;
+            box-shadow: -0px -0px 30px 5px #afc3d5;
+            border-radius: 24px;
+            padding: 25px 150px 25px 30px;
+        }
+        &__oneData {
+            color: black;
+            font-size: 24px;
+            font-family: "Montserrat", "sans-serif";
+            font-weight: 500;
+            padding: 30px 0;
+        }
+        &__price {
+            color: black;
+            font-size: 24px;
+            font-family: "Montserrat", "sans-serif";
+            font-weight: 500;
+            padding: 30px 0;
+        }
+        &__address {
+            color: rgba(76, 76, 76, 1);
+            font-size: 24px;
+            font-family: "Montserrat", "sans-serif";
+            font-weight: 500;
+        }
+        &__time {
+            color: rgba(76, 76, 76, 1);
+            font-size: 24px;
+            font-family: "Montserrat", "sans-serif";
+            font-weight: 500;
+            padding: 10px;
+        }
+    }
+}
+
+option {
+    background: none;
+    border: 1px solid rgba(212, 212, 212, 1);
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 400;
+    outline: none;
+    color: rgba(136, 136, 136, 1);
+    border-radius: 10px;
+    border: none;
+}
+.streetInput {
+    background: none;
+    border: 1px solid rgba(212, 212, 212, 1);
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 400;
+    outline: none;
+    color: rgba(136, 136, 136, 1);
+    border-radius: 10px;
+    padding: 10px;
+}
+.inputs {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+}
+.selects {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+    padding: 20px;
+}
+select {
+    background: none;
+    border: 1px solid rgba(212, 212, 212, 1);
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 400;
+    outline: none;
+    color: rgba(136, 136, 136, 1);
+    border-radius: 10px;
+    padding-right: 80px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 1139px) {
+    .userInput {
+        max-width: 1000px;
+        height: 100px;
+    }
+}
+@media screen and (max-width: 1222px) {
+    .userData__card {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .userData__card__two {
+        padding: 20px;
+    }
+}
+@media screen and (max-width: 1144px) {
+    .userData__card__one {
+        margin-top: 400px;
+    }
+}
+@media screen and (max-width: 1273px) {
+    .userInput__firstInput {
+        padding: 20px 227px 20px 20px;
+    }
+    .userInput__email {
+        padding: 20px;
+    }
+    .userInput__phone {
+        padding: 20px;
+    }
+    .userInput__secondInput {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .registration__btn {
+        display: none;
+    }
+    .btn__request {
+        display: block;
+    }
+}
+@media screen and (max-width: 1144px) {
+    .userInput__firstInput {
+        padding: 20px 27px 20px 20px;
+    }
+    .userInput__email {
+        padding: 20px;
+        max-width: 294px;
+    }
+    .userInput__phone {
+        max-width: 294px;
+        padding: 20px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .userData__card__one {
+        margin-top: 400px;
+        max-width: 200px;
+    }
+}
+@media screen and (max-width: 538px) {
+    .userData__card__two {
+        padding: 20px;
+        max-width: 300px;
+    }
+    .selects {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .inputs {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}

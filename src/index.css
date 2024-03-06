@@ -10,6 +10,15 @@ body {
 }
 
 .container {
-  max-width: 1280px;
-  margin: 0 auto;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+button {
+    cursor: pointer;
+    transition: 0.9s;
+}
+button:hover {
+    background: #e5edf7;
+    box-shadow: 3px 3px 7px 0px #88a5bf7a inset;
+    box-shadow: -3px -3px 7px 0px #ffffff inset;
 }
