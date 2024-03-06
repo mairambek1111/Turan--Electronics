@@ -5,6 +5,7 @@ import iconhelp from "../../assets/header-btn-help.svg";
 import iconbasket from "../../assets/header-btn-basket.svg";
 import iconprofile from "../../assets/header-btn-profile.svg";
 import iconsearch from "../../assets/header-search.svg";
+import burgermenu from "../../assets/burger-menu.svg";
 import "./header.scss";
 function Header() {
   return (
@@ -12,23 +13,44 @@ function Header() {
       <header className="header">
         <div className="container">
           <div className="header__content">
+            <div className="burger__menu__img__wrap">
+              <img src={burgermenu} alt="" />
+            </div>
             <div className="header__info">
-              <div className="logo__image">
+              <div className="search__header">
+                <img src={iconsearch} alt="" />
+              </div>
+              <div>
                 <img src={Logoimage} alt="" className="logoimage" />
               </div>
               <a href="#" className="logo">
-                <img src={Headerlogo} alt="" />
+                <img src={Headerlogo} alt="" className="header__logo" />
               </a>
+              <div className="logo__img__wrap">
+                <img src={iconbasket} alt="" />
+              </div>
               <div className="header-info__btns">
                 <div className="header__nav__btns">
                   <button className="header__nav__btn__help">
-                    <img src={iconhelp} alt="" />
+                    <img
+                      src={iconhelp}
+                      alt=""
+                      className="header__nav__icon__help"
+                    />
                   </button>
                   <button className="header__nav__btn">
-                    <img src={iconbasket} alt="" />
+                    <img
+                      src={iconbasket}
+                      alt=""
+                      className="header__nav__icon__btn"
+                    />
                   </button>
                   <button className="header__nav__btn__profile">
-                    <img src={iconprofile} alt="" />
+                    <img
+                      src={iconprofile}
+                      alt=""
+                      className="header__nav__icon__profile"
+                    />
                   </button>
                 </div>
                 <form action="#" className="">

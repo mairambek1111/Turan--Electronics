@@ -5,15 +5,19 @@ import NewPostupleniya from "../../components/newPostupleniya/index.jsx";
 import Hero from "../../components/hero/hero";
 import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
+import Navbtn from "../../components/navbtn/navbtn.jsx";
+import Brends from "../../components/Brends/Brends.jsx";
 function Home() {
   return (
     <>
       <Header />
+      <Navbtn />
       <Hero />
       <Cardhero />
       <SwipeBasket />
       <NewPostupleniya />
       <Recomendation />
+      <Brends />
       <Footer />
     </>
   );
