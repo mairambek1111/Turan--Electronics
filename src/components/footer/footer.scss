@@ -2,17 +2,248 @@
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-top: 30px;
 }
 
 .footer__info__social {
   display: flex;
   gap: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.footer-logo__img__wrap {
+  width: 397px;
+  height: 99px;
 }
 
 .footer__wrap__img {
   width: 50px;
   height: 50px;
-  padding: 13px 0 12px 0;
-  border-radius: 30px;
-  border: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background: #e3edf7;
+  box-shadow: 4px 2px 16px 0px #88a5bf7a;
+  box-shadow: -4px -2px 16px 0px #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.hr {
+  max-width: 270px;
+}
+.footer__info__text {
+  max-width: 788px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  height: 144px;
+}
+
+.footer-info__text {
+  margin-top: 60px;
+  display: flex;
+  gap: 150px;
+}
+
+.footer-info__contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info__contacts__title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 22px;
+  padding-bottom: 15px;
+  letter-spacing: 0em;
+}
+.footer-info-contacts__adres {
+  display: flex;
+  gap: 13px;
+  width: 220px;
+  padding: 10px 0 9px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.footer-info-contacts__work {
+  display: flex;
+  gap: 13px;
+  width: 224.95px;
+  padding: 10px 0 9px 0;
+  height: 39px;
+}
+
+.footer-info-contacts__tel {
+  display: flex;
+  gap: 13px;
+  padding: 0 0 36px 0;
+}
+
+.footer-info-contacts__email {
+  display: flex;
+  gap: 13px;
+}
+
+.footer-contacts-info__block {
+  margin-top: 15px;
+}
+
+.footer-info-contacts__text {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 12px 0;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 14px;
+  color: #000000;
+}
+
+.footer-info__personal-text {
+  display: flex;
+  padding: 0 0 12px 0;
+  flex-direction: column;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #000000;
+}
+
+.footer-info-personal__block {
+  margin-top: 15px;
+}
+
+.footer__adaptive__content {
+  max-width: 390px;
+  margin: 20px 0 0 25px;
+  height: 77px;
+  border-radius: 10px;
+  background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
+  box-shadow: 16px 4px 64px 0px #123d6533;
+  box-shadow: -8px -6px 80px 0px #ffffff2e inset;
+  border: 1px solid #ffffff;
+  display: none;
+}
+
+.footer__adaptive__content__info {
+  display: flex;
+  padding: 20px 10px 0 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.adaptive__content {
+  border: none;
+  background: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer__info__text {
+    font-size: 16px;
+  }
+
+  .footer-info__text {
+    gap: 120px;
+  }
+}
+@media screen and (max-width: 865px) {
+  .footer__info__text {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .footer__info__text {
+    font-size: 12px;
+  }
+
+  .footer-info__text {
+    gap: 100px;
+  }
+
+  .footer-info__contacts__title {
+    font-size: 16px;
+  }
+
+  .footer-info-contacts__text {
+    font-size: 12px;
+  }
+
+  .footer-info__personal-text {
+    font-size: 12px;
+  }
+
+  .footer-info-contacts__work {
+    font-size: 12px;
+  }
+
+  .footer-info-contacts__adres {
+    font-size: 12px;
+  }
+
+  .footer-info-contacts__tel {
+    font-size: 12px;
+  }
+
+  .footer-info-contacts__email {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 712px) {
+  .footer__info__text {
+    font-size: 10px;
+  }
+
+  .footer-logo__img__wrap {
+    width: 350px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .footer__info__text {
+    font-size: 8px;
+    line-height: 20px;
+  }
+
+  .footer-logo__img__wrap {
+    width: 350px;
+    height: 70px;
+  }
+
+  .footer-info__text {
+    gap: 70px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .footer-info__text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__info__text {
+    display: none;
+  }
+
+  .footer__info__social {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer__content {
+    display: none;
+  }
+
+  .footer__adaptive__content {
+    display: block;
+    margin-right: 40px;
+  }
 }
