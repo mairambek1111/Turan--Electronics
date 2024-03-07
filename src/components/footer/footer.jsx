@@ -32,14 +32,24 @@ function Footer() {
           </div>
           <div className="footer__content">
             <div className="footer__info">
-              <div className="footer__logo">
+              <div
+                className="footer__logo"
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-duration="1100"
+              >
                 <img
                   src={footerlogo}
                   alt=""
                   className="footer-logo__img__wrap"
                 />
               </div>
-              <p className="footer__info__text">
+              <p
+                className="footer__info__text"
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-duration="1100"
+              >
                 Turan Electronics - ваш идеальный магазин для шопинга.
                 Обнаружьте последние тренды, выбирайте изысканные товары,
                 оформляйте заказы с легкостью. Элегантный дизайн, безопасные
@@ -49,77 +59,222 @@ function Footer() {
               </p>
             </div>
             <div className="footer__info__social">
-              <div className="footer__wrap__img">
-                <img src={facebookicon} alt="" className="footer__img" />
+              <div
+                className="footer__wrap__img"
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-duration="1100"
+              >
+                <img src={facebookicon} alt="" className="footer-social-img" />
               </div>
-              <div className="footer__wrap__img">
-                <img src={twittericon} alt="" className="footer__img" />
+              <div
+                className="footer__wrap__img"
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-duration="1100"
+              >
+                <img src={twittericon} alt="" className="footer-social-img" />
               </div>
-              <div className="footer__wrap__img">
-                <img src={instagramicon} alt="" className="footer__img" />
+              <div
+                className="footer__wrap__img"
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-duration="1100"
+              >
+                <img src={instagramicon} alt="" className="footer-social-img" />
               </div>
             </div>
             <div className="footer-info__text">
               <div className="footer-info__contacts">
-                <h2 className="footer-info__contacts__title">Контакты</h2>
+                <h2
+                  className="footer-info__contacts__title"
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-duration="1100"
+                >
+                  Контакты
+                </h2>
                 <hr className="hr" />
 
-                <p className="footer-info-contacts__adres">
+                <p
+                  className="footer-info-contacts__adres"
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-duration="1100"
+                >
                   <img src={iconadres} alt="" />
                   Кыргызстан г. Бишкек ㅤㅤул.Киевская 168, 720001
                 </p>
-                <p className="footer-info-contacts__work">
+                <p
+                  className="footer-info-contacts__work"
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-duration="1100"
+                >
                   <img src={iconwork} alt="" />
                   Работаем каждый день с 10:00 до 20:00{" "}
                 </p>
-                <p className="footer-info-contacts__tel">
+                <p
+                  className="footer-info-contacts__tel"
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-duration="1100"
+                >
                   <img src={icontel} alt="" />
                   Тел: +99600000000 Смартфоны{" "}
                 </p>
-                <p className="footer-info-contacts__email">
+                <p
+                  className="footer-info-contacts__email"
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-duration="1100"
+                >
                   <img src={iconemail} alt="" />
                   Email: info@turanelectronic.kg{" "}
                 </p>
               </div>
               <div className="footer-info__contacts__info">
-                <h2 className="footer-info__contacts__title">Информация</h2>
+                <h2
+                  className="footer-info__contacts__title"
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-duration="1100"
+                >
+                  Информация
+                </h2>
                 <hr className="hr" />
                 <div className="footer-contacts-info__block">
-                  <Link className="footer-info-contacts__text">
+                  <Link
+                    className="footer-info-contacts__text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
                     Система начислений КЭШБЕК
                   </Link>
-                  <Link className="footer-info-contacts__text">О Нас</Link>
-                  <Link className="footer-info-contacts__text">
+                  <Link
+                    className="footer-info-contacts__text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
+                    О Нас
+                  </Link>
+                  <Link
+                    className="footer-info-contacts__text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
                     Условия гарантии{" "}
                   </Link>
-                  <Link className="footer-info-contacts__text">
+                  <Link
+                    className="footer-info-contacts__text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
                     Условия кредитования{" "}
                   </Link>
-                  <Link className="footer-info-contacts__text">
+                  <Link
+                    className="footer-info-contacts__text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
                     Политика конфиденциальности{" "}
                   </Link>
-                  <Link className="footer-info-contacts__text">
+                  <Link
+                    className="footer-info-contacts__text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
                     Публичная оферта{" "}
                   </Link>
-                  <Link className="footer-info-contacts__text">Контакты </Link>
+                  <Link
+                    className="footer-info-contacts__text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
+                    Контакты{" "}
+                  </Link>
                 </div>
               </div>
               <div className="footer-info__personal">
-                <h2 className="footer-info__contacts__title">Личный Кабинет</h2>
+                <h2
+                  className="footer-info__contacts__title"
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-duration="1100"
+                >
+                  Личный Кабинет
+                </h2>
                 <hr className="hr" />
                 <div className="footer-info-personal__block">
-                  <Link className="footer-info__personal-text">
+                  <Link
+                    className="footer-info__personal-text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
                     Личный Кабинет
                   </Link>
-                  <Link className="footer-info__personal-text">
+                  <Link
+                    className="footer-info__personal-text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
                     История заказов
                   </Link>
-                  <Link className="footer-info__personal-text">Закладки</Link>
-                  <Link className="footer-info__personal-text">Сравнить</Link>
-                  <Link className="footer-info__personal-text">Рассылка</Link>
-                  <Link className="footer-info__personal-text">Карта</Link>
-                  <Link className="footer-info__personal-text">сайта</Link>
-                  <Link className="footer-info__personal-text">
+                  <Link
+                    className="footer-info__personal-text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
+                    Закладки
+                  </Link>
+                  <Link
+                    className="footer-info__personal-text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
+                    Сравнить
+                  </Link>
+                  <Link
+                    className="footer-info__personal-text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
+                    Рассылка
+                  </Link>
+                  <Link
+                    className="footer-info__personal-text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
+                    Карта
+                  </Link>
+                  <Link
+                    className="footer-info__personal-text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
+                    сайта
+                  </Link>
+                  <Link
+                    className="footer-info__personal-text"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom"
+                    data-aos-duration="1100"
+                  >
                     Производители
                   </Link>
                 </div>

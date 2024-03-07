@@ -8,6 +8,7 @@ import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 import Navbtn from "../../components/navbtn/navbtn.jsx";
 import Brends from "../../components/Brends/Brends.jsx";
 function Home() {
+   
   return (
     <>
       <Header />

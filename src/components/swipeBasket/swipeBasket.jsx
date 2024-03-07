@@ -11,10 +11,10 @@ import Slider from "react-slick/lib/slider";
 function SwipeBasket() {
   const settings = {
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 1000,
+    speed: 4000,
     autoplaySpeed: 1000,
     cssEase: "linear",
     responsive: [
@@ -40,7 +40,7 @@ function SwipeBasket() {
           </div>
         </div>
         <Slider {...settings}>
-          <div className="card">
+          <div className="card" data-aos="zoom-in-up" data-aos-duration="1100">
             <div className="stars">
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />
@@ -59,7 +59,7 @@ function SwipeBasket() {
               <img src={basketIcon} alt="" className="basketIcon" />
             </div>
           </div>
-          <div className="card">
+          <div className="card" data-aos="zoom-in-up" data-aos-duration="1100">
             <div className="stars">
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />
@@ -78,7 +78,7 @@ function SwipeBasket() {
               <img src={basketIcon} alt="" className="basketIcon" />
             </div>
           </div>{" "}
-          <div className="card">
+          <div className="card" data-aos="zoom-in-up" data-aos-duration="1100">
             <div className="stars">
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />
@@ -97,7 +97,7 @@ function SwipeBasket() {
               <img src={basketIcon} alt="" className="basketIcon" />
             </div>
           </div>
-          <div className="card">
+          <div className="card" data-aos="zoom-in-up" data-aos-duration="1100">
             <div className="stars">
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />
@@ -116,7 +116,7 @@ function SwipeBasket() {
               <img src={basketIcon} alt="" className="basketIcon" />
             </div>
           </div>
-          <div className="card">
+          <div className="card" data-aos="zoom-in-up" data-aos-duration="1100">
             <div className="stars">
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />
@@ -135,7 +135,7 @@ function SwipeBasket() {
               <img src={basketIcon} alt="" className="basketIcon" />
             </div>
           </div>
-          <div className="card">
+          <div className="card" data-aos="zoom-in-up" data-aos-duration="1100">
             <div className="stars">
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />
               <RiStarSFill color="rgba(255, 115, 0, 1)" fontSize={20} />

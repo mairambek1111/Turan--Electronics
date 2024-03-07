@@ -10,6 +10,11 @@
   justify-content: space-between;
 }
 
+.header__nav-btn {
+  border: none;
+  background: none;
+}
+
 .logo {
   margin-left: 220px;
 }
@@ -110,7 +115,7 @@
     position: absolute;
     width: 24px;
     height: 24px;
-    top: 101px;
+    top: 81px;
     left: 1300px;
     padding: 2px 1.69px;
   }
@@ -159,7 +164,7 @@
   .input__icon__btn {
     width: 24px;
     height: 24px;
-    top: 101px;
+    top: 82px;
     left: calc(100% - 80px);
     padding: 2px 1.69px;
   }
@@ -172,7 +177,7 @@
 }
 @media screen and (max-width: 1080px) {
   .input__icon__btn {
-    top: 101px;
+    top: 82px;
     left: calc(100% - 125px);
     padding: 2px 1.69px;
   }
@@ -232,7 +237,7 @@
   .input__icon__btn {
     width: 22px;
     height: 22px;
-    top: 90px;
+    top: 70px;
     left: calc(100% - 120px);
   }
 
@@ -288,7 +293,7 @@
   .input__icon__btn {
     width: 18px;
     height: 18px;
-    top: 85px;
+    top: 65px;
     left: calc(100% - 100px);
   }
 

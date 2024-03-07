@@ -119,7 +119,8 @@
 }
 
 .footer__adaptive__content {
-  width: 390px;
+  max-width: 390px;
+  margin: 20px 0 0 25px;
   height: 77px;
   border-radius: 10px;
   background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
