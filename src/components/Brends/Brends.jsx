@@ -38,7 +38,11 @@ function Brends() {
           </div>
 
           <Slider {...settings}>
-            <button className="brends__card">
+            <button
+              className="brends__card"
+              data-aos="zoom-in-up"
+              data-aos-duration="1100"
+            >
               <Link className="brends__image">
                 <img src={iconApple} alt="" />
               </Link>
@@ -47,7 +51,11 @@ function Brends() {
                 <h4 className="brends__adaptive__title">Apple</h4>
               </Link>
             </button>
-            <button className="brends__card">
+            <button
+              className="brends__card"
+              data-aos="zoom-in-up"
+              data-aos-duration="1100"
+            >
               <Link className="brends__image">
                 <img src={iconApple} alt="" />
               </Link>
@@ -56,7 +64,11 @@ function Brends() {
                 <h4 className="brends__adaptive__title">Apple</h4>
               </Link>
             </button>
-            <button className="brends__card">
+            <button
+              className="brends__card"
+              data-aos="zoom-in-up"
+              data-aos-duration="1100"
+            >
               <Link className="brends__image">
                 <img src={iconApple} alt="" />
               </Link>
@@ -65,7 +77,11 @@ function Brends() {
                 <h4 className="brends__adaptive__title">Apple</h4>
               </Link>
             </button>
-            <button className="brends__card">
+            <button
+              className="brends__card"
+              data-aos="zoom-in-up"
+              data-aos-duration="1100"
+            >
               <Link className="brends__image">
                 <img src={iconApple} alt="" />
               </Link>
@@ -74,7 +90,11 @@ function Brends() {
                 <h4 className="brends__adaptive__title">Apple</h4>
               </Link>
             </button>
-            <button className="brends__card">
+            <button
+              className="brends__card"
+              data-aos="zoom-in-up"
+              data-aos-duration="1100"
+            >
               <Link className="brends__image">
                 <img src={iconApple} alt="" />
               </Link>
