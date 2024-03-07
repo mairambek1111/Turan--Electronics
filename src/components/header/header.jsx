@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Headerlogo from "../../assets/header-logo.svg";
 import Logoimage from "../../assets/logo-image.svg";
-import iconhelp from "../../assets/header-btn-help.svg";
+import iconfavorite from "../../assets/header-btn-help.svg";
 import iconbasket from "../../assets/header-btn-basket.svg";
 import iconprofile from "../../assets/header-btn-profile.svg";
 import iconsearch from "../../assets/header-search.svg";
@@ -10,8 +10,8 @@ import "./header.scss";
 function Header() {
   return (
     <>
-      <header className="header">
-        <div className="container">
+      <header className="header" data-aos="zoom-out" data-aos-duration="1100">
+        <div className="container ">
           <div className="header__content">
             <div className="burger__menu__img__wrap">
               <img src={burgermenu} alt="" />
@@ -23,27 +23,31 @@ function Header() {
               <div>
                 <img src={Logoimage} alt="" className="logoimage" />
               </div>
-              <a href="#" className="logo">
+              <Link to="/" className="logo">
                 <img src={Headerlogo} alt="" className="header__logo" />
-              </a>
-              <div className="logo__img__wrap">
-                <img src={iconbasket} alt="" />
-              </div>
+              </Link>
+              <Link to="/headerBasket">
+                <img src={iconbasket} alt="" className="logo__img__wrap" />
+              </Link>
               <div className="header-info__btns">
                 <div className="header__nav__btns">
                   <button className="header__nav__btn__help">
-                    <img
-                      src={iconhelp}
-                      alt=""
-                      className="header__nav__icon__help"
-                    />
+                    <Link to="/headerFavorite">
+                      <img
+                        src={iconfavorite}
+                        alt=""
+                        className="header__nav__icon__help"
+                      />
+                    </Link>
                   </button>
                   <button className="header__nav__btn">
-                    <img
-                      src={iconbasket}
-                      alt=""
-                      className="header__nav__icon__btn"
-                    />
+                    <Link to="/headerBasket">
+                      <img
+                        src={iconbasket}
+                        alt=""
+                        className="header__nav__icon__btn"
+                      />
+                    </Link>
                   </button>
                   <button className="header__nav__btn__profile">
                     <img
@@ -68,18 +72,28 @@ function Header() {
 
             <div className="header__info__link">
               <nav className="header__nav">
-                <Link to="/" className="header__nav__link">
-                  Главная
-                </Link>
-                <Link to="/" className="header__nav__link">
-                  Категории
-                </Link>
-                <Link to="/" className="header__nav__link">
-                  Новости
-                </Link>
-                <Link to="/" className="header__nav__link">
-                  О нас
-                </Link>
+                <button className="header__nav-btn">
+                  <Link to="/" className="header__nav__link">
+                    Главная
+                  </Link>
+                </button>
+
+                <button className="header__nav-btn">
+                  <Link to="/" className="header__nav__link">
+                    Категории
+                  </Link>
+                </button>
+
+                <button className="header__nav-btn">
+                  <Link to="/" className="header__nav__link">
+                    Новости
+                  </Link>
+                </button>
+                <button className="header__nav-btn">
+                  <Link to="/" className="header__nav__link">
+                    О нас
+                  </Link>
+                </button>
               </nav>
             </div>
           </div>
