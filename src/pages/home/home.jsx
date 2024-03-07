@@ -5,16 +5,18 @@ import NewPostupleniya from "../../components/newPostupleniya/index.jsx";
 import Hero from "../../components/hero/hero";
 import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 import Register from "../../components/Register/index.jsx";
+import Authorization from "../../components/Authorization/index.jsx";
 function Home() {
   return (
     <>
-      <Header />
+      {/* <Header />
       <Hero />
       <Cardhero />
       <SwipeBasket />
       <NewPostupleniya />
-      <Footer />
+      <Footer /> */}
       <Register />
+      {/* <Authorization /> */}
     </>
   );
 }
