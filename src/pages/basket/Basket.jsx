@@ -9,27 +9,27 @@ import Check from "../../components/check/check.jsx";
 import Footer from "../../components/footer/footer.jsx";
 
 const Basket = () => {
-    return (
-        <>
-            <Header />
-            <Order />
-            <UserData />
-            <Payment />
-            <Qrcode />
-            <Check />
-            <div id="basket">
-                <div className="container">
-                    <div className="basket">
-                        <div className="basket--none">
-                            <h2>Ваша корзина пуста</h2>
-                        </div>
-                    </div>
-                </div>
-                <Recomendation />
+  return (
+    <>
+      <Header />
+      <Order />
+      <UserData />
+      <Payment />
+      <Qrcode />
+      <Check />
+      <div id="basket">
+        <div className="container">
+          <div className="basket">
+            <div className="basket--none">
+              <h2>Ваша корзина пуста</h2>
             </div>
-            <Footer />
-        </>
-    );
+          </div>
+        </div>
+        <Recomendation />
+      </div>
+      <Footer />
+    </>
+  );
 };
 
 export default Basket;

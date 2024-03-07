@@ -7,7 +7,7 @@ import iconrassrochka from "../../assets/iconrassrochka.svg";
 function Navbtn() {
   return (
     <>
-      <section className="navbtn">
+      <section className="navbtn" data-aos="zoom-out" data-aos-duration="1100">
         <div className="container">
           <div className="navbtn__content">
             <div className="navbtn__btns">
