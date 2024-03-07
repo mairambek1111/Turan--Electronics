@@ -40,10 +40,14 @@
         border: 1px solid rgba(0, 0, 0, 0.15);
         border-radius: 24px;
         width: 275px;
-        height: 580px;
+        height: 590px;
         box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.08),
           -4px -4px 10px 0 rgba(0, 0, 0, 0.08);
         background: rgba(235, 242, 249, 1);
+        transition: .3s;
+        &:hover{
+          background: rgba(188, 192, 197, 0.3);
+        }
         &--h3 {
           display: flex;
           align-items: center;
@@ -80,6 +84,7 @@
           font-size: 35px;
           color: rgba(0, 0, 0, 0.35);
           margin: 0 0 -10px 0;
+          cursor: pointer;
         }
         &--available {
           display: flex;
@@ -89,6 +94,7 @@
             align-items: center;
             font-size: 18px;
             font-weight: 400;
+            gap: 5px;
           }
         }
         &--price {
@@ -157,9 +163,18 @@
             height: 38px;
             box-shadow: 4px 2px 16px 0 rgba(136, 165, 191, 0.48);
             color: rgba(0, 0, 0, 1);
+            transition: .5s all;
+            &:hover{
+              box-shadow: 7px 7px 7px 0 rgba(18, 61, 101, 0.14) inset, -7px -7px 7px 0px rgba(255, 255, 255, 1) inset;
+            }
           }
           .btnBasket {
             font-size: 35px;
+            transition: .5s all;
+            cursor: pointer;
+            &:hover{
+              box-shadow: 7px 7px 7px 0 rgba(18, 61, 101, 0.14) inset, -7px -7px 7px 0px rgba(255, 255, 255, 1) inset;
+            }
           }
         }
         &--colors {
@@ -173,11 +188,18 @@
             display: flex;
             gap: 10px;
             margin-left: 20px;
-            canvas {
-              background: rgba(24, 31, 39, 1);
+            canvas{
+              background: black;
+              border-radius: 50%;
               width: 25px;
               height: 25px;
-              border-radius: 50%;
+              cursor: pointer;
+              &:nth-child(2){
+                background: rgba(242, 228, 201, 1);
+              }
+              &:nth-child(3){
+                background: rgba(255, 255, 255, 1);
+              }
             }
           }
         }
@@ -200,6 +222,7 @@
           &__h3 {
             position: relative;
             margin: 0 0 -15px 0;
+            z-index: 1;
             h3 {
               font-weight: 500;
               width: 47px;
@@ -230,6 +253,7 @@
               align-items: center;
               font-size: 18px;
               font-weight: 400;
+              gap: 5px;
             }
           }
         }
@@ -406,6 +430,9 @@
   #newPostopleniya .newPostopleniya--allMobile__cardMobile--descript__stars {
     margin: 0 0 0 90px;
   }
+  #newPostopleniya .newPostopleniya--title h1 {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 370px) {
@@ -414,5 +441,55 @@
   }
   #newPostopleniya .newPostopleniya--allMobile__cardMobile--descript__stars {
     margin: 0 0 0 70px;
+  }
+}
+@media (max-width: 351px) {
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile--descript__title h1 {
+    font-size: 14px;
+  }
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile--descript__colors h4 {
+    font-size: 14px;
+  }
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile--descript__price h1 {
+    font-size: 15px;
+  }
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile--descript__price .priceBasket {
+    width: 40px;
+    height: 25px;
+  }
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile--descript__price {
+    margin: 5px 0 0 18px;
+    gap: 10px;
+  }
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile--tel__available h2 {
+    font-size: 14px;
+    margin: -7px 0 0 0;
+  }
+  #newPostopleniya .newPostopleniya--title h1 {
+    width: 198px;
+  }
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile--tel__imgs{
+    position: relative;
+  }
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile--tel__imgs .imgsHeart {
+    position: absolute;
+    font-size: 20px;
+    left: 105px;
+    right: 0;
+    top: 117px;
+    bottom: 0;
+  }
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile--tel__h3 {
+    margin: 0 0 -22px 0;
+    z-index: 1;
+  }
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile--tel__imgs img {
+    height: 140px;
+  }
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile {
+    height: 162px;
+  }
+  #newPostopleniya .newPostopleniya--allMobile__cardMobile--tel__available h2 svg {
+    width: 18px;
   }
 }
