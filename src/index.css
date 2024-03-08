@@ -10,7 +10,7 @@ img {
 body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  background: #e3edf7;
+  background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
 }
 
 .container {
