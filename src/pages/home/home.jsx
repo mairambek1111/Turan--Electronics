@@ -9,14 +9,10 @@ import Navbtn from "../../components/navbtn/navbtn.jsx";
 import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import Authorization from "../../components/Authorization/index.jsx";
 import Register from "../../components/Register/index.jsx";
-// import Register from "../../components/Register/Enter.jsx";
 
 function Home() {
   return (
     <>
-      {/* <Authorization /> */}
-      {/* <Register /> */}
-      {/* <Enter /> */}
       <Header />
       <Navbtn />
       <Hero />
