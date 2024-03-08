@@ -1,14 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, {useState} from "react";
 import "./Register.scss";
 import { Link } from "react-router-dom";
 import registerImage from "../../assets/register.png";
 import { AiFillGoogleCircle } from "react-icons/ai";
-import { FaFacebook } from "react-icons/fa";
+import {FaEye, FaEyeSlash, FaFacebook} from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
 import Enter from "./Enter";
 
 export default function Register() {
   const [showEnter, setShowEnter] = React.useState(false);
+  const [eye,setEye] = useState('password')
+
+  const handleEye = ()=>{
+    if(eye === 'password'){
+      setEye('text')
+    }else {
+      setEye('password')
+    }
+  }
 
   return (
     <>
@@ -28,16 +37,25 @@ export default function Register() {
                 <input
                   type="text"
                   placeholder="Имя"
-                  onChange={() => checkCode()}
                 />
-                <input type="password" placeholder="Пароль" />
-                <input type="password" placeholder="Потвердить пароль" />
+                <div className="register__inputs--pass">
+                  <input type={eye} placeholder="Пароль"/>
+                  {
+                    eye === 'password' ? <FaEyeSlash onClick={handleEye} className='passEye'/> :<FaEye onClick={handleEye} className='passEye'/>
+                  }
+                </div>
+                <div className="register__inputs--pass">
+                <input type={eye} placeholder="Потвердить пароль" />
+                  {
+                    eye === 'password' ? <FaEyeSlash onClick={handleEye} className='passEye'/> :<FaEye onClick={handleEye} className='passEye'/>
+                  }
+                </div>
                 <input type="text" placeholder="Email или телефон ..." />
-                <div className="register__inputs-check">
+                <div className="register__inputs--check">
                   <input type="checkbox" id="check" />
                   <label htmlFor="check">
                     <p>
-                      Я согласен с <Link> условиями обработки</Link>{" "}
+                      Я согласен с <Link> условиями обработки </Link>
                       персональных данных
                     </p>
                   </label>
