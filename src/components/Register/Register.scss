@@ -87,6 +87,10 @@
         border-radius: 16px;
         background: transparent;
         cursor: pointer;
+        transition: .3s;
+        &:hover{
+          box-shadow: 3px 3px 7px 0 rgba(136, 165, 191, 0.48) inset, -3px -3px 7px 0px rgba(255, 255, 255, 1) inset;
+        }
       }
     }
     &__links {
@@ -118,7 +122,6 @@
         margin: 10px 0;
         align-items: center;
         cursor: pointer;
-        // color: skyblue;
       }
     }
   }
