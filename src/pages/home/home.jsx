@@ -15,9 +15,9 @@ function Home() {
   return (
     <>
       {/* <Authorization /> */}
-      <Register />
+      {/* <Register /> */}
       {/* <Enter /> */}
-      {/* <Header />
+      <Header />
       <Navbtn />
       <Hero />
       <Cardhero />
@@ -25,7 +25,7 @@ function Home() {
       <NewPostupleniya />
       <Recomendation />
       <Brends />
-      <Footer /> */}
+      <Footer />
     </>
   );
 }
