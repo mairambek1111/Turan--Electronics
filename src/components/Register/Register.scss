@@ -1,0 +1,543 @@
+#register {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin: 1%;
+  h1 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 10px;
+  }
+  .register {
+    margin: 10px auto;
+    border-radius: 5px;
+    // padding: 0 40px;
+    max-width: 820px;
+    width: 100%;
+    height: 635px;
+    background: #ebf2f9;
+    box-shadow: 16px 4px 64px 0px #123d6533;
+    &__header {
+      padding: 20px 0 0 0;
+      p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 25px;
+        width: 518px;
+        margin: 0 auto;
+      }
+    }
+    &__inputs {
+      display: flex;
+      flex-direction: column;
+      margin: 30px 230px;
+      input {
+        box-shadow: 3px 3px 17px 0px #88a5bf7a inset;
+        box-shadow: -3px -3px 7px 0px #ffffff inset;
+        margin: 5px 0;
+        padding: 10px 14px;
+        background: transparent;
+        border-radius: 16px;
+        border: 1px solid #d4d4d4;
+        outline: none;
+      }
+      a {
+        text-align: end;
+        margin: 10px 5px;
+        color: #000;
+      }
+      &-check {
+        display: flex;
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    &__button {
+      button {
+        box-shadow: 3px 3px 17px 0px #88a5bf7a inset;
+        box-shadow: -3px -3px 7px 0px #ffffff inset;
+        padding: 10px 44px;
+        border: 1px solid #fff;
+        border-radius: 16px;
+        background: transparent;
+        cursor: pointer;
+      }
+    }
+    &__links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+      margin: 30px 0 20px 0;
+      h2 {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+      a {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #ff7300;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+    }
+    &__network {
+      margin: 10px 0;
+      &-link {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin: 10px 0;
+        align-items: center;
+        cursor: pointer;
+        // color: skyblue;
+      }
+    }
+  }
+}
+
+#enter {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin: 1%;
+  h1 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 10px;
+  }
+  .enter {
+    margin: 10px auto;
+    border-radius: 5px;
+    width: 820px;
+    height: 425px;
+    background: #ebf2f9;
+    box-shadow: 16px 4px 64px 0px #123d6533;
+    &__header {
+      padding: 20px 0 0 0;
+      p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 25px;
+        width: 518px;
+        margin: 10px auto;
+      }
+    }
+    &__inputs {
+      input {
+        box-shadow: 3px 3px 17px 0px #88a5bf7a inset;
+        box-shadow: -3px -3px 7px 0px #ffffff inset;
+        margin: 5px 0;
+        padding: 10px 44px;
+        background: transparent;
+        border-radius: 16px;
+        border: 1px solid #d4d4d4;
+        outline: none;
+        margin: 10px 0;
+        font-size: 16px;
+        letter-spacing: 2px;
+      }
+    }
+    img {
+      margin: 10px;
+    }
+    &__button {
+      button {
+        box-shadow: 3px 3px 17px 0px #88a5bf7a inset;
+        box-shadow: -3px -3px 7px 0px #ffffff inset;
+        padding: 10px 44px;
+        border: 1px solid #fff;
+        border-radius: 16px;
+        background: transparent;
+        cursor: pointer;
+      }
+    }
+    &__number {
+      p {
+        width: 535px;
+        margin: 10px auto;
+      }
+    }
+
+    &__request {
+      margin: 15px 0;
+    }
+    &__network {
+      margin: 10px 0;
+      &-link {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin: 10px 0;
+        align-items: center;
+        cursor: pointer;
+        // color: skyblue;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  #register {
+    margin: 5% 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  #register {
+    margin: 6% 0;
+  }
+  @media screen and (max-width: 840px) {
+    #register {
+      margin: 0;
+      padding: 0 20px;
+      .register {
+        max-width: 800px;
+        height: 90vh;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #register {
+    margin: 2% 0;
+    .register {
+      max-width: 749px;
+      padding: 0 10px;
+    }
+  }
+}
+@media screen and (max-width: 640px) {
+  #register {
+    margin: 1% 0;
+    .register {
+      max-width: 620px;
+      &__inputs {
+        margin: 10px 90px;
+        input {
+          width: 80%;
+          margin: 7px auto;
+        }
+      }
+      &-check {
+        display: flex;
+        align-items: center;
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      &__button {
+        button {
+          margin: 10px 0;
+        }
+      }
+      &__links {
+        h2 {
+          font-size: 16px;
+        }
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 540px) {
+  #register {
+    margin: 4% 0;
+    .register {
+      max-width: 520px;
+      &__inputs {
+        margin: 10px 90px;
+        input {
+          width: 80%;
+          margin: 7px auto;
+        }
+      }
+      &-check {
+        display: flex;
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      &__button {
+        button {
+          margin: 10px 0;
+        }
+      }
+      &__links {
+        h2 {
+          font-size: 16px;
+        }
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  #register {
+    margin: 4% 0;
+    .register {
+      height: 600px;
+      &__header {
+        padding: 20px 0 0 0;
+        p {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 25px;
+          width: 398px;
+          margin: 0 auto;
+        }
+      }
+      max-width: 440px;
+      &__inputs {
+        margin: 10px 90px;
+        input {
+          width: 80%;
+          margin: 7px auto;
+        }
+      }
+      &-check {
+        display: flex;
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      &__button {
+        button {
+          margin: 10px 0;
+        }
+      }
+      &__links {
+        h2 {
+          font-size: 16px;
+        }
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 380px) {
+  #register {
+    margin: 5% 0;
+    h1 {
+      font-size: 22px;
+    }
+    .register {
+      img {
+        width: 200px;
+        height: 20px;
+      }
+      height: 600px;
+      &__header {
+        padding: 20px 0 0 0;
+        p {
+          font-size: 11px;
+          width: 298px;
+          margin: 0 auto;
+        }
+      }
+      max-width: 340px;
+      &__inputs {
+        margin: 10px;
+        input {
+          row-gap: 50px;
+          width: 80%;
+          margin: 7px auto;
+        }
+      }
+      &-check {
+        display: flex;
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      &__button {
+        button {
+          margin: 10px 0;
+        }
+      }
+      &__links {
+        margin: 20px 0;
+        h2 {
+          font-size: 16px;
+        }
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  #register {
+    margin: 8% 0;
+    h1 {
+      font-size: 22px;
+    }
+    .register {
+      img {
+        width: 200px;
+        height: 20px;
+      }
+      height: 600px;
+      &__header {
+        padding: 20px 0 0 0;
+        p {
+          font-size: 11px;
+          width: 298px;
+          margin: 0 auto;
+        }
+      }
+      max-width: 300px;
+      &__inputs {
+        margin: 10px;
+        input {
+          row-gap: 50px;
+          width: 80%;
+          margin: 7px auto;
+        }
+      }
+      &-check {
+        display: flex;
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+      &__button {
+        button {
+          margin: 10px 0;
+        }
+      }
+      &__links {
+        margin: 20px 0;
+        h2 {
+          font-size: 16px;
+        }
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  #enter {
+    margin: 15% 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  #enter {
+    margin: 14% 0;
+  }
+  @media screen and (max-width: 840px) {
+    #enter {
+      margin: 0;
+      padding: 0 20px;
+      .enter {
+        max-width: 800px;
+        height: 90vh;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #enter {
+    margin: 7% 0;
+    .enter {
+      max-width: 749px;
+      padding: 0 10px;
+      height: 450px;
+    }
+  }
+}
+@media screen and (max-width: 640px) {
+  #enter {
+    margin: 12% 0;
+    .enter {
+      max-width: 620px;
+    }
+  }
+}
+@media screen and (max-width: 540px) {
+  #enter {
+    margin: 10% 0;
+    .enter {
+      max-width: 520px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  #enter {
+    h1 {
+    }
+    margin: 4% 0;
+    .enter {
+      height: 600px;
+      &__header {
+        padding: 20px 0 0 0;
+        p {
+          width: 340px;
+        }
+      }
+      max-width: 340px;
+      &__number {
+        p {
+          width: 320px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 380px) {
+  #enter {
+    margin: 5% 0;
+    .enter {
+      height: 600px;
+      &__header {
+        padding: 20px 0 0 0;
+        p {
+          width: 320px;
+        }
+      }
+      max-width: 340px;
+      &__number {
+        p {
+          width: 320px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #enter {
+    margin: 8% 0;
+    h1 {
+      font-size: 22px;
+    }
+    .enter {
+      max-width: 340px;
+    }
+  }
+}

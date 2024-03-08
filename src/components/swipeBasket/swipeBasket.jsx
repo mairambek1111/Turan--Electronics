@@ -12,7 +12,7 @@ function SwipeBasket() {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 4000,
+    speed: 3000,
     autoplaySpeed: 1000,
     cssEase: "linear",
     responsive: [
