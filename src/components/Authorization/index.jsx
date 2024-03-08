@@ -1,4 +1,3 @@
-import React from "react";
 import "./Authorization.scss";
 import { Link } from "react-router-dom";
 import registerImage from "../../assets/register.png";
