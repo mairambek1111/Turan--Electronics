@@ -7,19 +7,25 @@ import iconprofile from "../../assets/header-btn-profile.svg";
 import iconsearch from "../../assets/header-search.svg";
 import burgermenu from "../../assets/burger-menu.svg";
 import "./header.scss";
-import { Productdate } from "../../product";
+import { useState } from "react";
+import { IoMdClose } from "react-icons/io";
 function Header() {
-  const product = Productdate;
-
-  console.log(product);
-
+  const [nav, setNav] = useState(false);
+  console.log(nav);
   return (
     <>
       <header className="header" data-aos="zoom-out" data-aos-duration="1100">
         <div className="container ">
           <div className="header__content">
-            <div className="burger__menu__img__wrap">
-              <img src={burgermenu} alt="" />
+            <div
+              onClick={() => setNav(!nav)}
+              className="burger__menu__img__wrap"
+            >
+              {nav ? (
+                <IoMdClose size={25} className="menu-close-btn" />
+              ) : (
+                <img src={burgermenu} alt="" />
+              )}
             </div>
             <div className="header__info">
               <div className="search__header">
@@ -76,7 +82,7 @@ function Header() {
             </div>
 
             <div className="header__info__link">
-              <nav className="header__nav">
+              <nav className={`header__nav ${nav ? "active" : ""}`}>
                 <button className="header__nav-btn">
                   <Link to="/" className="header__nav__link">
                     Главная
