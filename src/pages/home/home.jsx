@@ -14,10 +14,10 @@ import Register from "../../components/Register/index.jsx";
 function Home() {
   return (
     <>
-      {/* <Authorization /> */}
-      <Register />
-      {/* <Enter /> */}
-      {/* <Header />
+      <Authorization />
+      {/* <Register />
+      <Enter />
+      <Header />
       <Navbtn />
       <Hero />
       <Cardhero />
