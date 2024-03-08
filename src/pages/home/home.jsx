@@ -13,7 +13,8 @@ import Register from "../../components/Register/index.jsx";
 function Home() {
   return (
     <>
-      <Header />
+      <Register />
+      {/* <Header />
       <Navbtn />
       <Hero />
       <Cardhero />
@@ -21,7 +22,7 @@ function Home() {
       <NewPostupleniya />
       <Recomendation />
       <Brends />
-      <Footer />
+      <Footer /> */}
     </>
   );
 }
