@@ -11,7 +11,6 @@ import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 function Header() {
   const [nav, setNav] = useState(false);
-  console.log(nav);
   return (
     <>
       <header className="header" data-aos="zoom-out" data-aos-duration="1100">
