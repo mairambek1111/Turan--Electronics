@@ -1,6 +1,7 @@
 import "../favorites/favorites.scss";
 import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import Header from "../../components/header/header.jsx";
+import Footer from "../../components/footer/footer.jsx";
 const Favorites = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const Favorites = () => {
           </div>
         </div>
         <Recomendation />
+        <Footer />
       </div>
     </>
   );
