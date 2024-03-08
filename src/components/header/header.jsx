@@ -7,7 +7,12 @@ import iconprofile from "../../assets/header-btn-profile.svg";
 import iconsearch from "../../assets/header-search.svg";
 import burgermenu from "../../assets/burger-menu.svg";
 import "./header.scss";
+import { Productdate } from "../../product";
 function Header() {
+  const product = Productdate;
+
+  console.log(product);
+
   return (
     <>
       <header className="header" data-aos="zoom-out" data-aos-duration="1100">
