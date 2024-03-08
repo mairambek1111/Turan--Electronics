@@ -7,6 +7,9 @@ import iconwork from "../../assets/footer.work.svg";
 import icontel from "../../assets/footer-tel.svg";
 import iconemail from "../../assets/footer-email.svg";
 import iconadaptive from "../../assets/icon-adaptive.svg";
+import iconadaptive2 from "../../assets/iconadaptive2.svg";
+import iconadaptive3 from "../../assets/header-btn-help.svg";
+import iconadaptive4 from "../../assets/header-btn-profile.svg";
 import "./footer.scss";
 import { Link } from "react-router-dom";
 function Footer() {
@@ -17,16 +20,20 @@ function Footer() {
           <div className="footer__adaptive__content">
             <div className="footer__adaptive__content__info">
               <button className="adaptive__content">
-                <img src={iconadaptive} alt="" />
+                <Link to="/">
+                  <img src={iconadaptive} alt="" />
+                </Link>
               </button>
               <button className="adaptive__content">
-                <img src={iconadaptive} alt="" />
+                <img src={iconadaptive2} alt="" />
               </button>
               <button className="adaptive__content">
-                <img src={iconadaptive} alt="" />
+                <Link to="/headerFavorite">
+                  <img src={iconadaptive3} alt="" />
+                </Link>
               </button>
               <button className="adaptive__content">
-                <img src={iconadaptive} alt="" />
+                <img src={iconadaptive4} alt="" />
               </button>
             </div>
           </div>
