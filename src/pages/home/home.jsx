@@ -7,18 +7,17 @@ import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 import Navbtn from "../../components/navbtn/navbtn.jsx";
 import Brends from "../../components/Brends/Brends.jsx";
+import Register from "../../components/Register/index.jsx";
+import Authorization from "../../components/Authorization/index.jsx";
 function Home() {
    
   return (
     <>
       <Header />
-      <Navbtn />
       <Hero />
       <Cardhero />
       <SwipeBasket />
       <NewPostupleniya />
-      <Recomendation />
-      <Brends />
       <Footer />
     </>
   );

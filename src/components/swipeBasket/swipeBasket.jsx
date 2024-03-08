@@ -1,8 +1,6 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
-
 import "./swipeBasket.css";
-
 import basketIcon from "../../assets/basket.png";
 import img from "../../assets/image.png";
 import { RiStarSFill } from "react-icons/ri";
@@ -14,7 +12,7 @@ function SwipeBasket() {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 4000,
+    speed: 3000,
     autoplaySpeed: 1000,
     cssEase: "linear",
     responsive: [
