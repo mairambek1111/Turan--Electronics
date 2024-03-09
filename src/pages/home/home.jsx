@@ -7,12 +7,15 @@ import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 import Brends from "../../components/Brends/Brends.jsx";
 import Navbtn from "../../components/navbtn/navbtn.jsx";
 import Recomendation from "../../components/recomendation/Recomendation.jsx";
+import Register from "../../components/Register/index.jsx";
+import Authorization from "../../components/Authorization/index.jsx";
 
 function Home() {
   return (
     <>
       <Register />
-      {/* <Header />
+      <Authorization />
+      <Header />
       <Navbtn />
       <Hero />
       <Cardhero />
@@ -20,7 +23,7 @@ function Home() {
       <NewPostupleniya />
       <Recomendation />
       <Brends />
-      <Footer /> */}
+      <Footer />
     </>
   );
 }
