@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Enter.scss";
-import { Link } from "react-router-dom";
 import registerImage from "../../assets/register.png";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
@@ -114,7 +113,7 @@ export default function Enter() {
             </p>
           </div>
           <div className="enter__button">
-            <button>Регистрация</button>
+            <button>Подтвердить</button>
           </div>
         </div>
       </div>

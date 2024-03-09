@@ -2,10 +2,46 @@ import "./Authorization.scss";
 import { Link } from "react-router-dom";
 import registerImage from "../../assets/register.png";
 import { AiFillGoogleCircle } from "react-icons/ai";
-import { FaFacebook } from "react-icons/fa";
+import {FaEye, FaEyeSlash, FaFacebook} from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
+import {useState} from "react";
 
 const Authorization = () => {
+  const [active,setActive] = useState(false)
+  const [eye,setEye] = useState('password')
+
+  const handleEye = ()=>{
+    if(eye === 'password'){
+      setEye('text')
+    }else {
+      setEye('password')
+    }
+  }
+
+  function iValue(){
+    const iPass = document.querySelector('.iPass')
+    const iEmail = document.querySelector('.iEmail')
+    if(iPass.value.trim() === ''){
+      iPass.style.border = '1px solid red'
+    }else {
+      iPass.style.border = '1px solid rgba(255, 255, 255, 1)'
+    }
+    if(iEmail.value.trim() === ''){
+      iEmail.style.border = '1px solid red'
+    }else {
+      iEmail.style.border = '1px solid rgba(255, 255, 255, 1)'
+    }
+  }
+  const btnActive = ()=>{
+    setActive(true)
+    iValue()
+  }
+  const validation = ()=>{
+    if(active === true){
+      iValue()
+    }
+  }
+
   return (
     <div id="authorization">
       <div className="container">
@@ -18,12 +54,17 @@ const Authorization = () => {
             </p>
           </div>
           <div className="authorization__inputs">
-            <input type="text" placeholder="Email или телефон ..." />
-            <input type="password" placeholder="Пароль" />
+            <input onInput={validation} className='iEmail' type="text" placeholder="Email или телефон ..." />
+            <div className="authorization__inputs--pass">
+              <input onInput={validation} className='iPass' type={eye} placeholder="Пароль" />
+              {
+                eye === 'password' ? <FaEyeSlash onClick={handleEye} className='passEye'/> :<FaEye onClick={handleEye} className='passEye'/>
+              }
+            </div>
             <Link>Забыли пароль?</Link>
           </div>
           <div className="authorization__button">
-            <button>Войти</button>
+            <button onClick={btnActive}>Войти</button>
           </div>
           <div className="authorization__links">
             <h2>Впервые у нас? </h2>
