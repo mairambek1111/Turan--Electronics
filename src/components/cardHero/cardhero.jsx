@@ -11,7 +11,11 @@ function Cardhero() {
     <div>
       <div className="container">
         <section className="cards">
-          <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+          <div
+            className="cards__wrap__dyson"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+          >
             <img src={dyson} alt="" className="dyson" />
             <button className="Button">Dyson</button>
           </div>
