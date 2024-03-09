@@ -48,6 +48,8 @@ export default function Enter() {
     setCheckCoder(str);
   }
 
+  
+
   return (
     <div id="enter">
       <div className="container">
