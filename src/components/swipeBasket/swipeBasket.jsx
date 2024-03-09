@@ -11,13 +11,31 @@ function SwipeBasket() {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 3000,
     autoplaySpeed: 1000,
     cssEase: "linear",
     responsive: [
       {
-        breakpoint: 949,
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1005,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 973,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 701,
         settings: {
           slidesToShow: 1,
         },
