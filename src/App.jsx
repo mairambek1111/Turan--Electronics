@@ -4,10 +4,15 @@ import "slick-carousel/slick/slick-theme.css";
 import Basket from "./pages/basket/Basket";
 import Favorites from "./pages/favorites/Favorites";
 import Home from "./pages/home/home";
+import PagesMain from "./pages/pagesMain";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/pagesmain",
+    element: <PagesMain />,
   },
   {
     path: "/headerBasket",

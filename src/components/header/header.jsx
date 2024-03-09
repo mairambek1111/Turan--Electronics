@@ -83,7 +83,7 @@ function Header() {
             <div className="header__info__link">
               <nav className={`header__nav ${nav ? "active" : ""}`}>
                 <button className="header__nav-btn">
-                  <Link to="/" className="header__nav__link">
+                  <Link to="/pagesmain" className="header__nav__link">
                     Главная
                   </Link>
                 </button>
