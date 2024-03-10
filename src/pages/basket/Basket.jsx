@@ -5,7 +5,6 @@ import Order from "../../components/order/order.jsx";
 import UserData from "../../components/userData/userData.jsx";
 import Footer from "../../components/footer/footer.jsx";
 import {useState} from "react";
-import Check from "../../components/check/check.jsx";
 
 const Basket = () => {
     const [userData,setUserData] = useState(false)
