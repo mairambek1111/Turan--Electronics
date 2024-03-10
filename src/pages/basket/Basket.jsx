@@ -3,20 +3,21 @@ import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import Header from "../../components/header/header.jsx";
 import Order from "../../components/order/order.jsx";
 import UserData from "../../components/userData/userData.jsx";
-import Payment from "../../components/payment/payment.jsx";
-import Qrcode from "../../components/qrcode/qrcode.jsx";
-import Check from "../../components/check/check.jsx";
 import Footer from "../../components/footer/footer.jsx";
+import {useState} from "react";
+import Check from "../../components/check/check.jsx";
 
 const Basket = () => {
+    const [userData,setUserData] = useState(false)
   return (
     <>
       <Header />
-      <Order />
-      <UserData />
-      <Payment />
-      <Qrcode />
-      <Check />
+      <Order setUserData={setUserData}/>
+        {
+            userData ?
+                    <UserData/>
+                : null
+        }
       <div id="basket">
         <div className="container">
           <div className="basket">
