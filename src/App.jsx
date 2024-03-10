@@ -6,30 +6,30 @@ import Favorites from "./pages/favorites/Favorites";
 import Home from "./pages/home/home";
 import PagesMain from "./pages/pagesMain";
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/pagesmain",
-    element: <PagesMain />,
-  },
-  {
-    path: "/headerBasket",
-    element: <Basket />,
-  },
-  {
-    path: "/headerFavorite",
-    element: <Favorites />,
-  },
+    {
+        path: "/",
+        element: <Home />,
+    },
+    {
+        path: "/pagesmain",
+        element: <PagesMain />,
+    },
+    {
+        path: "/headerBasket",
+        element: <Basket />,
+    },
+    {
+        path: "/headerFavorite",
+        element: <Favorites />,
+    },
 ]);
 
 function App() {
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+    return (
+        <div>
+            <RouterProvider router={router} />
+        </div>
+    );
 }
 
 export default App;
