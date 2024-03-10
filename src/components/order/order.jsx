@@ -2,7 +2,7 @@ import { RiStarSFill } from "react-icons/ri";
 import phone from "../../assets/newPost--iphone.svg";
 import "./order.scss";
 
-function Order() {
+function Order({setUserData}) {
   return (
     <div>
       <div className="container">
@@ -62,9 +62,8 @@ function Order() {
                 <RiStarSFill fontSize={25} />
               </div>
             </div>
-            <button className="orders__btn">Оформить заказ</button>
           </div>
-          <button className="order__btn">Оформить заказ</button>
+          <button onClick={()=> setUserData(true)} className="order__btn">Оформить заказ</button>
         </div>
       </div>
     </div>
