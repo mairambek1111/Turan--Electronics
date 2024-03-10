@@ -145,7 +145,7 @@ function UserData() {
                         <h1 className="userData__card__oneData">Доставка</h1>
                         <div className="userData__card__inputs">
                             <div className="selects">
-                                <select ref={refRegion} onChange={selectRegion}>
+                                <select defaultValue='' ref={refRegion} onChange={selectRegion}>
                                     <option value='' hidden disabled>
                                         Область
                                     </option>
@@ -158,7 +158,7 @@ function UserData() {
                                     <option value='Талас'>Талас</option>
                                 </select>
 
-                                <select ref={refGorod} onChange={selectGorod}>
+                                <select defaultValue='' ref={refGorod} onChange={selectGorod}>
                                     <option value='' hidden disabled>
                                         Город
                                     </option>
