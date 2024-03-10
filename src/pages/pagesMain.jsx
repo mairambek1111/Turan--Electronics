@@ -4,10 +4,12 @@ import Header from "../components/header/header";
 import Hero from "../components/hero/hero";
 import Navbtn from "../components/navbtn/navbtn";
 import MainCard from "../components/swipeBasket/mainCard";
+import Basket from "./basket/Basket.jsx";
 function PagesMain() {
   return (
     <>
       <Header />
+        <Basket/>
       <Navbtn />
       <MainCard />
       <br />
