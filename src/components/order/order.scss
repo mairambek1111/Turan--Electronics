@@ -30,7 +30,7 @@
     }
     &__card {
         max-width: 1250px;
-        height: 255px;
+        height: auto;
         border: 3px solid white;
         box-shadow: 0px 0px 0px 0px #7c9bb7;
         box-shadow: -0px -0px 40px 5px #afc3d5;
@@ -43,7 +43,6 @@
         &__info {
             display: flex;
             align-items: center;
-
             flex-direction: column;
         }
         &__title {
@@ -65,13 +64,13 @@
                     #c6d7eb 154.68%
                 );
                 border: 1px solid white;
-                padding: 5px 15px;
+                padding: 5px 10px;
                 border-radius: 5px;
             }
             &__nums {
                 font-family: "Montserrat", "sans-serif";
                 font-weight: 400;
-                font-size: 33px;
+                font-size: 25px;
                 padding: 5px 25px;
             }
             &__plus {
@@ -82,7 +81,7 @@
                     #c6d7eb 154.68%
                 );
                 border: 1px solid white;
-                padding: 5px 15px;
+                padding: 5px 10px;
                 border-radius: 5px;
             }
         }
@@ -110,9 +109,12 @@
         font-size: 20px;
     }
 }
-.stars {
+.stars__order {
     display: flex;
     align-items: center;
+}
+.stars__order {
+    margin-left: 28px;
 }
 .orders__btn {
     font-family: "Montserrat", sans-serif;
@@ -127,11 +129,12 @@
     display: none;
 }
 @media screen and (max-width: 1150px) {
-    .stars {
+    .stars__order {
         display: flex;
         flex-wrap: wrap;
     }
 }
+
 @media screen and (max-width: 1220px) {
     .order__btn {
         display: none;
@@ -149,13 +152,18 @@
     .order__card__title {
         font-family: "Montserrat", "sans-serif";
         font-weight: 400;
-        font-size: 25px;
+        font-size: 23px;
+    }
+    .order__card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
     }
     .order__card__quantity {
         display: flex;
         align-items: center;
         padding: 10px;
-        margin-right: 200px;
+        margin-right: 234px;
     }
 }
 @media screen and (max-width: 509px) {
@@ -165,10 +173,9 @@
         gap: 20px;
         flex-direction: column;
     }
-    .stars {
+    .stars__order {
         display: flex;
         flex-direction: row;
-        margin-left: 30px;
     }
     .order__card {
         max-width: 1250px;
