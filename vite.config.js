@@ -6,6 +6,6 @@ import EnvironmentPlugin from "vite-plugin-environment";
 export default defineConfig({
   plugins: [
       react(),
-      EnvironmentPlugin(['API_BOT', 'DEBUG'])
+      EnvironmentPlugin(['API_BOT', 'API_ID'])
   ],
 })
