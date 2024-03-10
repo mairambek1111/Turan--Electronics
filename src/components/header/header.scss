@@ -115,20 +115,23 @@
   box-shadow: -3px -3px 7px 0px #ffffff inset;
   border: 1px solid #ffffff;
   margin: 15px 35px 0 220px;
-  position: relative;
   outline: none;
 
   &__icon__btn {
     background: none;
     border: none;
-    position: absolute;
     width: 24px;
     height: 24px;
-    top: 101px;
-    left: 1300px;
+    margin: 12px 0 0 -70px;
     padding: 2px 1.69px;
   }
 }
+
+.input__form {
+  display: flex;
+  align-items: center;
+}
+
 .header__nav {
   display: flex;
   align-items: center;
