@@ -2,7 +2,7 @@ import "./qrcode.scss";
 import qrcode from "../../assets/qrcode.png";
 import {useEffect} from "react";
 
-function Qrcode({setActive, validation, setOplata, modal, activeModal, setModal}) {
+function Qrcode({setActive, validation, setOplata, modal, activeModal, setModal,SendData}) {
     function btnActive() {
         setActive(true)
         validation()
@@ -14,6 +14,7 @@ function Qrcode({setActive, validation, setOplata, modal, activeModal, setModal}
     useEffect(() => {
         if (modal) {
             setOplata(true)
+            SendData()
         }
     }, [modal, activeModal]);
     return (

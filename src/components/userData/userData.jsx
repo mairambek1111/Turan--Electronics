@@ -3,6 +3,7 @@ import Payment from "../payment/payment.jsx";
 import Qrcode from "../qrcode/qrcode.jsx";
 import {useRef, useState} from "react";
 import Check from "../check/check.jsx";
+import axios from "axios";
 
 function UserData() {
     const [active, setActive] = useState(false)
@@ -18,7 +19,28 @@ function UserData() {
     const refRegion = useRef(null)
     const [oplata, setOplata] = useState(false)
     const [modal, setModal] = useState(false)
-    console.log(name, tel, email, region, gorod, street, home)
+
+    const token = process.env.API_BOT
+    const id = process.env.API_ID
+    const siteName = 'Turan Electronics'
+    const url = `https://api.telegram.org/bot${token}/sendMessage`
+
+    console.log()
+    function SendData(){
+        let message = `<b>Заказ с сайта: ${siteName}</b>\n \n`
+        message += `<b>Имя: ${name}</b>\n`
+        message += `<b>Телефон: ${tel}</b>\n`
+        message += `<b>Email: ${email}</b>\n`
+        message += `<b>Область: ${region}</b>\n`
+        message += `<b>Город: ${gorod}</b>\n`
+        message += `<b>Улица: ${street}</b>\n`
+        message += `<b>Дом/кв: ${home}</b>\n`
+        axios.post(url,{
+            chat_id:id,
+            parse_mode:'html',
+            text: message
+        })
+    }
 
     function validation() {
         const iName = document.querySelector('.userInput__firstInput')
@@ -193,7 +215,7 @@ function UserData() {
             </div>
             <Payment/>
             <Qrcode validation={validation} setActive={setActive} setOplata={setOplata} modal={modal}
-                    activeModal={activeModal} setModal={setModal}/>
+                    activeModal={activeModal} setModal={setModal} SendData={SendData}/>
             <Check oplata={oplata} setOplata={setOplata}/>
         </>
     );
