@@ -20,6 +20,7 @@ function Header() {
               onClick={() => setNav(!nav)}
               className="burger__menu__img__wrap"
             >
+              {" "}
               {nav ? (
                 <IoMdClose size={25} className="menu-close-btn" />
               ) : (
@@ -67,7 +68,7 @@ function Header() {
                     />
                   </button>
                 </div>
-                <form action="#" className="">
+                <div className="input__form">
                   <input
                     type="text"
                     placeholder="search..."
@@ -76,7 +77,7 @@ function Header() {
                   <button className="input__icon__btn">
                     <img src={iconsearch} alt="" className="input__icon" />
                   </button>
-                </form>
+                </div>
               </div>
             </div>
 
@@ -89,18 +90,18 @@ function Header() {
                 </button>
 
                 <button className="header__nav-btn">
-                  <Link to="/" className="header__nav__link">
+                  <Link to="/pageskategory" className="header__nav__link">
                     Категории
                   </Link>
                 </button>
 
                 <button className="header__nav-btn">
-                  <Link to="/" className="header__nav__link">
+                  <Link to="/pagesNews" className="header__nav__link">
                     Новости
                   </Link>
                 </button>
                 <button className="header__nav-btn">
-                  <Link to="/" className="header__nav__link">
+                  <Link to="/pagesAboutus" className="header__nav__link">
                     О нас
                   </Link>
                 </button>
