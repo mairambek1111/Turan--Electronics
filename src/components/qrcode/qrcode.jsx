@@ -1,8 +1,21 @@
-import React from "react";
 import "./qrcode.scss";
 import qrcode from "../../assets/qrcode.png";
+import {useEffect} from "react";
 
-function Qrcode() {
+function Qrcode({setActive, validation, setOplata, modal, activeModal, setModal}) {
+    function btnActive() {
+        setActive(true)
+        validation()
+        if (activeModal) {
+            setModal(true)
+        }
+    }
+
+    useEffect(() => {
+        if (modal) {
+            setOplata(true)
+        }
+    }, [modal, activeModal]);
     return (
         <div>
             <div className="container">
@@ -10,11 +23,11 @@ function Qrcode() {
                     <h1 className="qrcode__title">
                         Отсканируйте QR код с вашего электронного кошелька
                     </h1>
-                    <img src={qrcode} alt="" className="qrcode__image" />
-                    <button className="code__btn">Заказ оплачен</button>
+                    <img src={qrcode} alt="" className="qrcode__image"/>
+                    <button onClick={btnActive} className="code__btn">Оплатить</button>
                 </div>
 
-                <button className="qrcode__btn">Заказ оплачен</button>
+                <button onClick={btnActive} className="qrcode__btn">Оплатить</button>
             </div>
         </div>
     );
