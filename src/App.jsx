@@ -8,6 +8,7 @@ import PagesMain from "./pages/pagesMain";
 import Pageskategory from "./pages/pageskategory";
 import PagesNews from "./pages/pagesNews";
 import PagesAboutus from "./pages/pagesAboutus";
+import Details from "./pages/details/Details.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/headerFavorite",
     element: <Favorites />,
+  },
+  {
+    path: "/details/:id",
+    element: <Details />,
   },
 ]);
 
