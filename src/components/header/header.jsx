@@ -9,8 +9,10 @@ import burgermenu from "../../assets/burger-menu.svg";
 import "./header.scss";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
+import {useSelector} from "react-redux";
 function Header() {
   const [nav, setNav] = useState(false);
+  const {favorite} = useSelector(s=>s.favorite)
   return (
     <>
       <header className="header" data-aos="zoom-out" data-aos-duration="1100">
@@ -49,6 +51,9 @@ function Header() {
                         alt=""
                         className="header__nav__icon__help"
                       />
+                      {
+                        favorite.length > 0 ? <p className='favCount'>{favorite.length}</p> : null
+                      }
                     </Link>
                   </button>
                   <button className="header__nav__btn">

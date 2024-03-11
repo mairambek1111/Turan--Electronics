@@ -68,8 +68,7 @@
     background: none;
     cursor: pointer;
     border: none;
-    box-shadow: 3px 3px 7px 0px #ffffff inset;
-    box-shadow: 3px 3px 7px 0px #88a5bf7a inset;
+    box-shadow: 3px 3px 7px 0 #ffffff inset,3px 3px 7px 0 #88a5bf7a inset;
   }
 }
 
@@ -79,11 +78,28 @@
   border: 1px solid #ffffff;
   background: none;
   cursor: pointer;
-  box-shadow: 4px 2px 16px 0px #88a5bf7a;
-  box-shadow: -4px -2px 16px 0px #ffffff;
+  box-shadow: 4px 2px 16px 0 #88a5bf7a,-4px -2px 16px 0px #ffffff;
+
+  position: relative;
+  .favCount{
+    position: absolute;
+    left: 35px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: red;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+  }
 }
 .header__nav__btn__help:hover {
-  box-shadow: 3px 3px 7px 0px #ffffff inset;
+  box-shadow: 3px 3px 7px 0px #ffffff inset,;
   box-shadow: 3px 3px 7px 0px #88a5bf7a inset;
 }
 
