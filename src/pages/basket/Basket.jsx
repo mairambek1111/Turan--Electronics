@@ -7,16 +7,12 @@ import Footer from "../../components/footer/footer.jsx";
 import {useState} from "react";
 
 const Basket = () => {
-    const [userData,setUserData] = useState(false)
+  const [userData, setUserData] = useState(false);
   return (
     <>
       <Header />
-      <Order setUserData={setUserData}/>
-        {
-            userData ?
-                    <UserData/>
-                : null
-        }
+      <Order setUserData={setUserData} />
+      {userData ? <UserData /> : null}
       <div id="basket">
         <div className="container">
           <div className="basket">
