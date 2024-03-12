@@ -12,6 +12,8 @@ export default function Enter() {
   const secunds = getPadTime(timeLeft - minutes * 60);
   const [checkCoder, setCheckCoder] = React.useState("");
 
+  const iEmail = localStorage.getItem("email");
+
   function getPadTime(time) {
     return time.toString().padStart(2, "0");
   }
@@ -48,8 +50,6 @@ export default function Enter() {
     setCheckCoder(str);
   }
 
-  
-
   return (
     <div id="enter">
       <div className="container">
@@ -84,10 +84,17 @@ export default function Enter() {
             </div>
             <img style={{ width: "200px" }} src={registerImage} alt="" />
             <div className="enter__number">
-              <p>
-                На номер телефона (070) 509-00-07 отправлено SMS-сообщение для
-                подтверждения регистрации.
-              </p>
+              {Number(iEmail) ? (
+                <p>
+                  На номер телефон {iEmail} отправлено SMS-сообщение для подтверждения
+                  регистрации.
+                </p>
+              ) : (
+                <p>
+                  На почту {iEmail} отправлено сообщение для подтверждения
+                  регистрации.
+                </p>
+              )}
             </div>
           </div>
           <div className="enter__inputs">
