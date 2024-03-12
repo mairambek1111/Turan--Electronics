@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./Register.scss";
-import { Link, json } from "react-router-dom";
+import { Link } from "react-router-dom";
 import registerImage from "../../assets/register.png";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
 import Enter from "../Enter/Enter";
+import Header from "../header/header";
 
 export default function Register() {
   const [showEnter, setShowEnter] = useState(false);
@@ -61,6 +62,7 @@ export default function Register() {
 
   return (
     <>
+      <Header />
       {showEnter && <Enter />}
       {showEnter === false && (
         <div id="register">

@@ -13,7 +13,6 @@ function Hero() {
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/carusel/").then((res) => {
       setSwiper(res.data);
-      console.log(res);
     });
   }, []);
   return (
@@ -30,7 +29,7 @@ function Hero() {
         >
           {swipers.map((el, id) => (
             <SwiperSlide key={id} className="swipe">
-              <h1 className="desc">{el.category}</h1>
+              <h1 className="desc">{el.title}</h1>
               <img src={el.photo} alt="" />
             </SwiperSlide>
           ))}
