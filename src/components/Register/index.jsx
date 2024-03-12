@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Register.scss";
-import { Link } from "react-router-dom";
+import { Link, json } from "react-router-dom";
 import registerImage from "../../assets/register.png";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
@@ -24,6 +24,7 @@ export default function Register() {
     const iPass = document.querySelector(".iPass");
     const iPass2 = document.querySelector(".iPass2");
     const iEmail = document.querySelector(".iEmail");
+
     if (iName.value.trim() === "") {
       iName.style.border = "1px solid red";
     } else {
@@ -46,6 +47,9 @@ export default function Register() {
     }
   }
   const btnActive = () => {
+    const iEmail = document.querySelector(".iEmail").value;
+    localStorage.setItem("email", iEmail);
+
     setActive(true);
     iValue();
   };
@@ -57,102 +61,102 @@ export default function Register() {
 
   return (
     <>
-      {
-        showEnter && <Enter/>
-      }
-     {showEnter === false && <div id="register">
-        <div className="container">
-          <h1>Регистрация</h1>
-          <div className="register">
-            <div className="register__header">
-              <p>
-                Авторизуйтесь, указав свои контактные данные, или
-                воспользовавшись перечисленными сервисами
-              </p>
-            </div>
-            <div className="register__inputs">
-              <input
-                className="iName"
-                type="text"
-                placeholder="Имя"
-                onInput={validation}
-              />
-              <div className="register__inputs--pass">
+      {showEnter && <Enter />}
+      {showEnter === false && (
+        <div id="register">
+          <div className="container">
+            <h1>Регистрация</h1>
+            <div className="register">
+              <div className="register__header">
+                <p>
+                  Авторизуйтесь, указав свои контактные данные, или
+                  воспользовавшись перечисленными сервисами
+                </p>
+              </div>
+              <div className="register__inputs">
                 <input
-                  className="iPass"
-                  type={eye}
-                  placeholder="Пароль"
+                  className="iName"
+                  type="text"
+                  placeholder="Имя"
                   onInput={validation}
                 />
-                {eye === "password" ? (
-                  <FaEyeSlash onClick={handleEye} className="passEye" />
-                ) : (
-                  <FaEye onClick={handleEye} className="passEye" />
-                )}
-              </div>
-              <div className="register__inputs--pass">
+                <div className="register__inputs--pass">
+                  <input
+                    className="iPass"
+                    type={eye}
+                    placeholder="Пароль"
+                    onInput={validation}
+                  />
+                  {eye === "password" ? (
+                    <FaEyeSlash onClick={handleEye} className="passEye" />
+                  ) : (
+                    <FaEye onClick={handleEye} className="passEye" />
+                  )}
+                </div>
+                <div className="register__inputs--pass">
+                  <input
+                    className="iPass2"
+                    type={eye}
+                    placeholder="Потвердить пароль"
+                    onInput={validation}
+                  />
+                  {eye === "password" ? (
+                    <FaEyeSlash onClick={handleEye} className="passEye" />
+                  ) : (
+                    <FaEye onClick={handleEye} className="passEye" />
+                  )}
+                </div>
                 <input
-                  className="iPass2"
-                  type={eye}
-                  placeholder="Потвердить пароль"
+                  className="iEmail"
+                  type="text"
+                  placeholder="Email или телефон ..."
                   onInput={validation}
                 />
-                {eye === "password" ? (
-                  <FaEyeSlash onClick={handleEye} className="passEye" />
-                ) : (
-                  <FaEye onClick={handleEye} className="passEye" />
-                )}
+                <div className="register__inputs--check">
+                  <input type="checkbox" id="check" />
+                  <label htmlFor="check">
+                    <p>
+                      Я согласен с <Link> условиями обработки </Link>
+                      персональных данных
+                    </p>
+                  </label>
+                </div>
               </div>
-              <input
-                className="iEmail"
-                type="text"
-                placeholder="Email или телефон ..."
-                onInput={validation}
-              />
-              <div className="register__inputs--check">
-                <input type="checkbox" id="check" />
-                <label htmlFor="check">
-                  <p>
-                    Я согласен с <Link> условиями обработки </Link>
-                    персональных данных
-                  </p>
-                </label>
+              <div className="register__button">
+                <button onClick={btnActive}>Регистрация</button>
               </div>
-            </div>
-            <div className="register__button">
-              <button onClick={btnActive}>Регистрация</button>
-            </div>
-            <div className="register__links">
-              <h2>Уже регистрировались? </h2>
-              <Link onClick={() => setShowEnter(true)}>Войти</Link>
-            </div>
-            <img src={registerImage} alt="" />
-            <div className="register__network">
-              <p>Войти через</p>
-              <div className="register__network-link">
-                <AiFillGoogleCircle
-                  style={{
-                    width: "33px",
-                    height: "33px",
-                  }}
-                />
-                <FaFacebook
-                  style={{
-                    width: "30px",
-                    height: "30px",
-                  }}
-                />
-                <FaTelegram
-                  style={{
-                    width: "30px",
-                    height: "30px",
-                  }}
-                />
+              <div className="register__links">
+                <h2>Уже регистрировались? </h2>
+                <Link onClick={() => setShowEnter(true)}>Войти</Link>
+              </div>
+              <img src={registerImage} alt="" />
+              <div className="register__network">
+                <p>Войти через</p>
+                <div className="register__network-link">
+                  <AiFillGoogleCircle
+                    style={{
+                      width: "33px",
+                      height: "33px",
+                    }}
+                  />
+                  <FaFacebook
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                    }}
+                  />
+                  <FaTelegram
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>}
+      )}
     </>
   );
 }

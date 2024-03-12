@@ -1,193 +1,110 @@
-.order {
+.container-link {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 90px;
-  &__btn {
-    margin-left: 930px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    border: 1px solid white;
-    border-radius: 20px;
-    box-shadow: 0px 0px 0px 0px #7c9bb7;
-    box-shadow: -0px -0px 40px 5px #afc3d5;
-    padding: 20px 50px;
-    background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
-  }
-  &__title {
-    font-family: "Montserrat", "sans-serif";
-    font-weight: 400;
-    font-size: 30px;
-  }
-  &__delete {
-    color: rgba(1, 30, 184, 1);
-    font-family: sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    background: none;
-    border: none;
-  }
-  &__card {
-    max-width: 1250px;
-    height: auto;
-    border: 3px solid white;
-    box-shadow: 0px 0px 0px 0px #7c9bb7;
-    box-shadow: -0px -0px 40px 5px #afc3d5;
-    background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
-    border-radius: 20px;
-    display: flex;
-    align-items: start;
-    padding: 50px 30px;
-    justify-content: space-between;
-    &__info {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
-    &__title {
-      font-family: "Montserrat", "sans-serif";
-      font-weight: 400;
-      font-size: 33px;
-    }
-    &__quantity {
-      display: flex;
-      align-items: center;
-      padding: 40px;
-      margin-right: 370px;
-
-      &__minus {
-        cursor: pointer;
-        background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
-        border: 1px solid white;
-        padding: 5px 10px;
-        border-radius: 5px;
-      }
-      &__nums {
-        font-family: "Montserrat", "sans-serif";
-        font-weight: 400;
-        font-size: 25px;
-        padding: 5px 25px;
-      }
-      &__plus {
-        cursor: pointer;
-        background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
-        border: 1px solid white;
-        padding: 5px 10px;
-        border-radius: 5px;
-      }
-    }
-  }
+  margin: 50px 20px;
 }
-.order__content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 40px;
-  padding: 0 0 70px;
-}
-
-.price {
-  &__real {
-    font-family: "Montserrat", "sans-serif";
-    color: black;
-    font-weight: 600;
-    font-size: 32px;
+.order {
+  button {
+    padding: 20px 30px;
+    background: #000;
   }
-  &__prev {
-    font-family: "Montserrat", "sans-serif";
-    color: rgba(136, 136, 136, 1);
-    font-weight: 400;
-    font-size: 20px;
-  }
-}
-.stars__order {
-  display: flex;
-  align-items: center;
-}
-.stars__order {
-  margin-left: 28px;
-}
-.orders__btn {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  border: 1px solid white;
-  border-radius: 20px;
-  box-shadow: 0px 0px 0px 0px #7c9bb7;
-  box-shadow: -0px -0px 40px 5px #afc3d5;
-  padding: 20px 50px;
+  width: 95%;
+  height: auto;
   background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
-  display: none;
-}
-@media screen and (max-width: 1150px) {
-  .stars__order {
+  border: 3px solid #fff;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 20px;
+  .order-wrap {
     display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 1220px) {
-  .order__btn {
-    margin-left: 0;
-    font-weight: 400;
-    font-size: 20px;
-    border: 1px solid white;
-    border-radius: 20px;
-    box-shadow: 0px 0px 0px 0px #7c9bb7;
-    box-shadow: -0px -0px 40px 5px #afc3d5;
-    padding: 20px 50px;
-    background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
-  }
-  .orders__btn {
-    display: block;
-  }
-  .order__card {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 860px) {
-  .order__card__title {
-    font-family: "Montserrat", "sans-serif";
-    font-weight: 400;
-    font-size: 23px;
-  }
-  .order__card {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  .order__card__quantity {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-right: 234px;
-  }
-}
-@media screen and (max-width: 509px) {
-  .order {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-direction: column;
-  }
-  .stars__order {
-    display: flex;
-    flex-direction: row;
-  }
-  .order__card {
-    max-width: 1250px;
-    border: 3px solid white;
-    box-shadow: 0px 0px 0px 0px #7c9bb7;
-    box-shadow: -0px -0px 40px 5px #afc3d5;
-    background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
-    border-radius: 20px;
-    display: flex;
-    align-items: start;
-    padding: 50px 30px;
     justify-content: space-between;
-    height: 400px;
+    flex-wrap: wrap;
+    width: 100%;
+    &__image {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      p {
+        font-family: "Montserrat";
+        font-size: 32px;
+        font-weight: 400;
+        max-width: 400px;
+        width: 100%;
+      }
+      &__button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        h1 {
+          font-size: 16px;
+          font-weight: 400;
+        }
+        button {
+          padding: 6px 12px;
+          background: linear-gradient(
+            210.55deg,
+            #ebf2f9 19.14%,
+            #c6d7eb 154.68%
+          );
+          border: 1px solid #fff;
+          border-radius: 10px;
+        }
+      }
+    }
+    &__stars {
+      max-width: 100px;
+      width: 100%;
+      margin: 15px 0;
+    }
+    &__price {
+      h1 {
+        font-family: "Montserrat";
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px;
+      }
+      h2 {
+        font-family: "Inter";
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 47px;
+        color: #525252;
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .order {
+    .order-wrap {
+      max-width: 90%;
+      .info p {
+        max-width: 300px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .order {
+    .order-wrap {
+      align-items: flex-start;
+      justify-content: space-around;
+    }
+  }
+}
+@media screen and (max-width: 560px) {
+  .order {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .order {
+    width: 85%;
   }
 }
