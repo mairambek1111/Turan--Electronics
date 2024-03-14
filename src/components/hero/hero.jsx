@@ -16,7 +16,7 @@ function Hero() {
     });
   }, []);
   return (
-    <div data-aos="zoom-out" data-aos-duration="1100">
+    <div>
       <div className="container">
         <Swiper
           cssMode={true}

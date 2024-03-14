@@ -1,19 +1,21 @@
+/* eslint-disable react/prop-types */
 import { FaStar } from "react-icons/fa";
 import { IoMdHeart } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { TbShoppingBag } from "react-icons/tb";
 import { useDispatch, useSelector } from "react-redux";
-
+// eslint-disable-next-line react/prop-types
 const NewPostupleniyaCard = ({ el }) => {
-  const { favorite } = useSelector((s) => s.favorite);
-  const heart = favorite.some((some) => some.id == el.id);
+  const { favorite } = useSelector((state) => state.favorite);
+  const heart = favorite.some((some) => some.id === el.id);
   const dis = useDispatch();
   const addFav = () => {
     dis({ type: "ADD_TO_FAVORITE", payload: el });
   };
-  const addDiskord = () => {
+  const addBasket = () => {
     dis({ type: "ADD_TO_BASKET", payload: el });
   };
+
   return (
     <div
       key={el.id}
@@ -123,7 +125,7 @@ const NewPostupleniyaCard = ({ el }) => {
       </div>
       <div className="newPostopleniya--all__card--descrip">
         <p>
-          {el.description.length > 75
+          {el.description && el.description.length > 75
             ? el.description.substring(0, 75) + "..."
             : el.description}
         </p>
@@ -132,7 +134,7 @@ const NewPostupleniyaCard = ({ el }) => {
         <Link to={`/details/${el.id}`}>
           <button>Быстрый заказ</button>
         </Link>
-        <TbShoppingBag onClick={addDiskord} className="btnBasket" />
+        <TbShoppingBag onClick={addBasket} className="btnBasket" />
       </div>
       <div className="newPostopleniya--all__card--colors">
         <h4>Цвет</h4>

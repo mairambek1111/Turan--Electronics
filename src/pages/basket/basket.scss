@@ -1,15 +1,15 @@
-#basket{
-  .basket{
+#basket {
+  .basket {
     margin: 30px 0;
-    &--none{
+    &--none {
       width: 100%;
       height: 220px;
-      background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+      background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
       border-radius: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      h2{
+      h2 {
         font-size: 30px;
         color: rgba(0, 0, 0, 1);
         font-weight: 500;
