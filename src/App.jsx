@@ -10,6 +10,7 @@ import PagesNews from "./pages/pagesNews";
 import PagesAboutus from "./pages/pagesAboutus";
 import Details from "./pages/details/Details.jsx";
 import Register from "./components/Register/index.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -47,6 +48,7 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register />,
   },
+
 ]);
 
 function App() {
