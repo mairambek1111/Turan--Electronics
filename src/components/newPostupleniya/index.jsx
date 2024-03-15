@@ -12,14 +12,13 @@ const NewPostopleniya = () => {
   const {product} = useSelector(s=>s.main)
   const dis = useDispatch()
   const getData = async ()=>{
-    const url = await axios('http://localhost:3000/products')
+    const url = await axios('http://127.0.0.1:8000/product')
     const {data} = await url
     dis({type: "GET_PRODUCT",payload: data})
   }
   useEffect(() => {
     getData()
   }, []);
-
   return (
     <div id="newPostopleniya">
       <div className="container">

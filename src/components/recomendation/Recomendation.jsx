@@ -4,7 +4,19 @@ import { IoMdHeart } from "react-icons/io";
 import { TbShoppingBag } from "react-icons/tb";
 import "../newPostupleniya/newPostupleniya.scss";
 import { GrLinkNext } from "react-icons/gr";
+import axios from "axios";
+import {useEffect, useState} from "react";
+import RecomendationCard from "./RecomendationCard.jsx";
 const Recomendation = () => {
+  const [recom,setRecom] = useState([])
+  const getData = async ()=>{
+    const url = await axios('http://localhost:3000/recomendation')
+    const {data} = await url
+    setRecom(data)
+  }
+  useEffect(() => {
+    getData()
+  }, []);
   return (
     <div id="newPostopleniya">
       <div className="container">
@@ -17,198 +29,9 @@ const Recomendation = () => {
           </div>
 
           <div className="newPostopleniya--all">
-            <div
-              className="newPostopleniya--all__card"
-              data-aos="zoom-in-up"
-              data-aos-duration="1100"
-            >
-              <div className="newPostopleniya--all__card--h3">
-                <h3>Новое</h3>
-                <div className="newPostopleniya--all__card--h3__stars">
-                  <FaStar className="starsYellow" />
-                  <FaStar className="starsYellow" />
-                  <FaStar className="starsNone" />
-                  <FaStar className="starsNone" />
-                  <FaStar className="starsNone" />
-                </div>
-              </div>
-              <center>
-                <img src={tel} alt="no img" />
-                <IoMdHeart className="imgHeart" />
-              </center>
-              <div className="newPostopleniya--all__card--price">
-                <h1>
-                  100 415 сом <span>105 415 сом</span>
-                </h1>
-              </div>
-              <div className="newPostopleniya--all__card--discount">
-                <h4>-5%</h4>
-                <h3>экономия 5 285 сом</h3>
-              </div>
-              <div className="newPostopleniya--all__card--descrip">
-                <h1>Смартфон Apple iPhone 14 Pro Max 256GB EU</h1>
-                <p>
-                  iPhone 14 Pro MaxВолшебный новый способ взаимодействия с
-                  iPhone. .....
-                </p>
-              </div>
-              <div className="newPostopleniya--all__card--btn">
-                <button>Быстрый заказ</button>
-                <TbShoppingBag className="btnBasket" />
-              </div>
-              <div className="newPostopleniya--all__card--colors">
-                <h4>Цвет</h4>
-                <div className="newPostopleniya--all__card--colors__color">
-                  <canvas></canvas>
-                  <canvas></canvas>
-                  <canvas></canvas>
-                </div>
-              </div>
-            </div>
-            <div
-              className="newPostopleniya--all__card"
-              data-aos="zoom-in-up"
-              data-aos-duration="1100"
-            >
-              <div className="newPostopleniya--all__card--h3">
-                <h3>Новое</h3>
-                <div className="newPostopleniya--all__card--h3__stars">
-                  <FaStar className="starsYellow" />
-                  <FaStar className="starsYellow" />
-                  <FaStar className="starsNone" />
-                  <FaStar className="starsNone" />
-                  <FaStar className="starsNone" />
-                </div>
-              </div>
-              <center>
-                <img src={tel} alt="no img" />
-                <IoMdHeart className="imgHeart" />
-              </center>
-              <div className="newPostopleniya--all__card--price">
-                <h1>
-                  100 415 сом <span>105 415 сом</span>
-                </h1>
-              </div>
-              <div className="newPostopleniya--all__card--discount">
-                <h4>-5%</h4>
-                <h3>экономия 5 285 сом</h3>
-              </div>
-              <div className="newPostopleniya--all__card--descrip">
-                <h1>Смартфон Apple iPhone 14 Pro Max 256GB EU</h1>
-                <p>
-                  iPhone 14 Pro MaxВолшебный новый способ взаимодействия с
-                  iPhone. .....
-                </p>
-              </div>
-              <div className="newPostopleniya--all__card--btn">
-                <button>Быстрый заказ</button>
-                <TbShoppingBag className="btnBasket" />
-              </div>
-              <div className="newPostopleniya--all__card--colors">
-                <h4>Цвет</h4>
-                <div className="newPostopleniya--all__card--colors__color">
-                  <canvas></canvas>
-                  <canvas></canvas>
-                  <canvas></canvas>
-                </div>
-              </div>
-            </div>
-            <div
-              className="newPostopleniya--all__card"
-              data-aos="zoom-in-up"
-              data-aos-duration="1100"
-            >
-              <div className="newPostopleniya--all__card--h3">
-                <h3>Новое</h3>
-                <div className="newPostopleniya--all__card--h3__stars">
-                  <FaStar className="starsYellow" />
-                  <FaStar className="starsYellow" />
-                  <FaStar className="starsNone" />
-                  <FaStar className="starsNone" />
-                  <FaStar className="starsNone" />
-                </div>
-              </div>
-              <center>
-                <img src={tel} alt="no img" />
-                <IoMdHeart className="imgHeart" />
-              </center>
-              <div className="newPostopleniya--all__card--price">
-                <h1>
-                  100 415 сом <span>105 415 сом</span>
-                </h1>
-              </div>
-              <div className="newPostopleniya--all__card--discount">
-                <h4>-5%</h4>
-                <h3>экономия 5 285 сом</h3>
-              </div>
-              <div className="newPostopleniya--all__card--descrip">
-                <h1>Смартфон Apple iPhone 14 Pro Max 256GB EU</h1>
-                <p>
-                  iPhone 14 Pro MaxВолшебный новый способ взаимодействия с
-                  iPhone. .....
-                </p>
-              </div>
-              <div className="newPostopleniya--all__card--btn">
-                <button>Быстрый заказ</button>
-                <TbShoppingBag className="btnBasket" />
-              </div>
-              <div className="newPostopleniya--all__card--colors">
-                <h4>Цвет</h4>
-                <div className="newPostopleniya--all__card--colors__color">
-                  <canvas></canvas>
-                  <canvas></canvas>
-                  <canvas></canvas>
-                </div>
-              </div>
-            </div>
-            <div
-              className="newPostopleniya--all__card"
-              data-aos="zoom-in-up"
-              data-aos-duration="1100"
-            >
-              <div className="newPostopleniya--all__card--h3">
-                <h3>Новое</h3>
-                <div className="newPostopleniya--all__card--h3__stars">
-                  <FaStar className="starsYellow" />
-                  <FaStar className="starsYellow" />
-                  <FaStar className="starsNone" />
-                  <FaStar className="starsNone" />
-                  <FaStar className="starsNone" />
-                </div>
-              </div>
-              <center>
-                <img src={tel} alt="no img" />
-                <IoMdHeart className="imgHeart" />
-              </center>
-              <div className="newPostopleniya--all__card--price">
-                <h1>
-                  100 415 сом <span>105 415 сом</span>
-                </h1>
-              </div>
-              <div className="newPostopleniya--all__card--discount">
-                <h4>-5%</h4>
-                <h3>экономия 5 285 сом</h3>
-              </div>
-              <div className="newPostopleniya--all__card--descrip">
-                <h1>Смартфон Apple iPhone 14 Pro Max 256GB EU</h1>
-                <p>
-                  iPhone 14 Pro MaxВолшебный новый способ взаимодействия с
-                  iPhone. .....
-                </p>
-              </div>
-              <div className="newPostopleniya--all__card--btn">
-                <button>Быстрый заказ</button>
-                <TbShoppingBag className="btnBasket" />
-              </div>
-              <div className="newPostopleniya--all__card--colors">
-                <h4>Цвет</h4>
-                <div className="newPostopleniya--all__card--colors__color">
-                  <canvas></canvas>
-                  <canvas></canvas>
-                  <canvas></canvas>
-                </div>
-              </div>
-            </div>
+            {
+              recom.map(el=> <RecomendationCard key={el.id} el={el}/>)
+            }
           </div>
           <div className="newPostopleniya--allMobile">
             <div className="newPostopleniya--allMobile__cardMobile">
