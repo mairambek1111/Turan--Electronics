@@ -7,8 +7,6 @@ import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 import Brends from "../../components/Brends/Brends.jsx";
 import Navbtn from "../../components/navbtn/navbtn.jsx";
 import Recomendation from "../../components/recomendation/Recomendation.jsx";
-import Register from "../../components/Register";
-import Authorization from "../../components/Authorization";
 
 function Home() {
   return (

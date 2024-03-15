@@ -1,0 +1,430 @@
+#filter .filter--all {
+  background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+  border: 1px solid;
+  border-image-source: linear-gradient(123.5deg, #FFFFFF 38.36%, rgba(219, 230, 242, 0) 69.31%, #8F9FAE 131.91%);
+  box-shadow: 10px 10px 64px 0 rgba(18, 61, 101, 0.3), -16px -16px 40px 0px rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 10px;
+  z-index: 9;
+}
+#filter .filter--all__select {
+  position: relative;
+}
+#filter .filter--all__select h1 {
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+#filter .filter--all__select h1 .selectDown {
+  color: rgba(82, 82, 82, 0.5);
+  width: 13px;
+}
+#filter .filter--all__select h1 .selectUp {
+  color: rgb(255, 115, 0);
+  width: 15px;
+  font-weight: 400;
+}
+#filter .filter--all__select h4 {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 400;
+  cursor: pointer;
+}
+#filter .filter--all__select h4 .selectDown {
+  color: rgba(82, 82, 82, 0.5);
+}
+#filter .filter--all__select h4 .selectUp {
+  color: rgb(255, 115, 0);
+}
+#filter .filter--all__select--option {
+  width: 200px;
+  height: 220px;
+  padding: 20px 10px 30px 10px;
+  background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+  border: 1px solid;
+  border-image-source: linear-gradient(123.5deg, #FFFFFF 38.36%, rgba(219, 230, 242, 0) 69.31%, #8F9FAE 131.91%);
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 44px;
+  display: none;
+}
+#filter .filter--all__select--option__inp {
+  margin: 10px 0;
+}
+#filter .filter--all__select--option__inp label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#filter .filter--all__select--option__inp label p {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+#filter .filter--all__select--optionModel {
+  width: 200px;
+  height: 220px;
+  padding: 20px 10px 30px 10px;
+  background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+  border: 1px solid;
+  border-image-source: linear-gradient(123.5deg, #FFFFFF 38.36%, rgba(219, 230, 242, 0) 69.31%, #8F9FAE 131.91%);
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  left: -40px;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  overflow-Y: scroll;
+  display: none;
+}
+#filter .filter--all__select--optionModel::-webkit-scrollbar {
+  width: 4px;
+  background: white;
+}
+#filter .filter--all__select--optionModel::-webkit-scrollbar-thumb {
+  background: rgb(255, 115, 0);
+  border-radius: 10px;
+}
+#filter .filter--all__select--optionModel__inp {
+  margin: 10px 0;
+}
+#filter .filter--all__select--optionModel__inp label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#filter .filter--all__select--optionModel__inp label p {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+#filter .filter--all__select--optionObem {
+  width: 200px;
+  height: 220px;
+  padding: 20px 10px 30px 10px;
+  background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+  border: 1px solid;
+  border-image-source: linear-gradient(123.5deg, #FFFFFF 38.36%, rgba(219, 230, 242, 0) 69.31%, #8F9FAE 131.91%);
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  left: -40px;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  display: none;
+}
+#filter .filter--all__select--optionObem__inp {
+  margin: 10px 0;
+}
+#filter .filter--all__select--optionObem__inp label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#filter .filter--all__select--optionObem__inp label p {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+#filter .filter--all__select--optionPrice {
+  width: 250px;
+  height: 80px;
+  padding: 20px 10px 30px 10px;
+  background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+  border: 1px solid;
+  border-image-source: linear-gradient(123.5deg, #FFFFFF 38.36%, rgba(219, 230, 242, 0) 69.31%, #8F9FAE 131.91%);
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  left: -50px;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  display: none;
+}
+#filter .filter--all__select--optionPrice__inp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+#filter .filter--all__select--optionPrice__inp input {
+  width: 100px;
+  padding: 10px 7px;
+  border-radius: 16px;
+  outline: none;
+  background: rgb(227, 237, 247);
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 3px 3px 7px 0 rgba(136, 165, 191, 0.48) inset, -3px -3px 7px 0px rgb(255, 255, 255) inset;
+}
+#filter .filter--all__select--optionPrice__inp .inpRange {
+  background: rgb(255, 115, 0);
+  box-shadow: none;
+  margin-top: 20px;
+  width: 180px;
+}
+#filter .filter--all__select--optionColor {
+  width: 200px;
+  height: 200px;
+  padding: 20px 10px 30px 10px;
+  background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+  border: 1px solid;
+  border-image-source: linear-gradient(123.5deg, #FFFFFF 38.36%, rgba(219, 230, 242, 0) 69.31%, #8F9FAE 131.91%);
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  left: -40px;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  display: none;
+}
+#filter .filter--all__select--optionColor__inp {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  gap: 10px;
+}
+#filter .filter--all__select--optionColor__inp label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#filter .filter--all__select--optionColor__inp label p {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+#filter .filter--all__select--optionColor__inp canvas {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(24, 31, 39);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.35), -1px -1px 2px 0px rgba(255, 255, 255, 0.25);
+}
+#filter .filter--all__select--optionColor__inp canvas:nth-child(2) {
+  background: rgb(242, 228, 201);
+}
+#filter .filter--all__select--optionColor__inp canvas:nth-child(3) {
+  background: white;
+}
+#filter .filter--all__select--optionColor__inp canvas:nth-child(4) {
+  background: green;
+}
+#filter .filter--all__select--optionColor__inp canvas:nth-child(2n+5) {
+  background: red;
+}
+#filter .filter--all__select--optionAll {
+  padding: 20px 10px 30px 10px;
+  background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+  border: 1px solid;
+  border-image-source: linear-gradient(123.5deg, #FFFFFF 38.36%, rgba(219, 230, 242, 0) 69.31%, #8F9FAE 131.91%);
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  top: 0;
+  display: none;
+}
+#filter .filter--all__select--optionAll__inp {
+  margin: 10px 0;
+}
+#filter .filter--all__select--optionAll__inp label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#filter .filter--all__select--optionAll__inp label p {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+#filter .filterAll {
+  transform: translateX(100%);
+  transition: 0.3s;
+  background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+  width: 310px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 30px 10px 0 20px;
+  z-index: 3;
+  overflow-y: scroll;
+}
+#filter .filterAll::-webkit-scrollbar {
+  width: 5px;
+  background: white;
+}
+#filter .filterAll::-webkit-scrollbar-thumb {
+  background: rgb(255, 115, 0);
+}
+#filter .filterAll h1 {
+  font-size: 24px;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 30px 0;
+}
+#filter .filterAll--card__close {
+  font-size: 28px;
+  cursor: pointer;
+}
+#filter .filterAll--card__select {
+  position: relative;
+  margin: 10px 0;
+}
+#filter .filterAll--card__select h4 {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+#filter .filterAll--card__select h4 .selectDown {
+  color: rgba(82, 82, 82, 0.5);
+}
+#filter .filterAll--card__select h4 .selectUp {
+  color: rgb(255, 115, 0);
+}
+#filter .filterAll--card__select--option {
+  margin-top: 10px;
+}
+#filter .filterAll--card__select--option__inp {
+  margin: 10px 0;
+}
+#filter .filterAll--card__select--option__inp label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#filter .filterAll--card__select--option__inp label p {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+#filter .filterAll--card__select--optionModel {
+  display: none;
+  max-height: 230px;
+  margin-top: 10px;
+  overflow-Y: scroll;
+}
+#filter .filterAll--card__select--optionModel::-webkit-scrollbar {
+  width: 4px;
+  background: white;
+}
+#filter .filterAll--card__select--optionModel::-webkit-scrollbar-thumb {
+  background: rgb(255, 115, 0);
+  border-radius: 10px;
+}
+#filter .filterAll--card__select--optionModel__inp {
+  margin: 10px 0;
+}
+#filter .filterAll--card__select--optionModel__inp label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#filter .filterAll--card__select--optionModel__inp label p {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+#filter .filterAll--card__select--optionObem {
+  display: none;
+  margin-top: 10px;
+}
+#filter .filterAll--card__select--optionObem__inp {
+  margin: 10px 0;
+}
+#filter .filterAll--card__select--optionObem__inp label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#filter .filterAll--card__select--optionObem__inp label p {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+#filter .filterAll--card__select--optionPrice {
+  margin-top: 10px;
+}
+#filter .filterAll--card__select--optionPrice__inp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+#filter .filterAll--card__select--optionPrice__inp input {
+  width: 100px;
+  padding: 10px 7px;
+  border-radius: 16px;
+  outline: none;
+  background: rgb(227, 237, 247);
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 3px 3px 7px 0 rgba(136, 165, 191, 0.48) inset, -3px -3px 7px 0px rgb(255, 255, 255) inset;
+}
+#filter .filterAll--card__select--optionPrice__inp .inpRange {
+  background: rgb(255, 115, 0);
+  box-shadow: none;
+  margin-top: 20px;
+  width: 180px;
+}
+#filter .filterAll--card__select--optionColor {
+  display: none;
+  margin-top: 10px;
+}
+#filter .filterAll--card__select--optionColor__inp {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  gap: 10px;
+}
+#filter .filterAll--card__select--optionColor__inp label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#filter .filterAll--card__select--optionColor__inp label p {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+#filter .filterAll--card__select--optionColor__inp canvas {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(24, 31, 39);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.35), -1px -1px 2px 0px rgba(255, 255, 255, 0.25);
+}
+#filter .filterAll--card__select--optionColor__inp canvas:nth-child(2) {
+  background: rgb(242, 228, 201);
+}
+#filter .filterAll--card__select--optionColor__inp canvas:nth-child(3) {
+  background: white;
+}
+#filter .filterAll--card__select--optionColor__inp canvas:nth-child(4) {
+  background: green;
+}
+#filter .filterAll--card__select--optionColor__inp canvas:nth-child(2n+5) {
+  background: red;
+}
+#filter .filterAllBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(182, 207, 238, 0.7);
+  z-index: 2;
+  display: none;
+}/*# sourceMappingURL=filter.css.map */

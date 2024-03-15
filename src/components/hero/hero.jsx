@@ -13,11 +13,10 @@ function Hero() {
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/carusel/").then((res) => {
       setSwiper(res.data);
-      console.log(res);
     });
   }, []);
   return (
-    <div data-aos="zoom-out" data-aos-duration="1100">
+    <div>
       <div className="container">
         <Swiper
           cssMode={true}
@@ -30,7 +29,7 @@ function Hero() {
         >
           {swipers.map((el, id) => (
             <SwiperSlide key={id} className="swipe">
-              <h1 className="desc">{el.category}</h1>
+              <h1 className="desc">{el.title}</h1>
               <img src={el.photo} alt="" />
             </SwiperSlide>
           ))}

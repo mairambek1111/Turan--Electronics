@@ -1,0 +1,99 @@
+#enter {
+  text-align: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+#enter h1 {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 10px;
+}
+#enter .enter {
+  margin: 10px auto;
+  border-radius: 24px;
+  width: 920px;
+  padding: 20px 0;
+  background: #ebf2f9;
+  box-shadow: 16px 4px 64px 0 rgba(18, 61, 101, 0.2);
+}
+#enter .enter__header p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  width: 95%;
+  margin: 10px auto;
+}
+#enter .enter__inputs input {
+  box-shadow: 3px 3px 17px 0 rgba(136, 165, 191, 0.4784313725) inset, -3px -3px 7px 0px #ffffff inset;
+  padding: 10px 44px;
+  background: transparent;
+  border-radius: 16px;
+  border: 1px solid #d4d4d4;
+  outline: none;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+#enter .enter img {
+  margin: 10px;
+}
+#enter .enter__button button {
+  box-shadow: 3px 3px 17px 0px rgba(136, 165, 191, 0.4784313725) inset, -3px -3px 7px 0px #ffffff inset;
+  padding: 10px 44px;
+  border: 1px solid #fff;
+  border-radius: 16px;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#enter .enter__button button:hover {
+  box-shadow: 3px 3px 7px 0 rgba(136, 165, 191, 0.48) inset, -3px -3px 7px 0px rgb(255, 255, 255) inset;
+}
+#enter .enter__number p {
+  width: 535px;
+  margin: 10px auto;
+}
+#enter .enter__request {
+  margin: 15px 0;
+}
+#enter .enter__network {
+  margin: 10px 0;
+}
+#enter .enter__network-link {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px 0;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  #enter .enter {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 840px) {
+  #enter .enter {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 640px) {
+  #enter .enter__number p {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #enter .enter__number p {
+    width: 95%;
+  }
+  #enter .enter__header p {
+    width: 98%;
+  }
+}
+@media screen and (max-width: 380px) {
+  #enter .enter__inputs input {
+    padding: 10px 34px;
+  }
+}/*# sourceMappingURL=Enter.css.map */
