@@ -113,7 +113,9 @@ const NewPostupleniyaCard = ({el}) => {
                 </div>
             </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default NewPostupleniyaCard;

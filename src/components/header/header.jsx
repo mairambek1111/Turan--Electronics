@@ -10,6 +10,7 @@ import "./header.scss";
 import {useEffect, useState} from "react";
 import { IoMdClose } from "react-icons/io";
 import axios from "axios";
+
 function Header() {
   const [nav, setNav] = useState(false);
   const [favoriteCount, setFavoriteCount] = useState(0);
@@ -80,11 +81,13 @@ function Header() {
                     </Link>
                   </button>
                   <button className="header__nav__btn__profile">
-                    <img
-                      src={iconprofile}
-                      alt=""
-                      className="header__nav__icon__profile"
-                    />
+                    <Link to="/register">
+                      <img
+                        src={iconprofile}
+                        alt=""
+                        className="header__nav__icon__profile"
+                      />
+                    </Link>
                   </button>
                 </div>
                 <div className="input__form">
