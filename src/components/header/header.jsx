@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import Headerlogo from "../../assets/header-logo.svg";
 import Logoimage from "../../assets/logo-image.svg";
 import iconfavorite from "../../assets/header-btn-help.svg";
@@ -7,13 +7,27 @@ import iconprofile from "../../assets/header-btn-profile.svg";
 import iconsearch from "../../assets/header-search.svg";
 import burgermenu from "../../assets/burger-menu.svg";
 import "./header.scss";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { IoMdClose } from "react-icons/io";
-import { useSelector } from "react-redux";
+import axios from "axios";
 
 function Header() {
   const [nav, setNav] = useState(false);
-  const { favorite } = useSelector((s) => s.favorite);
+  const [favoriteCount, setFavoriteCount] = useState(0);
+
+  useEffect(() => {
+    const fetchFavorites = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/favorite');
+        const count = response.data.length;
+        setFavoriteCount(count);
+      } catch (error) {
+        console.error('Ошибка при получении избранных элементов:', error);
+      }
+    };
+
+    fetchFavorites();
+  }, []);
   return (
     <>
       <header className="header" data-aos="zoom-out" data-aos-duration="1100">
@@ -52,9 +66,9 @@ function Header() {
                         alt=""
                         className="header__nav__icon__help"
                       />
-                      {favorite.length > 0 ? (
-                        <p className="favCount">{favorite.length}</p>
-                      ) : null}
+                      {
+                        favoriteCount !== 0 ? <p className='favCount'>{favoriteCount}</p> : null
+                      }
                     </Link>
                   </button>
                   <button className="header__nav__btn">

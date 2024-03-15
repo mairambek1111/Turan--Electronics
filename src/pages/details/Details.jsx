@@ -1,4 +1,3 @@
-// import img from '../../assets/details.svg'
 import img2 from "../../assets/details2.svg";
 import img3 from "../../assets/details3.svg";
 import img4 from "../../assets/details4.svg";
@@ -13,19 +12,46 @@ import PohojieTovary from "../../components/pohojieTovary/pohojieTovary.jsx";
 import Brends from "../../components/Brends/Brends.jsx";
 import Header from "../../components/header/header.jsx";
 import Footer from "../../components/footer/footer.jsx";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import {useParams} from "react-router-dom";
+import axios from "axios";
+import {useEffect, useState} from "react";
+
 
 const Details = () => {
-    const { id } = useParams();
-    const { favorite } = useSelector((s) => s.favorite);
-    const { product } = useSelector((s) => s.main);
-    const dis = useDispatch();
-    const el = product.find((el) => el.id == id);
-    const heart = favorite.some((some) => some.id === el.id);
-    const addFav = () => {
-        dis({ type: "ADD_TO_FAVORITE", payload: el });
-    };
+    const {id,category} = useParams()
+    const [el,setEl] = useState([])
+    const [heart,setHeart] = useState(false)
+    const [btnSlice,setBtnSlice] = useState(false)
+    const getData = async ()=>{
+        const url = await axios(`http://localhost:3000/${category}/${id}`)
+        const {data} = await url
+        setEl(data)
+    }
+    const addFav = async () => {
+        const response = await axios.get(`http://localhost:3000/favorite`);
+        const existingItem = response.data.find(item => item.id === el.id);
+
+        if (existingItem) {
+            await axios.delete(`http://localhost:3000/favorite/${existingItem.id}`);
+            setHeart(false)
+        } else {
+            await axios.post(`http://localhost:3000/favorite`, el);
+            setHeart(true)
+        }
+    }
+    useEffect(() => {
+        const fetchData = async () => {
+            const res = await axios.get(`http://localhost:3000/favorite`);
+            const existingItem = res.data.find(item => item.id === el.id);
+            if (existingItem) {
+                setHeart(true);
+            } else {
+                setHeart(false);
+            }
+        };
+        getData()
+        fetchData();
+    }, [el]);
     return (
         <>
             <Header />
@@ -102,7 +128,46 @@ const Details = () => {
                                         <button>Развернуть</button>
                                     </p>
                                 </div>
+                        
+                            <div className="details--main__slider--description">
+                                <h1>Описание</h1>
+                                {
+                                    el?.description?.length >= 140 ?
+                                    btnSlice ? (<p>{el?.description}
+                                            <button onClick={() => setBtnSlice(false)}>закрыть</button>
+                                        </p> ):
+                                        (<p>{el?.description?.slice(0,130)}<span>{el?.description?.slice(130,130 + 30)}...</span>
+                                            <button onClick={()=> setBtnSlice(true)}>Развернуть</button>
+                                        </p>)
+                                        : <p>{el?.description}</p>
+                                }
                             </div>
+                        </div>
+                        <div className="details--main__abouts">
+                            <div className="details--main__abouts--stars">
+                            <FaStar className='starsYellow'/>
+                                <FaStar className='starsYellow'/>
+                                <FaStar className='starsNone'/>
+                                <FaStar className='starsNone'/>
+                                <FaStar className='starsNone'/>
+                            </div>
+                            <div className="details--main__abouts--h1">
+                               <h1>{el.title}</h1>
+                           </div>
+                            <div className="details--main__abouts--memory">
+                                <p>Память</p>
+                                <button>256 gb</button>
+                                <button>512 gb</button>
+                                <button>1 tb</button>
+                            </div>
+                            <div className="details--main__abouts--price">
+                                <h1>{el.price} сом</h1>
+                            </div>
+                            <div className="details--main__abouts--btn">
+                                <button>В корзину</button>
+                                <IoMdHeart onClick={addFav} style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}} className="btnHeart" />
+                            </div>
+
                             <div className="details--main__abouts">
                                 <div className="details--main__abouts--stars">
                                     <FaStar className="starsYellow" />
@@ -137,6 +202,7 @@ const Details = () => {
                                         className="btnHeart"
                                     />
                                 </div>
+
 
                                 <div className="details--main__abouts--harakteristiki">
                                     <h1>Характеристики:</h1>

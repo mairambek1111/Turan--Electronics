@@ -79,6 +79,7 @@
           width: 194px;
           height: 194px;
           margin: 10px 0 15px 0;
+          mix-blend-mode: darken;
         }
         .imgHeart {
           font-size: 35px;
@@ -146,6 +147,9 @@
             font-weight: 400;
             color: rgba(136, 136, 136, 1);
             margin: 5px 0;
+            max-height: 70px;
+            height: 70px;
+            overflow: hidden;
           }
         }
         &--btn {

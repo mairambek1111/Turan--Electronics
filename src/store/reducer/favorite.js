@@ -1,10 +1,8 @@
-/* eslint-disable no-case-declarations */
 const initialState = {
     favorite: []
 }
 
-
-export const FavoriteReducer = (state = initialState,action) =>{
+export const FavoriteReducer = async (state = initialState,action) =>{
     switch (action.type){
         case "ADD_TO_FAVORITE":
             const foundFavorite = state.favorite.find(el => el.id === action.payload.id)
