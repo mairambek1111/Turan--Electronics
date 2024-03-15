@@ -58,7 +58,7 @@ const router = createBrowserRouter([
     path: "/apple",
     element: <Apple/>,
   },
-    path: "/register",
+  {path: "/register",
     element: <Register />,
   },
 ]);
