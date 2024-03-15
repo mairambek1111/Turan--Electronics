@@ -9,13 +9,17 @@ import Navbtn from "../../components/navbtn/navbtn.jsx";
 import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import Register from "../../components/Register";
 import Authorization from "../../components/Authorization";
+import News from "../../components/News/index.jsx";
+import Detail from "../../components/Detail/index.jsx";
 
 function Home() {
   return (
     <>
       {/* <Authorization /> */}
       {/* <Register /> */}
-      <Header />
+      <News />
+      {/* <Detail /> */}
+      {/* <Header />
       <Navbtn />
       <Hero />
       <Cardhero />
@@ -23,7 +27,7 @@ function Home() {
       <NewPostupleniya />
       <Recomendation />
       <Brends />
-      <Footer />
+      <Footer /> */}
     </>
   );
 }
