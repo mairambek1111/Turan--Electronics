@@ -1,0 +1,143 @@
+.content {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0 0 0;
+    flex-direction: column;
+    gap: 7px; */
+}
+.review--card {
+    font-family: "Montserrar", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    outline: none;
+    height: 130px;
+    border: none;
+    margin-bottom: 30px;
+    width: 100%;
+    border-radius: 24px;
+    padding: 20px;
+    background: linear-gradient(
+        210.55deg,
+        #ebf2f9 -27%,
+        #ebf2f9 7.42%,
+        #e0ebf9 69.57%,
+        #e4eef9 79.07%,
+        #c6d7eb 154.68%
+    );
+    box-shadow: 16px 4px 64px 0 rgba(18, 61, 101, 0.2),
+        -8px -6px 80px 0 rgba(255, 255, 255, 0.18) inset;
+    margin-top: 30px;
+}
+.starsYellow {
+    color: rgba(255, 115, 0, 1);
+    width: 15px;
+    height: 22px;
+}
+.review--cardabout--titlestars {
+    margin-left: 20px;
+}
+
+.textareaReview {
+    max-width: 1200px;
+    background: linear-gradient(
+        210.55deg,
+        #ebf2f9 -27%,
+        #ebf2f9 7.42%,
+        #e0ebf9 69.57%,
+        #e4eef9 79.07%,
+        #c6d7eb 154.68%
+    );
+
+    font-family: 20px;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    outline: none;
+    padding: 20px;
+    box-shadow: rgba(114, 114, 122, 0.25) 0px 13px 27px -5px,
+        rgba(105, 101, 101, 0.3) 0px 8px 16px -8px;
+}
+.UserTextareaReview {
+    /* max-width: 800px; */
+    margin-top: 30px;
+    width: 670px;
+    border-radius: 20px;
+    padding: 20px;
+    height: 130px;
+    background-color: red;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: linear-gradient(
+        210.55deg,
+        #ebf2f9 -27%,
+        #ebf2f9 7.42%,
+        #e0ebf9 69.57%,
+        #e4eef9 79.07%,
+        #c6d7eb 154.68%
+    );
+    padding: 20px;
+    box-shadow: rgba(114, 114, 122, 0.25) 0px 13px 27px -5px,
+        rgba(105, 101, 101, 0.3) 0px 8px 16px -8px;
+}
+.columns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.btnReview {
+    box-shadow: rgba(114, 114, 122, 0.25) 0px 13px 27px -5px,
+        rgba(105, 101, 101, 0.3) 0px 8px 16px -8px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
+}
+.userTextCard {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    gap: 20px;
+}
+.userText {
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    font-size: 20px;
+}
+.person {
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    font-size: 20px;
+}
+.review--card p {
+    color: #000000;
+    font-size: 18px;
+    line-height: 33px;
+    margin-top: 15px;
+}
+.review--card__about--title__date {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    line-height: 33px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    margin-top: 50px;
+}
