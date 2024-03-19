@@ -1,0 +1,306 @@
+#filterAll{
+  .filterAll{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    &--h1{
+      color: black;
+      font-size: 24px;
+      margin: 30px 0 100px;
+    }
+    .newPostopleniya--all__card {
+        padding: 15px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 24px;
+        width: 275px;
+        height: 590px;
+        box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.08),
+        -4px -4px 10px 0 rgba(0, 0, 0, 0.08);
+        background: rgba(235, 242, 249, 1);
+        transition: .3s;
+        &:hover{
+          background: rgba(188, 192, 197, 0.3);
+        }
+        &--h3 {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h3 {
+            font-weight: 400;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 5px 10px;
+            box-shadow: -4px -4px 4px 0 rgba(0, 0, 0, 0.08),
+            4px 4px 3px 0 rgba(0, 0, 0, 0.08);
+            background: rgba(255, 115, 0, 1);
+            border: 1px solid white;
+          }
+          &__stars {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            .starsYellow {
+              color: rgba(255, 115, 0, 1);
+            }
+            .starsNone {
+              color: rgba(0, 0, 0, 0.35);
+            }
+          }
+        }
+        img {
+          width: 194px;
+          height: 194px;
+          margin: 10px 0 15px 0;
+          mix-blend-mode: darken;
+        }
+        .imgHeart {
+          font-size: 35px;
+          color: rgba(0, 0, 0, 0.35);
+          margin: 0 0 -10px 0;
+          cursor: pointer;
+        }
+        &--available {
+          display: flex;
+          justify-content: space-between;
+          h2 {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 400;
+            gap: 5px;
+          }
+        }
+        &--price {
+          h1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 10px 0;
+          }
+          span {
+            text-decoration: line-through;
+            color: #888888;
+            font-weight: 400;
+          }
+        }
+        &--discount {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          padding: 5px 0;
+          h4 {
+            background: #ff7300;
+            color: black;
+            border-radius: 5px;
+            padding: 6px 3px;
+            font-size: 14px;
+          }
+          h3 {
+            background: #ffffff;
+            border-radius: 5px;
+            color: black;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 5px;
+          }
+        }
+        &--descrip {
+          h1 {
+            font-size: 18px;
+            font-weight: 500;
+            width: 270px;
+            height: 45px;
+            overflow: hidden;
+          }
+          p {
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(136, 136, 136, 1);
+            margin: 5px 0;
+            max-height: 70px;
+            height: 70px;
+            overflow: hidden;
+          }
+        }
+        &--btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 15px 0 20px 0;
+          button {
+            font-weight: 500;
+            border-radius: 16px;
+            background: rgba(227, 237, 247, 1);
+            border: 2px solid rgba(255, 255, 255, 1);
+            font-size: 16px;
+            width: 183px;
+            height: 38px;
+            box-shadow: 4px 2px 16px 0 rgba(136, 165, 191, 0.48);
+            color: rgba(0, 0, 0, 1);
+            transition: .5s all;
+            &:hover{
+              box-shadow: 7px 7px 7px 0 rgba(18, 61, 101, 0.14) inset, -7px -7px 7px 0px rgba(255, 255, 255, 1) inset;
+            }
+          }
+          .btnBasket {
+            font-size: 35px;
+            transition: .5s all;
+            cursor: pointer;
+            &:hover{
+              box-shadow: 7px 7px 7px 0 rgba(18, 61, 101, 0.14) inset, -7px -7px 7px 0px rgba(255, 255, 255, 1) inset;
+            }
+          }
+        }
+        &--colors {
+          display: flex;
+          align-items: center;
+          h4 {
+            font-weight: 500;
+            font-size: 16px;
+          }
+          &__color {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+            canvas{
+              background: black;
+              border-radius: 50%;
+              width: 25px;
+              height: 25px;
+              cursor: pointer;
+              &:nth-child(2){
+                background: rgba(242, 228, 201, 1);
+              }
+              &:nth-child(3){
+                background: rgba(255, 255, 255, 1);
+              }
+            }
+          }
+        }
+      }
+    .newPostopleniya--allMobile {
+      display: none;
+      &__cardMobile {
+        width: 96%;
+        height: 185px;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.08),
+        -4px -4px 10px 0 rgba(0, 0, 0, 0.08);
+        background: rgba(235, 242, 249, 1);
+        display: flex;
+        justify-content: space-between;
+        &--tel {
+          &__h3 {
+            position: relative;
+            margin: 0 0 -15px 0;
+            z-index: 1;
+            h3 {
+              font-weight: 500;
+              width: 47px;
+              padding: 3px 5px;
+              background: rgba(255, 115, 0, 1);
+              color: white;
+              font-size: 14px;
+              border-radius: 7px;
+              border: 2px solid white;
+            }
+          }
+          &__imgs {
+            img {
+              width: 145px;
+              height: 145px;
+            }
+            .imgsHeart {
+              font-size: 35px;
+              color: rgba(0, 0, 0, 0.35);
+            }
+          }
+          &__available {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            h2 {
+              display: flex;
+              align-items: center;
+              font-size: 18px;
+              font-weight: 400;
+              gap: 5px;
+            }
+          }
+        }
+        &--descript {
+          &__stars {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0 0 0 177px;
+            left: 100%;
+            .starsYellow {
+              color: rgba(255, 115, 0, 1);
+            }
+            .starsNone {
+              color: rgba(0, 0, 0, 0.35);
+            }
+          }
+          &__title {
+            width: 300px;
+            margin: 10px 0;
+            h1 {
+              font-weight: 500;
+              font-size: 16px;
+              color: rgba(0, 0, 0, 1);
+              height: 40px;
+              overflow: hidden;
+            }
+          }
+          &__colors {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            h4 {
+              font-weight: 400;
+              font-size: 16px;
+              color: rgba(0, 0, 0, 1);
+            }
+            &--col {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              canvas {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: black;
+              }
+            }
+          }
+          &__price {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 0 0 0 90px;
+            h1 {
+              font-weight: 700;
+              font-size: 16px;
+              color: rgba(51, 51, 51, 1);
+            }
+            .priceBasket {
+              cursor: pointer;
+              width: 50px;
+              height: 35px;
+              border-radius: 5px;
+              border: 1px solid white;
+              background: rgba(227, 237, 247, 1);
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

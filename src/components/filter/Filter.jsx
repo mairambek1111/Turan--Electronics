@@ -3,7 +3,7 @@ import '../filter/filter.scss'
 import {useRef, useState} from "react";
 import {IoClose} from "react-icons/io5";
 
-const Filter = () => {
+const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,setMemory,setBrand}) => {
     const refOption = useRef(null)
     const refOptionModel = useRef(null)
     const refOptionObem = useRef(null)
@@ -149,170 +149,87 @@ const Filter = () => {
         refCloseBg.current.style.display = 'none'
         body.style.overflow = 'auto'
     }
+    const brand = filterData.filter((el)=> el.brand === brend)
+    const allColors = brand.flatMap(el => el.color)
+    const uniqueColors = [...new Set(allColors)]
+    const allMemory = brand.flatMap(el => el.characteristics.memory)
+    const uniqueMemory = [...new Set(allMemory)]
+    const allBrands = filterData.flatMap(el => el.brand)
+    const uniqueBrand = [...new Set(allBrands)]
     return (
         <div id='filter'>
             <div className="container">
                 <div className="filter">
                     <div className="filter--all">
                         <div onMouseEnter={hoverOption} className="filter--all__select">
-                            <h1><FaApple/> Apple {down ? <FaAngleUp className='selectUp'/> : <FaAngleDown className='selectDown'/>}  </h1>
+                            <h1><FaApple/> {brend !== '' ? brend : 'Все'} {down ? <FaAngleUp className='selectUp'/> : <FaAngleDown className='selectDown'/>}  </h1>
                             <div onMouseLeave={hoverOption2} ref={refOption} className="filter--all__select--option">
                                 <div className="filter--all__select--option__inp">
-                                    <label>
+                                    <label onClick={()=> setBrand('')}>
                                         <input name='Apple' type="radio"/>
                                         <p>Все</p>
                                     </label>
                                 </div>
-                                <div className="filter--all__select--option__inp">
-                                    <label>
-                                        <input name='Apple' type="radio"/>
-                                        <p>IPhone</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--option__inp">
-                                    <label>
-                                        <input name='Apple' type="radio"/>
-                                        <p>Mac</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--option__inp">
-                                    <label>
-                                        <input name='Apple' type="radio"/>
-                                        <p>IPad</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--option__inp">
-                                    <label>
-                                        <input name='Apple' type="radio"/>
-                                        <p>Watch</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--option__inp">
-                                    <label>
-                                        <input name='Apple' type="radio"/>
-                                        <p>AirPods</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--option__inp">
-                                    <label>
-                                        <input name='Apple' type="radio"/>
-                                        <p>Аксессуары </p>
-                                    </label>
-                                </div>
+                                {
+                                    uniqueBrand.map((el,inx)=> (
+                                        <div key={inx} className="filter--all__select--option__inp">
+                                            <label onClick={()=>setBrand(el)}>
+                                                <input name='Apple' type="radio"/>
+                                                <p>{el}</p>
+                                            </label>
+                                        </div>
+                                    ))
+                                }
                             </div>
                         </div>
                         <div onMouseEnter={hoverOptionModel} className="filter--all__select">
                             <h4>Модель {downM ? <FaAngleUp className='selectUp'/> : <FaAngleDown className='selectDown'/>}</h4>
                             <div onMouseLeave={hoverOptionModel2} ref={refOptionModel} className="filter--all__select--optionModel">
                                 <div className="filter--all__select--optionModel__inp">
-                                    <label>
+                                    <label onClick={()=>setModel('')}>
                                         <input name='Модель' type="radio"/>
                                         <p>Все</p>
                                     </label>
                                 </div>
-                                <div className="filter--all__select--optionModel__inp">
-                                    <label>
-                                        <input name='Модель' type="radio"/>
-                                        <p>IPhone 14</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionModel__inp">
-                                    <label>
-                                        <input name='Модель' type="radio"/>
-                                        <p>IPhone 14 Pro</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionModel__inp">
-                                    <label>
-                                        <input name='Модель' type="radio"/>
-                                        <p>IPhone 14 Pro Max</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionModel__inp">
-                                    <label>
-                                        <input name='Модель' type="radio"/>
-                                        <p>Watch Series 8</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionModel__inp">
-                                    <label>
-                                        <input name='Модель' type="radio"/>
-                                        <p>AirPods</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionModel__inp">
-                                    <label>
-                                        <input name='Модель' type="radio"/>
-                                        <p>Аксессуары </p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionModel__inp">
-                                    <label>
-                                        <input name='Модель' type="radio"/>
-                                        <p>Watch Series 8 </p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionModel__inp">
-                                    <label>
-                                        <input name='Модель' type="radio"/>
-                                        <p>AirPods</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionModel__inp">
-                                    <label>
-                                        <input name='Модель' type="radio"/>
-                                        <p>Watch Series 8 </p>
-                                    </label>
-                                </div>
+                                {
+                                    brand.map((el)=> (
+                                        <div className="filter--all__select--optionModel__inp">
+                                            <label onClick={()=> setModel(el.model)}>
+                                                <input name='Модель' type="radio"/>
+                                                <p>{el.model}</p>
+                                            </label>
+                                        </div>
+                                    ))
+                                }
                             </div>
                         </div>
                         <div onMouseEnter={hoverOptionObem} className="filter--all__select">
                             <h4>Обьем {downO ? <FaAngleUp className='selectUp'/> : <FaAngleDown className='selectDown'/>}</h4>
                             <div onMouseLeave={hoverOptionObem2} ref={refOptionObem} className="filter--all__select--optionObem">
                                 <div className="filter--all__select--optionObem__inp">
-                                    <label>
+                                    <label onClick={()=>setMemory('')}>
                                         <input name='Обьем' type="radio"/>
                                         <p>Все</p>
                                     </label>
                                 </div>
-                                <div className="filter--all__select--optionObem__inp">
-                                    <label>
-                                        <input name='Обьем' type="radio"/>
-                                        <p>128 ГБ</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionObem__inp">
-                                    <label>
-                                        <input name='Обьем' type="radio"/>
-                                        <p>256 ГБ</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionObem__inp">
-                                    <label>
-                                        <input name='Обьем' type="radio"/>
-                                        <p>512 ГБ</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionObem__inp">
-                                    <label>
-                                        <input name='Обьем' type="radio"/>
-                                        <p>1 ТБ</p>
-                                    </label>
-                                </div>
-                                <div className="filter--all__select--optionObem__inp">
-                                    <label>
-                                        <input name='Обьем' type="radio"/>
-                                        <p>64 ТБ</p>
-                                    </label>
-                                </div>
+                                {
+                                    uniqueMemory.map((el,inx)=> (
+                                        <div key={inx} className="filter--all__select--optionObem__inp">
+                                            <label>
+                                                <input name='Обьем' type="radio" onClick={()=>setMemory(el)}/>
+                                                <p>{el}</p>
+                                            </label>
+                                        </div>
+                                    ))
+                                }
                             </div>
                         </div>
                         <div onMouseEnter={hoverOptionPrice} className="filter--all__select">
                             <h4>Цена, Сом {downP ? <FaAngleUp className='selectUp'/> : <FaAngleDown className='selectDown'/>}</h4>
                             <div onMouseLeave={hoverOptionPrice2} ref={refOptionPrice} className="filter--all__select--optionPrice">
                                 <div className="filter--all__select--optionPrice__inp">
-                                        <input name='Цена' type="number"/>
-                                        <input name='Цена' type="number"/>
+                                        <input onInput={(e)=> setStartPrice(e.target.value)} name='Цена' type="number"/>
+                                        <input onInput={(e)=> e.target.value !== '' ? setEndPrice(e.target.value) : setEndPrice('10000000000000000000')} name='Цена' type="number"/>
                                 </div>
                                 <div className="filter--all__select--optionPrice__inp">
                                         <input className='inpRange' name='Цена' type="range"/>
@@ -323,21 +240,17 @@ const Filter = () => {
                             <h4>Цвет {downC ? <FaAngleUp className='selectUp'/> : <FaAngleDown className='selectDown'/>}</h4>
                             <div onMouseLeave={hoverOptionColor2} ref={refOptionColor} className="filter--all__select--optionColor">
                                 <div className="filter--all__select--optionColor__inp">
-                                    <label>
+                                    <label onClick={()=>setColor('')}>
                                         <input name='Цвет' type="radio"/>
                                         <p>Все</p>
                                     </label>
                                 </div>
                                 <div className="filter--all__select--optionColor__inp">
-                                   <canvas></canvas>
-                                   <canvas></canvas>
-                                   <canvas></canvas>
-                                   <canvas></canvas>
-                                   <canvas></canvas>
-                                   <canvas></canvas>
-                                   <canvas></canvas>
-                                   <canvas></canvas>
-                                   <canvas></canvas>
+                                    {
+                                        uniqueColors.map((color, index) => (
+                                            <canvas onClick={()=> setColor(color)} key={index} style={{ background: color }} color={color}></canvas>
+                                        ))
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -362,8 +275,10 @@ const Filter = () => {
                             <FaAngleDown className='selectDown'/>}</h4>
                         <div ref={refAllOptionPrice} className="filterAll--card__select--optionPrice">
                             <div className="filterAll--card__select--optionPrice__inp">
-                                <input name='Цена' type="number"/>
-                                <input name='Цена' type="number"/>
+                                <input onInput={(e) => setStartPrice(e.target.value)} name='Цена' type="number"/>
+                                <input
+                                    onInput={(e) => e.target.value !== '' ? setEndPrice(e.target.value) : setEndPrice('10000000000000000000')}
+                                    name='Цена' type="number"/>
                             </div>
                             <div className="filterAll--card__select--optionPrice__inp">
                                 <input className='inpRange' name='Цена' type="range"/>
@@ -375,47 +290,21 @@ const Filter = () => {
                             <FaAngleDown className='selectDown'/>}  </h4>
                         <div ref={refAllOption} className="filterAll--card__select--option">
                             <div className="filterAll--card__select--option__inp">
-                                <label>
+                                <label onClick={()=>setBrand('')}>
                                     <input name='Apple' type="radio"/>
                                     <p>Все</p>
                                 </label>
                             </div>
-                            <div className="filterAll--card__select--option__inp">
-                                <label>
-                                    <input name='Apple' type="radio"/>
-                                    <p>IPhone</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--option__inp">
-                                <label>
-                                    <input name='Apple' type="radio"/>
-                                    <p>Mac</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--option__inp">
-                                <label>
-                                    <input name='Apple' type="radio"/>
-                                    <p>IPad</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--option__inp">
-                                <label>
-                                    <input name='Apple' type="radio"/>
-                                    <p>Watch</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--option__inp">
-                                <label>
-                                    <input name='Apple' type="radio"/>
-                                    <p>AirPods</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--option__inp">
-                                <label>
-                                    <input name='Apple' type="radio"/>
-                                    <p>Аксессуары </p>
-                                </label>
-                            </div>
+                            {
+                                uniqueBrand.map((el,inx)=> (
+                                    <div key={inx} className="filterAll--card__select--option__inp">
+                                        <label onClick={()=>setBrand(el)}>
+                                            <input name='Apple' type="radio"/>
+                                            <p>{el}</p>
+                                        </label>
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                     <div onClick={clickOptionModel} className="filterAll--card__select">
@@ -423,65 +312,22 @@ const Filter = () => {
                             <FaAngleDown className='selectDown'/>}</h4>
                         <div ref={refAllOptionModel} className="filterAll--card__select--optionModel">
                             <div className="filterAll--card__select--optionModel__inp">
-                                <label>
+                                <label onClick={()=>setModel('')}>
                                     <input name='Модель' type="radio"/>
                                     <p>Все</p>
                                 </label>
                             </div>
-                            <div className="filterAll--card__select--optionModel__inp">
-                                <label>
-                                    <input name='Модель' type="radio"/>
-                                    <p>IPhone 14</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionModel__inp">
-                                <label>
-                                    <input name='Модель' type="radio"/>
-                                    <p>IPhone 14 Pro</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionModel__inp">
-                                <label>
-                                    <input name='Модель' type="radio"/>
-                                    <p>IPhone 14 Pro Max</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionModel__inp">
-                                <label>
-                                    <input name='Модель' type="radio"/>
-                                    <p>Watch Series 8</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionModel__inp">
-                                <label>
-                                    <input name='Модель' type="radio"/>
-                                    <p>AirPods</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionModel__inp">
-                                <label>
-                                    <input name='Модель' type="radio"/>
-                                    <p>Аксессуары </p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionModel__inp">
-                                <label>
-                                    <input name='Модель' type="radio"/>
-                                    <p>Watch Series 8 </p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionModel__inp">
-                                <label>
-                                    <input name='Модель' type="radio"/>
-                                    <p>AirPods</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionModel__inp">
-                                <label>
-                                    <input name='Модель' type="radio"/>
-                                    <p>Watch Series 8 </p>
-                                </label>
-                            </div>
+                            {
+                                brand.map((el,inx)=> (
+                                    <div key={inx} className="filterAll--card__select--optionModel__inp">
+                                        <label onClick={() => setModel(el.model)}>
+                                            <input name='Модель' type="radio"/>
+                                            <p>{el.model}</p>
+                                        </label>
+                                    </div>
+                                ))
+                            }
+
                         </div>
                     </div>
                     <div onClick={clickOptionObem} className="filterAll--card__select">
@@ -489,41 +335,21 @@ const Filter = () => {
                             <FaAngleDown className='selectDown'/>}</h4>
                         <div ref={refAllOptionObem} className="filterAll--card__select--optionObem">
                             <div className="filterAll--card__select--optionObem__inp">
-                                <label>
+                                <label onClick={()=>setMemory('')}>
                                     <input name='Обьем' type="radio"/>
                                     <p>Все</p>
                                 </label>
                             </div>
-                            <div className="filterAll--card__select--optionObem__inp">
-                                <label>
-                                    <input name='Обьем' type="radio"/>
-                                    <p>128 ГБ</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionObem__inp">
-                                <label>
-                                    <input name='Обьем' type="radio"/>
-                                    <p>256 ГБ</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionObem__inp">
-                                <label>
-                                    <input name='Обьем' type="radio"/>
-                                    <p>512 ГБ</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionObem__inp">
-                                <label>
-                                    <input name='Обьем' type="radio"/>
-                                    <p>1 ТБ</p>
-                                </label>
-                            </div>
-                            <div className="filterAll--card__select--optionObem__inp">
-                                <label>
-                                    <input name='Обьем' type="radio"/>
-                                    <p>64 ТБ</p>
-                                </label>
-                            </div>
+                            {
+                                uniqueMemory.map((el,inx)=> (
+                                    <div key={inx} className="filterAll--card__select--optionObem__inp">
+                                        <label onClick={()=>setMemory(el)}>
+                                            <input name='Обьем' type="radio"/>
+                                            <p>{el}</p>
+                                        </label>
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                     <div onClick={clickOptionColor} className="filterAll--card__select">
@@ -537,15 +363,11 @@ const Filter = () => {
                                 </label>
                             </div>
                             <div className="filterAll--card__select--optionColor__inp">
-                                <canvas></canvas>
-                                <canvas></canvas>
-                                <canvas></canvas>
-                                <canvas></canvas>
-                                <canvas></canvas>
-                                <canvas></canvas>
-                                <canvas></canvas>
-                                <canvas></canvas>
-                                <canvas></canvas>
+                                {
+                                    uniqueColors.map((color, index) => (
+                                        <canvas  onClick={()=> setColor(color)} key={index} style={{ background: color }} color={color}></canvas>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>

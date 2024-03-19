@@ -5,23 +5,29 @@ import Footer from "../../components/footer/footer.jsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import FavoritesCard from "./FavoritesCard.jsx";
+import {useLocation} from "react-router-dom";
 
 
 
 const Favorites = () => {
+    const {pathname} = useLocation()
+    useEffect(() => {
+        window.scroll(0,0)
+    }, [pathname]);
    const [favorite,setFavorite] = useState([])
     useEffect(() => {
         const fetchFavorites = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/favorite');
-                const {data} = response;
+                const response = await axios.get('http://127.0.0.1:8000/favorite/')
+                const {data} = response
                 setFavorite(data)
             } catch (error) {
-                console.error('Ошибка при получении избранных элементов:', error);
+                console.error('Ошибка при получении избранных:', error);
             }
         };
         fetchFavorites()
-    }, [favorite]);
+    }, [favorite])
+
     return (
         <>
             <Header/>

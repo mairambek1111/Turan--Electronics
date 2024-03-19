@@ -1,52 +1,93 @@
 import {FaStar} from "react-icons/fa";
 import {IoMdHeart} from "react-icons/io";
-import {Link} from "react-router-dom";
-import {TbShoppingBag} from "react-icons/tb";
+import {Link, useNavigate} from "react-router-dom";
+import {TbShoppingBag, TbShoppingBagCheck} from "react-icons/tb";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {FaBagShopping} from "react-icons/fa6";
 
 
 const NewPostupleniyaCard = ({el}) => {
     const [heart, setHeart] = useState(false)
+    const [bag, setBag] = useState(false)
+    const nav = useNavigate()
+    const user = 1
+    const data = {
+        product: el.id,
+        user: user
+    }
+    const data2 = {
+        product: el.id,
+        user: user,
+        summ_products: el.price
+    }
     const addFav = async () => {
-        const response = await axios.get(`http://127.0.0.1:8000/favorite`);
-        const existingItem = response.data.find(item => item.id === el.id);
-
+        const response = await axios.get(`http://127.0.0.1:8000/favorite`)
+        const every = response.data.map((el)=> el.product)
+        const existingItem = every.find(item => item.id === el.id);
         if (existingItem) {
-            await axios.delete(`http://127.0.0.1:8000/favorite/${existingItem.id}`);
-            setHeart(false)
+            // await axios.delete(`http://127.0.0.1:8000/favorite/${existingItem.id}`);
+            // setHeart(false)
+            nav('/headerFavorite')
         } else {
-            await axios.post(`http://127.0.0.1:8000/favorite`,el);
+            await axios.post(`http://127.0.0.1:8000/favorite_post/`,data);
             setHeart(true)
         }
     }
+    const addBasket = async () => {
+        const response = await axios.get(`http://127.0.0.1:8000/basket`)
+        const every = response.data.map((el)=> el.product)
+        const existingItem = every.find(item => item.id === el.id);
+        if (existingItem) {
+            nav('/headerBasket')
+        } else {
+            await axios.post(`http://127.0.0.1:8000/basket_post/`,data2);
+            setBag(true)
+        }
+    }
+
     useEffect(() => {
         const fetchData = async () => {
             const res = await axios.get(`http://127.0.0.1:8000/favorite`);
-            const existingItem = res.data.find(item => item.id === el.id);
+            const every = res.data.map((el)=> el.product)
+            const existingItem = every.find(item => item.id === el.id);
             if (existingItem) {
                 setHeart(true);
             } else {
                 setHeart(false);
             }
         };
+        fetchData()
+        const fetchData2 = async () => {
+            const res = await axios.get(`http://127.0.0.1:8000/basket`);
+            const every = res.data.map((el)=> el.product)
+            const existingItem = every.find(item => item.id === el.id);
+            if (existingItem) {
+                setBag(true);
+            } else {
+                setBag(false);
+            }
+        };
         fetchData();
+        fetchData2()
     }, []);
+    const starsCount = el.stars
+    const maxStars = 5
+    const stars = [];
+    for (let i = 0; i < maxStars; i++) {
+        stars.push(<FaStar key={i} className={i < starsCount ? "starsYellow" : "starsNone"} />);
+    }
     return (
         <div key={el.id} className="newPostopleniya--all__card" data-aos="zoom-in-up"
              data-aos-duration="1100">
             <div className="newPostopleniya--all__card--h3">
                 <h3>Новое</h3>
                 <div className="newPostopleniya--all__card--h3__stars">
-                    <FaStar className="starsYellow"/>
-                    <FaStar className="starsYellow"/>
-                    <FaStar className="starsNone"/>
-                    <FaStar className="starsNone"/>
-                    <FaStar className="starsNone"/>
+                    {stars}
                 </div>
             </div>
             <center>
-                <img src={el.photos[0]} alt="no img"/>
+                <img src={el.first_photo} alt="no img"/>
                 <IoMdHeart onClick={addFav} style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}}
                            className="imgHeart"/>
             </center>
@@ -97,17 +138,20 @@ const NewPostupleniyaCard = ({el}) => {
                 <p>{el.description} .....</p>
             </div>
             <div className="newPostopleniya--all__card--btn">
-                <Link to={`/details/products/${el.id}`}>
+                <Link to={`/product/${el.id}`}>
                     <button>Быстрый заказ</button>
                 </Link>
-                <TbShoppingBag className="btnBasket"/>
+                {
+                    bag ?  <TbShoppingBagCheck onClick={()=> nav('/headerBasket')} className="btnBasket"/> :  <TbShoppingBag onClick={addBasket} className="btnBasket"/>
+                }
+
             </div>
             <div className="newPostopleniya--all__card--colors">
                 <h4>Цвет</h4>
                 <div className="newPostopleniya--all__card--colors__color">
                     {
-                        el.color.map((el)=>(
-                            <canvas style={{background:el}}></canvas>
+                        el.color.map((el,inx)=>(
+                            <canvas key={inx} style={{background:el}}></canvas>
                         ))
                     }
                 </div>
