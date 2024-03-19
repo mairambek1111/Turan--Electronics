@@ -10,6 +10,7 @@ import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import {useLocation} from "react-router-dom";
 import {useEffect} from "react";
 
+
 function Home() {
     const {pathname} = useLocation()
     useEffect(() => {
