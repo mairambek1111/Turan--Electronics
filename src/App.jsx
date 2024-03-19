@@ -48,19 +48,17 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <Admin/>,
+    element: <Admin />,
   },
   {
     path: "/admin/:category/:id",
-    element: <AdminDetails/>,
+    element: <AdminDetails />,
   },
   {
     path: "/apple",
-    element: <Apple/>,
+    element: <Apple />,
   },
-  {path: "/register",
-    element: <Register />,
-  },
+  { path: "/register", element: <Register /> },
 ]);
 
 function App() {
