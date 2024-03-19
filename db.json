@@ -1,32 +1,704 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
+      "title": "Смартфон Apple iPhone 14 256GB EU",
+      "image": "https://my-store.by/wp-content/uploads/2023/04/apple_iphone_14-yellow.png",
+      "price": 100105,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+      "memory": {
+        "junior": 256,
+        "middle": 512,
+        "senior": 1
+      },
+      "characteristics": {
+        "guarantee": {
+          "day": 1,
+          "month": 2,
+          "year": 3
+        }
+      }
+    },
+    {
+      "id": "2",
+      "title": "Смартфон Apple iPhone 14 Pro Max 128GB EU",
+      "image": "https://login.kg/image/cache/catalog/new/Phones/Apple/iPhone%2014/Pro-Pro%20Max/3-500x400.jpg",
+      "price": 100157,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+      "memory": {
+        "junior": 256,
+        "middle": 512,
+        "senior": 1
+      },
+      "characteristics": {
+        "guarantee": {
+          "day": 1,
+          "month": 2,
+          "year": 3
+        }
+      }
+    },
+    {
+      "id": "3",
+      "title": "Смартфон Apple iPhone 13 Pro Max 256GB EU",
+      "image": "https://object.pscloud.io/cms/cms/Photo/img_0_77_3131_4_1.jpg",
+      "price": 97810,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+      "memory": {
+        "junior": 256,
+        "middle": 512,
+        "senior": 1
+      },
+      "characteristics": {
+        "guarantee": {
+          "day": 1,
+          "month": 2,
+          "year": 3
+        }
+      }
+    },
+    {
+      "id": "4",
+      "title": "Смартфон Apple iPhone 14 Pro Max 256GB EU",
+      "image": "https://my-store.by/wp-content/uploads/2023/04/apple_iphone_14-yellow.png",
+      "price": 111510,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+      "memory": {
+        "junior": 256,
+        "middle": 512,
+        "senior": 1
+      },
+      "characteristics": {
+        "guarantee": {
+          "day": 1,
+          "month": 2,
+          "year": 3
+        }
+      }
+    }
+  ],
+  "recomendation": [
+    {
+      "id": "11",
       "title": "Смартфон Apple iPhone 14 256GB EU",
       "image": "https://my-store.by/wp-content/uploads/2023/04/apple_iphone_14-yellow.png",
       "price": "100 105 сом",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, quaerat."
     },
     {
-      "id": 2,
-      "title": "Смартфон Apple iPhone 14 Pro Max 128GB EU",
+      "id" : 2,
+      "title" : "Смартфон Apple iPhone 14 Pro Max 128GB EU",
       "image": "https://login.kg/image/cache/catalog/new/Phones/Apple/iPhone%2014/Pro-Pro%20Max/3-500x400.jpg",
-      "price": "100 157 сом",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, quaerat."
+      "price": 100157,
+      "price_old": 105616,
+      "discount": 5,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et",
+      "memory": {
+        "junior": 256,
+        "middle": 512,
+        "senior": 1
+      },
+      "characteristics": {
+        "guarantee": {
+          "day": 1,
+          "month": 2,
+          "year": 3
+        }
+      }
+    },
+    {
+      "id" : 3,
+      "title" : "Смартфон Apple iPhone 13 Pro Max 256GB EU",
+      "image": "https://object.pscloud.io/cms/cms/Photo/img_0_77_3131_4_1.jpg",
+      "price": 97810,
+      "price_old": 99999,
+      "discount": 5,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+      "memory": {
+        "junior": 256,
+        "middle": 512,
+        "senior": 1
+      },
+      "characteristics": {
+        "guarantee": {
+          "day": 1,
+          "month": 2,
+          "year": 3
+        }
+      }
+    },
+    {
+      "id": "44",
+      "title": "Смартфон Apple iPhone 14 Pro Max 256GB EU",
+      "image": "https://my-store.by/wp-content/uploads/2023/04/apple_iphone_14-yellow.png",
+      "price": 111510,
+      "price_old": 12000,
+      "discount": 5,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+      "memory": {
+        "junior": 256,
+        "middle": 512,
+        "senior": 1
+      },
+      "characteristics": {
+        "guarantee": {
+          "day": 1,
+          "month": 2,
+          "year": 3
+        }
+      }
+    }
+  ],
+  "favorite": [
+    {
+      "id": 2,
+      "photos": [
+        "http://127.0.0.1:8000/media/product_photos/nissan.jpg",
+        "http://127.0.0.1:8000/media/product_photos/%D0%BA%D0%B0%D0%B1%D0%BB%D1%83%D0%BA%D0%B8.jpg",
+        "http://127.0.0.1:8000/media/product_photos/%D0%B1%D1%83%D0%BB%D0%BE%D1%87%D0%BA%D0%B811.jpg"
+      ],
+      "brand": "apple",
+      "model": "apple12",
+      "color": [
+        "red"
+      ],
+      "name": "apple",
+      "description": "fgvbhn",
+      "price": "123.00",
+      "warranty": 2,
+      "stars": 3
+    },
+    {
+      "id": 2,
+      "photos": [
+        "http://127.0.0.1:8000/media/product_photos/nissan.jpg",
+        "http://127.0.0.1:8000/media/product_photos/%D0%BA%D0%B0%D0%B1%D0%BB%D1%83%D0%BA%D0%B8.jpg",
+        "http://127.0.0.1:8000/media/product_photos/%D0%B1%D1%83%D0%BB%D0%BE%D1%87%D0%BA%D0%B811.jpg"
+      ],
+      "brand": "apple",
+      "model": "apple12",
+      "color": [
+        "red"
+      ],
+      "name": "Смартфон Apple iPhone 14 Pro Max 128GB EU",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa",
+      "price": "123.00",
+      "warranty": 2,
+      "stars": 3
     },
     {
       "id": 3,
-      "title": "Смартфон Apple iPhone 13 Pro Max 256GB EU",
-      "image": "https://object.pscloud.io/cms/cms/Photo/img_0_77_3131_4_1.jpg",
-      "price": "97 810 сом",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, quaerat."
+      "photos": [
+        "http://127.0.0.1:8000/media/product_photos/%D0%B1%D1%83%D0%BB%D0%BE%D1%87%D0%BA%D0%B811.jpg"
+      ],
+      "brand": "apple",
+      "model": "apple12",
+      "color": [
+        "red",
+        "blue"
+      ],
+      "name": "Apple 12 256gb new",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa",
+      "price": "3400.00",
+      "warranty": 1,
+      "stars": 1
     },
     {
-      "id": 4,
-      "title": "Смартфон Apple iPhone 14 Pro Max 256GB EU",
-      "image": "https://my-store.by/wp-content/uploads/2023/04/apple_iphone_14-yellow.png",
-      "price": "110 777 сом",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, quaerat."
+      "id": 3,
+      "photos": [
+        "http://127.0.0.1:8000/media/product_photos/%D0%B1%D1%83%D0%BB%D0%BE%D1%87%D0%BA%D0%B811.jpg"
+      ],
+      "brand": "apple",
+      "model": "apple12",
+      "color": [
+        "red",
+        "blue"
+      ],
+      "name": "Apple 12 256gb new",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa",
+      "price": "3400.00",
+      "warranty": 1,
+      "stars": 1
+    },
+    {
+      "id": 3,
+      "photos": [
+        "http://127.0.0.1:8000/media/product_photos/%D0%B1%D1%83%D0%BB%D0%BE%D1%87%D0%BA%D0%B811.jpg"
+      ],
+      "brand": "apple",
+      "model": "apple12",
+      "color": [
+        "red",
+        "blue"
+      ],
+      "name": "Apple 12 256gb new",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa",
+      "price": "3400.00",
+      "warranty": 1,
+      "stars": 1
+    },
+    {
+      "id": 3,
+      "photos": [
+        "http://127.0.0.1:8000/media/product_photos/%D0%B1%D1%83%D0%BB%D0%BE%D1%87%D0%BA%D0%B811.jpg"
+      ],
+      "brand": "apple",
+      "model": "apple12",
+      "color": [
+        "red",
+        "blue"
+      ],
+      "name": "Apple 12 256gb new",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa",
+      "price": "3400.00",
+      "warranty": 1,
+      "stars": 1
+    },
+    {
+      "id": 3,
+      "photos": [
+        "http://127.0.0.1:8000/media/product_photos/%D0%B1%D1%83%D0%BB%D0%BE%D1%87%D0%BA%D0%B811.jpg"
+      ],
+      "brand": "apple",
+      "model": "apple12",
+      "color": [
+        "red",
+        "blue"
+      ],
+      "name": "Apple 12 256gb new",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa",
+      "price": "3400.00",
+      "warranty": 1,
+      "stars": 1
+    },
+    {
+      "id": 3,
+      "photos": [
+        "http://127.0.0.1:8000/media/product_photos/%D0%B1%D1%83%D0%BB%D0%BE%D1%87%D0%BA%D0%B811.jpg"
+      ],
+      "brand": "apple",
+      "model": "apple12",
+      "color": [
+        "red",
+        "blue"
+      ],
+      "name": "Apple 12 256gb new",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa",
+      "price": "3400.00",
+      "warranty": 1,
+      "stars": 1
+    }
+  ],
+  "brends": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "products": [
+        {
+          "id": "1",
+          "title": "Смартфон Apple iPhone 14 256GB EU",
+          "image": "https://my-store.by/wp-content/uploads/2023/04/apple_iphone_14-yellow.png",
+          "price": 100105,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "2",
+          "title": "Смартфон Apple iPhone 14 Pro Max 128GB EU",
+          "image": "https://login.kg/image/cache/catalog/new/Phones/Apple/iPhone%2014/Pro-Pro%20Max/3-500x400.jpg",
+          "price": 100157,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "3",
+          "title": "Смартфон Apple iPhone 13 Pro Max 256GB EU",
+          "image": "https://object.pscloud.io/cms/cms/Photo/img_0_77_3131_4_1.jpg",
+          "price": 97810,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "4",
+          "title": "Смартфон Apple iPhone 14 Pro Max 256GB EU",
+          "image": "https://my-store.by/wp-content/uploads/2023/04/apple_iphone_14-yellow.png",
+          "price": 111510,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Samsung",
+      "products": [
+        {
+          "id": "1",
+          "title": "Смартфон Samsung",
+          "image": "https://samsungstore.kg/files/media/13/13363.jpg",
+          "price": 100105,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "2",
+          "title": "This Samsung phone is the one most people should buy (and it's not a flagship) | ZDNET",
+          "image": "https://www.zdnet.com/a/img/resize/f792d73c3e241b8f40a52875616f490ea1a08e97/2023/04/24/4e586f53-afa2-452d-baf4-cc7c78c2c5fb/samsung-galaxy-a54-5g.jpg?auto=webp&fit=crop&height=1200&width=1200",
+          "price": 100157,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "3",
+          "title": "New Samsung Galaxy S24 leaks reveal exact release date and much more | ZDNET",
+          "image": "https://www.zdnet.com/a/img/resize/a9c2c31b8afc0f1f58a92ee1329293139dff144a/2023/02/09/783b5969-5823-4008-9c6c-2e04b1815851/samsung-galaxy-s23-ultra-display.jpg?auto=webp&fit=crop&height=1200&width=1200",
+          "price": 97810,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "4",
+          "title": "Samsung Galaxy M04 Light Green, 4GB RAM, 64GB Storage | Upto 8GB RAM with RAM Plus",
+          "image": "https://m.media-amazon.com/images/I/813sVzTfvaL._AC_UF1000,1000_QL80_.jpg",
+          "price": 111510,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Xiaomi",
+      "products": [
+        {
+          "id": "1",
+          "title": "Купить Смартфон Xiaomi Redmi Note 12 8/256Gb NFC Onyx Gray",
+          "image": "https://object.pscloud.io/cms/cms/Photo/img_0_77_4498_0_1_SfktgQ.jpg",
+          "price": 100105,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "2",
+          "title": "Смартфон Xiaomi 13 12/256Gb зеленый GLOBAL",
+          "image": "https://afm.kg/d/xiaomi_13_12_256gb_chernyj.jpg",
+          "price": 100157,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "3",
+          "title": "Телефон Xiaomi Redmi Note 12 4/128GB Mint Green MZB0DP3EU",
+          "image": "https://lt2.pigugroup.eu/colours/706/915/11/70691511/xiaomi-redmi-note-12-4g-dual-sim-f448f-kaina_original.jpg",
+          "price": 97810,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "4",
+          "title": "Купить смартфон Xiaomi 13 8+256GB EU",
+          "image": "https://login.kg/image/cache/catalog/new/Phones/Xiaomi/Xiaomi%2013/xiaomi%2013-500x400.jpg",
+          "price": 111510,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Dyson",
+      "products": [
+        {
+          "id": "1",
+          "title": "Фен-стайлер Dyson Airwrap Complete Long HS05 никель-розовый",
+          "image": "https://www.kivano.kg/images/product/121688/full/1685677230_08923400.png",
+          "price": 100105,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "2",
+          "title": "Фен Dyson Supersonic купить",
+          "image": "https://login.kg/image/cache/catalog/new/Smart%20Home/Fen/Dyson/Supersonic/1-1200x800.jpg",
+          "price": 100157,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "3",
+          "title": "Фен-стайлер Multistyler Dyson Airwrap™ Complete Long",
+          "image": "https://buycosmetics.com.ua/images/products/dys3.jpg",
+          "price": 97810,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "4",
+          "title": "Dyson V10 Allergy Cordfree Vacuum Cleaner | Blue | New",
+          "image": "https://i5.walmartimages.com/asr/78d12801-b8d6-4616-9377-bf7aae3d89d8.a14cc2163530a936503b24df85d66e1b.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+          "price": 111510,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "SonyPlaystation",
+      "products": [
+        {
+          "id": "1",
+          "title": "Sony PlayStation 5 (PS5) Slim Digital Япония",
+          "image": "https://megastore.kg/upload/iblock/78b/78b8418ac31224b4d21c7bff9f54a2c8.png",
+          "price": 100105,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "2",
+          "title": "Купить Игровая консоль Sony PlayStation 4 CUH",
+          "image": "https://object.pscloud.io/cms/cms/Photo/img_0_68_57_3.jpg",
+          "price": 100157,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "3",
+          "title": "Портативная игровая консоль Sony PlayStation Portal Белый",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF1tkED8xwSSY69GM8OOVZXXawUVFTPrGgWA&usqp=CAU",
+          "price": 97810,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        },
+        {
+          "id": "4",
+          "title": "Беспроводной джойстик Sony Dualshock 4 для Sony PlayStation 4",
+          "image": "https://login.kg/image/cache/catalog/new/Igrovye%20pristavki/Djoistik/DualShok4/1-500x400.jpg",
+          "price": 111510,
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
+          "memory": {
+            "junior": 256,
+            "middle": 512,
+            "senior": 1
+          },
+          "characteristics": {
+            "guarantee": {
+              "day": 1,
+              "month": 2,
+              "year": 3
+            }
+          }
+        }
+      ]
     }
   ]
 }

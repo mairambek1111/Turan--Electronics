@@ -91,8 +91,10 @@ const Filter = () => {
         refOptionColor.current.style.display = 'none'
     }
     function hoverOptionAll(){
+        const body = document.querySelector('body')
         refClose.current.style.transform = 'translateX(0)'
         refCloseBg.current.style.display = 'block'
+        body.style.overflow = 'hidden'
         hoverOptionModel2()
         hoverOption2()
         hoverOptionObem2()
@@ -142,8 +144,10 @@ const Filter = () => {
         }
     }
     function clickClose(){
+        const body = document.querySelector('body')
         refClose.current.style.transform = 'translateX(100%)'
         refCloseBg.current.style.display = 'none'
+        body.style.overflow = 'auto'
     }
     return (
         <div id='filter'>

@@ -2,16 +2,36 @@ import {FaStar} from "react-icons/fa";
 import {IoMdHeart} from "react-icons/io";
 import {Link} from "react-router-dom";
 import {TbShoppingBag} from "react-icons/tb";
-import {useDispatch, useSelector} from "react-redux";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 
 const NewPostupleniyaCard = ({el}) => {
-    const {favorite} = useSelector(s=>s.favorite)
-    const heart = favorite.some(some => some.id === el.id)
-    const dis = useDispatch()
-    const addFav = ()=>{
-        dis({type:"ADD_TO_FAVORITE",payload: el})
+    const [heart, setHeart] = useState(false)
+    const addFav = async () => {
+        const response = await axios.get(`http://127.0.0.1:8000/favorite`);
+        const existingItem = response.data.find(item => item.id === el.id);
+
+        if (existingItem) {
+            await axios.delete(`http://127.0.0.1:8000/favorite/${existingItem.id}`);
+            setHeart(false)
+        } else {
+            await axios.post(`http://127.0.0.1:8000/favorite`,el);
+            setHeart(true)
+        }
     }
+    useEffect(() => {
+        const fetchData = async () => {
+            const res = await axios.get(`http://127.0.0.1:8000/favorite`);
+            const existingItem = res.data.find(item => item.id === el.id);
+            if (existingItem) {
+                setHeart(true);
+            } else {
+                setHeart(false);
+            }
+        };
+        fetchData();
+    }, []);
     return (
         <div key={el.id} className="newPostopleniya--all__card" data-aos="zoom-in-up"
              data-aos-duration="1100">
@@ -26,7 +46,7 @@ const NewPostupleniyaCard = ({el}) => {
                 </div>
             </div>
             <center>
-                <img src={el.image} alt="no img"/>
+                <img src={el.photos[0]} alt="no img"/>
                 <IoMdHeart onClick={addFav} style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}}
                            className="imgHeart"/>
             </center>
@@ -70,14 +90,14 @@ const NewPostupleniyaCard = ({el}) => {
                 </h2>
             </div>
             <div className="newPostopleniya--all__card--price">
-                <h1>{el.price}</h1>
+                <h1>{el.price} сом</h1>
             </div>
             <div className="newPostopleniya--all__card--descrip">
-                <h1>{el.title}</h1>
+                <h1>{el.name}</h1>
                 <p>{el.description} .....</p>
             </div>
             <div className="newPostopleniya--all__card--btn">
-                <Link to={`/details/${el.id}`}>
+                <Link to={`/details/products/${el.id}`}>
                     <button>Быстрый заказ</button>
                 </Link>
                 <TbShoppingBag className="btnBasket"/>
@@ -85,9 +105,11 @@ const NewPostupleniyaCard = ({el}) => {
             <div className="newPostopleniya--all__card--colors">
                 <h4>Цвет</h4>
                 <div className="newPostopleniya--all__card--colors__color">
-                    <canvas></canvas>
-                    <canvas></canvas>
-                    <canvas></canvas>
+                    {
+                        el.color.map((el)=>(
+                            <canvas style={{background:el}}></canvas>
+                        ))
+                    }
                 </div>
             </div>
         </div>
