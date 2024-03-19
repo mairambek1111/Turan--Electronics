@@ -7,21 +7,17 @@ import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 import Brends from "../../components/Brends/Brends.jsx";
 import Navbtn from "../../components/navbtn/navbtn.jsx";
 import Recomendation from "../../components/recomendation/Recomendation.jsx";
-<<<<<<< HEAD
-=======
-import Register from "../../components/Register";
-import Authorization from "../../components/Authorization";
-import News from "../../components/News/index.jsx";
-import Detail from "../../components/Detail/index.jsx";
->>>>>>> master
+import {useLocation} from "react-router-dom";
+import {useEffect} from "react";
+
 
 function Home() {
+    const {pathname} = useLocation()
+    useEffect(() => {
+        window.scroll(0,0)
+    }, [pathname]);
   return (
     <>
-      {/* <Authorization /> */}
-      {/* <Register /> */}
-      {/* <News /> */}
-      {/* <Detail /> */}
       <Header />
       <Navbtn />
       <Hero />
