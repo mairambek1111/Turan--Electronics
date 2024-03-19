@@ -8,6 +8,7 @@ import {FaBagShopping} from "react-icons/fa6";
 
 
 const NewPostupleniyaCard = ({el}) => {
+    // qwertyui
     const [heart, setHeart] = useState(false)
     const [bag, setBag] = useState(false)
     const nav = useNavigate()
