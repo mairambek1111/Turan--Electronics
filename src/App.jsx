@@ -13,6 +13,7 @@ import Admin from "./components/Admin/Admin.jsx";
 import AdminDetails from "./components/Admin/AdminDetails/AdminDetails.jsx";
 import Apple from "./pages/apple/Apple.jsx";
 import Register from "./components/Register/index.jsx";
+import Authorization from "./components/Authorization/index.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,19 +49,18 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <Admin/>,
+    element: <Admin />,
   },
   {
     path: "/admin/:category/:id",
-    element: <AdminDetails/>,
+    element: <AdminDetails />,
   },
   {
     path: "/apple",
-    element: <Apple/>,
+    element: <Apple />,
   },
-  {path: "/register",
-    element: <Register />,
-  },
+  { path: "/register", element: <Register /> },
+  { path: "/Authorization", element: <Authorization /> },
 ]);
 
 function App() {

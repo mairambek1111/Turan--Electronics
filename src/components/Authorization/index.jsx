@@ -6,6 +6,7 @@ import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
 import { useState } from "react";
 import Register from "../Register";
+import Header from "../header/header";
 
 const Authorization = () => {
   const [active, setActive] = useState(false);
@@ -46,6 +47,7 @@ const Authorization = () => {
 
   return (
     <>
+      <Header />
       {showRegister === false && (
         <div id="authorization">
           <div className="container">
