@@ -1,25 +1,36 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { FaStar } from "react-icons/fa";
 import { IoMdHeart } from "react-icons/io";
-import { Link } from "react-router-dom";
-import { TbShoppingBag } from "react-icons/tb";
+import { Link, useNavigate } from "react-router-dom";
+import { TbShoppingBag, TbShoppingBagCheck } from "react-icons/tb";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { FaBagShopping } from "react-icons/fa6";
 
 const NewPostupleniyaCard = ({ el }) => {
+  const dis = useDispatch();
   const [heart, setHeart] = useState(false);
   const addFav = async () => {
-    const response = await axios.get(`http://127.0.0.1:8000/favorite`);
+    const response = await axios.get(
+      "https://oceanbackend.pythonanywhere.com/product/"
+    );
+    console.log(response);
     const existingItem = response.data.find((item) => item.id === el.id);
-
     if (existingItem) {
       await axios.delete(`http://127.0.0.1:8000/favorite/${existingItem.id}`);
       setHeart(false);
     } else {
-      await axios.post(`http://127.0.0.1:8000/favorite`, el);
+      await axios.post(`http://127.0.0.1:8000/favorite_post`, el);
       setHeart(true);
     }
   };
+
+  function addBasket() {
+    dis({ type: "ADD_TO_BASKET", payload: el });
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(`http://127.0.0.1:8000/favorite`);
@@ -50,7 +61,7 @@ const NewPostupleniyaCard = ({ el }) => {
         </div>
       </div>
       <center>
-        <img src={el.photos[0]} alt="no img" />
+        <img src={el.first_photo} alt="no img" />
         <IoMdHeart
           onClick={addFav}
           style={{ color: `${heart ? "red" : "rgba(0, 0, 0, 0.35)"}` }}
@@ -144,7 +155,7 @@ const NewPostupleniyaCard = ({ el }) => {
         <Link to={`/details/products/${el.id}`}>
           <button>Быстрый заказ</button>
         </Link>
-        <TbShoppingBag className="btnBasket" />
+        <TbShoppingBag onClick={addBasket} className="btnBasket" />
       </div>
       <div className="newPostopleniya--all__card--colors">
         <h4>Цвет</h4>

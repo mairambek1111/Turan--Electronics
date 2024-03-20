@@ -39,7 +39,7 @@
 
           .swiper-slide img {
             display: block;
-            object-fit: cover;
+            object-fit: contain;
               width: 420px;
               height: 335px;
             mix-blend-mode: darken;
@@ -61,6 +61,8 @@
              img{
                width: 88px;
                height: 115px;
+               mix-blend-mode: darken;
+               object-fit: fill;
              }
            }
           }

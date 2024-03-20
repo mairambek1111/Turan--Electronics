@@ -7,21 +7,22 @@ import axios from "axios";
 
 const FavoritesCard = ({el}) => {
     const [heart, setHeart] = useState(false)
-    const addFav = async () => {
-        const response = await axios.get(`http://localhost:3000/favorite`);
+    const {product} = el
+    const delFav = async () => {
+        const response = await axios.get(`http://127.0.0.1:8000/favorite`);
         const existingItem = response.data.find(item => item.id === el.id);
 
         if (existingItem) {
-            await axios.delete(`http://localhost:3000/favorite/${existingItem.id}`);
+            await axios.delete(`http://127.0.0.1:8000/favorite/${existingItem.id}`);
             setHeart(false)
         } else {
-            await axios.post(`http://localhost:3000/favorite`,el);
+            await axios.post(`http://127.0.0.1:8000/favorite_post/`,data);
             setHeart(true)
         }
     }
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get(`http://localhost:3000/favorite`);
+            const res = await axios.get(`http://127.0.0.1:8000/favorite/`);
             const existingItem = res.data.find(item => item.id === el.id);
             if (existingItem) {
                 setHeart(true);
@@ -30,23 +31,25 @@ const FavoritesCard = ({el}) => {
             }
         };
         fetchData();
-    }, []);
+    }, [])
+    const starsCount = product.stars
+    const maxStars = 5
+    const stars = [];
+    for (let i = 0; i < maxStars; i++) {
+        stars.push(<FaStar key={i} className={i < starsCount ? "starsYellow" : "starsNone"} />);
+    }
     return (
-        <div key={el.id} className="newPostopleniya--all__card" data-aos="zoom-in-up"
+        <div className="newPostopleniya--all__card" data-aos="zoom-in-up"
              data-aos-duration="1100">
             <div className="newPostopleniya--all__card--h3">
                 <h3>Новое</h3>
                 <div className="newPostopleniya--all__card--h3__stars">
-                    <FaStar className="starsYellow"/>
-                    <FaStar className="starsYellow"/>
-                    <FaStar className="starsNone"/>
-                    <FaStar className="starsNone"/>
-                    <FaStar className="starsNone"/>
+                    {stars}
                 </div>
             </div>
             <center>
-                <img src={el.image} alt="no img"/>
-                <IoMdHeart onClick={addFav} style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}}
+                <img src={product.first_photo} alt="no img"/>
+                <IoMdHeart onClick={delFav} style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}}
                            className="imgHeart"/>
             </center>
             <div className="newPostopleniya--all__card--available">
@@ -89,11 +92,11 @@ const FavoritesCard = ({el}) => {
                 </h2>
             </div>
             <div className="newPostopleniya--all__card--price">
-                <h1>{el.price} сом</h1>
+                <h1>{product.price} сом</h1>
             </div>
             <div className="newPostopleniya--all__card--descrip">
-                <h1>{el.title}</h1>
-                <p>{el.description} .....</p>
+                <h1>{product.name}</h1>
+                <p>{product.description} .....</p>
             </div>
             <div className="newPostopleniya--all__card--btn">
                 <Link to={`/details/favorite/${el.id}`}>
@@ -104,9 +107,11 @@ const FavoritesCard = ({el}) => {
             <div className="newPostopleniya--all__card--colors">
                 <h4>Цвет</h4>
                 <div className="newPostopleniya--all__card--colors__color">
-                    <canvas></canvas>
-                    <canvas></canvas>
-                    <canvas></canvas>
+                    {
+                        product.color.map((el,inx)=>(
+                            <canvas key={inx} style={{background:el}}></canvas>
+                        ))
+                    }
                 </div>
             </div>
         </div>

@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Basket from "./pages/basket/Basket";
 import Favorites from "./pages/favorites/Favorites";
 import Home from "./pages/home/home";
-import PagesMain from "./pages/pagesMain";
 import Pageskategory from "./pages/pageskategory";
 import PagesNews from "./pages/pagesNews";
 import PagesAboutus from "./pages/pagesAboutus";
@@ -18,10 +17,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-  },
-  {
-    path: "/pagesmain",
-    element: <PagesMain />,
   },
   {
     path: "/pageskategory",
@@ -44,7 +39,7 @@ const router = createBrowserRouter([
     element: <Favorites />,
   },
   {
-    path: "/details/:category/:id",
+    path: "/product/:id",
     element: <Details />,
   },
   {

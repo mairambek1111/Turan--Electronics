@@ -33,7 +33,9 @@ function Footer() {
                 </Link>
               </button>
               <button className="adaptive__content">
-                <img src={iconadaptive4} alt="" />
+                <Link to="/register">
+                  <img src={iconadaptive4} alt="" />
+                </Link>
               </button>
             </div>
           </div>

@@ -1,7 +1,3 @@
-import img2 from '../../assets/details2.svg'
-import img3 from '../../assets/details3.svg'
-import img4 from '../../assets/details4.svg'
-import img5 from '../../assets/details5.svg'
 import {FaStar} from "react-icons/fa";
 import {IoMdHeart} from "react-icons/io";
 import '../details/details.scss'
@@ -12,46 +8,62 @@ import PohojieTovary from "../../components/pohojieTovary/pohojieTovary.jsx";
 import Brends from "../../components/Brends/Brends.jsx";
 import Header from "../../components/header/header.jsx";
 import Footer from "../../components/footer/footer.jsx";
-import {useParams} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import {useEffect, useState} from "react";
 
 
 const Details = () => {
-    const {id,category} = useParams()
+    const {pathname} = useLocation()
+    useEffect(() => {
+        window.scroll(0,0)
+    }, [pathname]);
+    const {id} = useParams()
     const [el,setEl] = useState([])
     const [heart,setHeart] = useState(false)
     const [btnSlice,setBtnSlice] = useState(false)
+    const nav = useNavigate()
+    const data = {
+        product: el.id,
+        user: 1
+    }
     const getData = async ()=>{
-        const url = await axios(`http://localhost:3000/${category}/${id}`)
+        const url = await axios(`http://127.0.0.1:8000/product/${id}/`)
         const {data} = await url
         setEl(data)
     }
     const addFav = async () => {
-        const response = await axios.get(`http://localhost:3000/favorite`);
-        const existingItem = response.data.find(item => item.id === el.id);
-
+        const response = await axios.get(`http://127.0.0.1:8000/favorite`)
+        const every = response.data.map((el)=> el.product)
+        const existingItem = every.find(item => item.id === el.id);
         if (existingItem) {
-            await axios.delete(`http://localhost:3000/favorite/${existingItem.id}`);
-            setHeart(false)
+            nav('/headerFavorite')
         } else {
-            await axios.post(`http://localhost:3000/favorite`, el);
+            await axios.post(`http://127.0.0.1:8000/favorite_post/`,data);
             setHeart(true)
         }
     }
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get(`http://localhost:3000/favorite`);
-            const existingItem = res.data.find(item => item.id === el.id);
+            const res = await axios.get(`http://127.0.0.1:8000/favorite`);
+            const every = res.data.map((el)=> el.product)
+            const existingItem = every.find(item => item.id === el.id);
             if (existingItem) {
                 setHeart(true);
             } else {
                 setHeart(false);
             }
         };
+        fetchData()
         getData()
-        fetchData();
     }, [el]);
+    const starsCount = el.stars
+    const maxStars = 5
+    const stars = [];
+    for (let i = 0; i < maxStars; i++) {
+        stars.push(<FaStar key={i} className={i < starsCount ? "starsYellow" : "starsNone"} />);
+    }
+    console.log(el)
     return (
         <>
             <Header/>
@@ -63,43 +75,32 @@ const Details = () => {
                             <div className="details--main__slider">
                                 <div className="details--main__slider--imgs">
                                     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-                                        <SwiperSlide>
-                                            <div className="details--main__slider--imgs__m"><img src={el.image} alt=""/></div>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <div className="details--main__slider--imgs__m"><img src={img2} alt=""/></div>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <div className="details--main__slider--imgs__m"><img src={img3} alt=""/></div>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <div className="details--main__slider--imgs__m"><img src={img4} alt=""/></div>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <div className="details--main__slider--imgs__m"><img src={img5} alt=""/></div>
-                                        </SwiperSlide>
+                                        {
+                                            el?.photos?.map((img)=>(
+                                                <SwiperSlide>
+                                                    <div className="details--main__slider--imgs__m"><img src={img} alt=""/></div>
+                                                </SwiperSlide>
+                                            ))
+                                        }
                                     </Swiper>
                                     <div className="details--main__slider--imgs__i">
-                                        <div className="details--main__slider--imgs__i--one">
-                                            <img src={img2} alt=""/>
-                                        </div>
-                                        <div className="details--main__slider--imgs__i--one">
-                                            <img src={img3} alt=""/>
-                                        </div>
-                                        <div className="details--main__slider--imgs__i--one">
-                                            <img src={img4} alt=""/>
-                                        </div>
-                                        <div className="details--main__slider--imgs__i--one">
-                                            <img src={img5} alt=""/>
-                                        </div>
+                                        {
+                                            el?.photos?.map((img)=> (
+                                                <div className="details--main__slider--imgs__i--one">
+                                                    <img src={img} alt=""/>
+                                                </div>
+                                            ))
+                                        }
                                     </div>
                                 </div>
                                 <div className="details--main__slider--colors">
                                     <h4>Выбрать цвет</h4>
                                     <div className="details--main__slider--colors__canvas">
-                                        <canvas></canvas>
-                                        <canvas></canvas>
-                                        <canvas></canvas>
+                                        {
+                                            el?.color?.map((el,inx)=>(
+                                                <canvas key={inx} style={{background:el}}></canvas>
+                                            ))
+                                        }
                                     </div>
                                 </div>
                                 <div className="details--main__slider--description">
@@ -118,20 +119,14 @@ const Details = () => {
                             </div>
                             <div className="details--main__abouts">
                                 <div className="details--main__abouts--stars">
-                                    <FaStar className='starsYellow'/>
-                                    <FaStar className='starsYellow'/>
-                                    <FaStar className='starsNone'/>
-                                    <FaStar className='starsNone'/>
-                                    <FaStar className='starsNone'/>
+                                    {stars}
                                 </div>
                                 <div className="details--main__abouts--h1">
-                                    <h1>{el.title}</h1>
+                                    <h1>{el.name}</h1>
                                 </div>
                                 <div className="details--main__abouts--memory">
                                     <p>Память</p>
-                                    <button>256 gb</button>
-                                    <button>512 gb</button>
-                                    <button>1 tb</button>
+                                    <button>{el?.characteristics?.memory}</button>
                                 </div>
                                 <div className="details--main__abouts--price">
                                     <h1>{el.price} сом</h1>

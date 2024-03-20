@@ -4,17 +4,30 @@ import Header from "../../components/header/header.jsx";
 import Order from "../../components/order/order.jsx";
 import UserData from "../../components/userData/userData.jsx";
 import Footer from "../../components/footer/footer.jsx";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import {useEffect, useState} from "react";
+import axios from "axios";
+import {useLocation} from "react-router-dom";
 
 const Basket = () => {
+    const {pathname} = useLocation()
+    useEffect(() => {
+        window.scroll(0,0)
+    }, [pathname]);
   const [userData, setUserData] = useState(false);
-  const { basket } = useSelector((state) => state.basket);
+    const [basket,setBasket] = useState([])
 
+  const getBasket = async () =>{
+      const res = await axios.get(`http://127.0.0.1:8000/basket`)
+      const {data} = await res
+      setBasket(data)
+  }
+    useEffect(() => {
+        getBasket()
+    }, [basket]);
   return (
     <>
       <Header />
-      {basket.length !== 0 ? <Order setUserData={setUserData} /> : null}
+      {basket.length !== 0 ? <Order basket={basket} setUserData={setUserData} /> : null}
       {userData ? <UserData /> : null}
       <div id="basket">
         <div className="container">

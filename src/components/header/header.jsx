@@ -14,6 +14,8 @@ import axios from "axios";
 function Header() {
   const [nav, setNav] = useState(false);
   const [favoriteCount, setFavoriteCount] = useState(0);
+  // eslint-disable-next-line no-unused-vars
+  const [basketCount, setBasketCount] = useState(0);
 
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -25,7 +27,6 @@ function Header() {
         console.error("Ошибка при получении избранных элементов:", error);
       }
     };
-
     fetchFavorites();
   }, []);
   return (
@@ -78,6 +79,9 @@ function Header() {
                         alt=""
                         className="header__nav__icon__btn"
                       />
+                      {basketCount !== 0 ? (
+                        <p className="basketCount">{basketCount}</p>
+                      ) : null}
                     </Link>
                   </button>
                   <button className="header__nav__btn__profile">
@@ -106,7 +110,7 @@ function Header() {
             <div className="header__info__link">
               <nav className={`header__nav ${nav ? "active" : ""}`}>
                 <button className="header__nav-btn">
-                  <Link to="/pagesmain" className="header__nav__link">
+                  <Link to="/" className="header__nav__link">
                     Главная
                   </Link>
                 </button>

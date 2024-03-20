@@ -82,26 +82,12 @@
       "id": "11",
       "title": "Смартфон Apple iPhone 14 256GB EU",
       "image": "https://my-store.by/wp-content/uploads/2023/04/apple_iphone_14-yellow.png",
-      "price": 100105,
-      "price_old": 105415,
-      "discount": 5,
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, architecto atque culpa dolorem doloremque et, ipsum maiores minus nobis obcaecati odio provident quidem quisquam quo rerum velit veritatis vero, vitae. Doloribus eligendi iusto maiores minima mollitia natus vitae voluptatum! Accusamus consequatur corporis earum, est facilis illum natus quam quasi voluptates.",
-      "memory": {
-        "junior": 256,
-        "middle": 512,
-        "senior": 1
-      },
-      "characteristics": {
-        "guarantee": {
-          "day": 1,
-          "month": 2,
-          "year": 3
-        }
-      }
+      "price": "100 105 сом",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, quaerat."
     },
     {
-      "id": "22",
-      "title": "Смартфон Apple iPhone 14 Pro Max 128GB EU",
+      "id" : 2,
+      "title" : "Смартфон Apple iPhone 14 Pro Max 128GB EU",
       "image": "https://login.kg/image/cache/catalog/new/Phones/Apple/iPhone%2014/Pro-Pro%20Max/3-500x400.jpg",
       "price": 100157,
       "price_old": 105616,
@@ -121,8 +107,8 @@
       }
     },
     {
-      "id": "33",
-      "title": "Смартфон Apple iPhone 13 Pro Max 256GB EU",
+      "id" : 3,
+      "title" : "Смартфон Apple iPhone 13 Pro Max 256GB EU",
       "image": "https://object.pscloud.io/cms/cms/Photo/img_0_77_3131_4_1.jpg",
       "price": 97810,
       "price_old": 99999,

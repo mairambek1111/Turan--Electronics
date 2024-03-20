@@ -3,6 +3,13 @@
   justify-content: space-between;
   margin: 50px 20px;
 }
+.linkBtn{
+  color: #011EB8;
+  font-size: 20px;
+  font-weight: 400;
+  border: none;
+  background: none;
+}
 .order {
   button {
     padding: 20px 30px;
@@ -13,7 +20,7 @@
   background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
   border: 3px solid #fff;
   border-radius: 20px;
-  margin: 0 auto;
+  margin: 20px 0;
   padding: 20px;
   .order-wrap {
     display: flex;
@@ -24,13 +31,18 @@
       width: 200px;
       height: 200px;
       object-fit: cover;
+      img{
+        width: 245px;
+        height: 220px;
+        mix-blend-mode: darken;
+      }
     }
     .info {
       display: flex;
       flex-direction: column;
       gap: 20px;
       p {
-        font-family: "Montserrat";
+        font-family: "Montserrat",sans-serif;
         font-size: 32px;
         font-weight: 400;
         max-width: 400px;
@@ -60,6 +72,23 @@
       max-width: 100px;
       width: 100%;
       margin: 15px 0;
+      display: flex;
+      gap: 5px;
+      .starsYellow {
+        color: rgba(255, 115, 0, 1);
+        width: 15px;
+        height: 22px;
+      }
+      svg{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .starsNone {
+        width: 15px;
+        height: 22px;
+        color: rgba(0, 0, 0, 0.35);
+      }
     }
     &__price {
       h1 {
@@ -77,6 +106,19 @@
         text-decoration: line-through;
       }
     }
+  }
+  &__btn{
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+    border: 1px solid;
+    border-image-source: linear-gradient(123.5deg, #FFFFFF 38.36%, rgba(219, 230, 242, 0) 69.31%, #8F9FAE 131.91%);
+    box-shadow: 16px 16px 64px 0 #123D657A,-16px -16px 40px 0px #FFFFFFCC;
+    border-radius: 20px;
+    width: 295px;
+    padding: 15px 0;
+    margin-top: 30px;
   }
 }
 
