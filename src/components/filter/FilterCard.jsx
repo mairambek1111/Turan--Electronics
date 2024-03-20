@@ -1,37 +1,71 @@
 import {FaStar} from "react-icons/fa";
 import {IoMdHeart} from "react-icons/io";
-import {Link} from "react-router-dom";
-import {TbShoppingBag} from "react-icons/tb";
+import {Link, useNavigate} from "react-router-dom";
+import {TbShoppingBag, TbShoppingBagCheck} from "react-icons/tb";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
 const FilterCard = ({el}) => {
     const [heart, setHeart] = useState(false)
+    const [bag, setBag] = useState(false)
+    const nav = useNavigate()
+    const data = {
+        product: el.id,
+        user: 1
+    }
+    const data2 = {
+        product: el.id,
+        user: 1,
+        summ_products: el.price
+    }
     const addFav = async () => {
-        const response = await axios.get(`http://localhost:3000/favorite`);
-        const existingItem = response.data.find(item => item.id === el.id);
-
+        const response = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`)
+        const every = response.data.map((el)=> el.product)
+        const existingItem = every.find(item => item.id === el.id);
         if (existingItem) {
-            await axios.delete(`http://localhost:3000/favorite/${existingItem.id}`);
-            setHeart(false)
+            nav('/headerFavorite')
         } else {
-            await axios.post(`http://localhost:3000/favorite`, el);
+            await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`,data);
             setHeart(true)
         }
     }
+    const addBasket = async () => {
+        const response = await axios.get(`https://oceanbackend.pythonanywhere.com/basket`)
+        const every = response.data.map((el)=> el.product)
+        const existingItem = every.find(item => item.id === el.id);
+        if (existingItem) {
+            nav('/headerBasket')
+        } else {
+            await axios.post(`https://oceanbackend.pythonanywhere.com/basket_post/`,data2);
+            setBag(true)
+        }
+    }
+
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get(`http://localhost:3000/favorite`);
-            const existingItem = res.data.find(item => item.id === el.id);
+            const res = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`);
+            const every = res.data.map((el)=> el.product)
+            const existingItem = every.find(item => item.id === el.id);
             if (existingItem) {
                 setHeart(true);
             } else {
                 setHeart(false);
             }
         };
+        fetchData()
+        const fetchData2 = async () => {
+            const res = await axios.get(`https://oceanbackend.pythonanywhere.com/basket`);
+            const every = res.data.map((el)=> el.product)
+            const existingItem = every.find(item => item.id === el.id);
+            if (existingItem) {
+                setBag(true);
+            } else {
+                setBag(false);
+            }
+        };
         fetchData();
-    }, []);
-    // const newPrice = Math.round(el.price_old - (el.price_old * el.discount / 100))
+        fetchData2()
+    }, [el]);
 
     const starsCount = el.stars
     const maxStars = 5
@@ -69,7 +103,9 @@ const FilterCard = ({el}) => {
                 <Link to={`/product/${el.id}`}>
                     <button>Быстрый заказ</button>
                 </Link>
-                <TbShoppingBag className="btnBasket"/>
+                {
+                    bag ?  <TbShoppingBagCheck onClick={()=> nav('/headerBasket')} className="btnBasket"/> :  <TbShoppingBag onClick={addBasket} className="btnBasket"/>
+                }
             </div>
             <div className="newPostopleniya--all__card--colors">
                 <h4>Цвет</h4>

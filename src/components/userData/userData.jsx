@@ -25,7 +25,8 @@ function UserData() {
   const siteName = "Turan Electronics";
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
-  console.log();
+  const data = JSON.parse(localStorage.getItem('data')) || [];
+
   function SendData() {
     let message = `<b>Заказ с сайта: ${siteName}</b>\n \n`;
     message += `<b>Имя: ${name}</b>\n`;
@@ -34,7 +35,13 @@ function UserData() {
     message += `<b>Область: ${region}</b>\n`;
     message += `<b>Город: ${gorod}</b>\n`;
     message += `<b>Улица: ${street}</b>\n`;
-    message += `<b>Дом/кв: ${home}</b>\n`;
+    message += `<b>Дом/кв: ${home}</b>\n \n`;
+    message += `<b>Товары:</b>\n`;
+    data.forEach((el)=>{
+      message += `<b>Наз-е: ${el.name}</b>\n`;
+      message += `<b>Количество: ${el.count}</b>\n`;
+      message += `<b>Общая сумма: ${el.price} сом</b>\n \n`;
+    })
     axios.post(url, {
       chat_id: id,
       parse_mode: "html",

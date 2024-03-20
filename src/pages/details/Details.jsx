@@ -28,24 +28,24 @@ const Details = () => {
         user: 1
     }
     const getData = async ()=>{
-        const url = await axios(`http://127.0.0.1:8000/product/${id}/`)
+        const url = await axios(`https://oceanbackend.pythonanywhere.com/product/${id}/`)
         const {data} = await url
         setEl(data)
     }
     const addFav = async () => {
-        const response = await axios.get(`http://127.0.0.1:8000/favorite`)
+        const response = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`)
         const every = response.data.map((el)=> el.product)
         const existingItem = every.find(item => item.id === el.id);
         if (existingItem) {
             nav('/headerFavorite')
         } else {
-            await axios.post(`http://127.0.0.1:8000/favorite_post/`,data);
+            await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`,data);
             setHeart(true)
         }
     }
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get(`http://127.0.0.1:8000/favorite`);
+            const res = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`);
             const every = res.data.map((el)=> el.product)
             const existingItem = every.find(item => item.id === el.id);
             if (existingItem) {
@@ -63,7 +63,6 @@ const Details = () => {
     for (let i = 0; i < maxStars; i++) {
         stars.push(<FaStar key={i} className={i < starsCount ? "starsYellow" : "starsNone"} />);
     }
-    console.log(el)
     return (
         <>
             <Header/>
@@ -76,8 +75,8 @@ const Details = () => {
                                 <div className="details--main__slider--imgs">
                                     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                                         {
-                                            el?.photos?.map((img)=>(
-                                                <SwiperSlide>
+                                            el?.photos?.map((img,inx)=>(
+                                                <SwiperSlide key={inx}>
                                                     <div className="details--main__slider--imgs__m"><img src={img} alt=""/></div>
                                                 </SwiperSlide>
                                             ))
@@ -85,8 +84,8 @@ const Details = () => {
                                     </Swiper>
                                     <div className="details--main__slider--imgs__i">
                                         {
-                                            el?.photos?.map((img)=> (
-                                                <div className="details--main__slider--imgs__i--one">
+                                            el?.photos?.map((img,inx)=> (
+                                                <div key={inx} className="details--main__slider--imgs__i--one">
                                                     <img src={img} alt=""/>
                                                 </div>
                                             ))
@@ -124,12 +123,16 @@ const Details = () => {
                                 <div className="details--main__abouts--h1">
                                     <h1>{el.name}</h1>
                                 </div>
-                                <div className="details--main__abouts--memory">
-                                    <p>Память</p>
-                                    <button>{el?.characteristics?.memory}</button>
-                                </div>
+                                {
+                                    el?.characteristics?.memory ?
+                                        <div className="details--main__abouts--memory">
+                                            <p>Память</p>
+                                            <button>{el?.characteristics?.memory}</button>
+                                        </div> : null
+                                }
+
                                 <div className="details--main__abouts--price">
-                                    <h1>{el.price} сом</h1>
+                                    <h1>{Math.round(el.price)} сом</h1>
                                 </div>
                                 <div className="details--main__abouts--btn">
                                     <button>В корзину</button>
@@ -137,45 +140,70 @@ const Details = () => {
                                 </div>
 
                                 <div className="details--main__abouts--harakteristiki">
-                                    <h1>Характеристики:</h1>
+                                    {
+                                        el?.characteristics?.length > 0 ? <h1>Характеристики:</h1> : null
+                                    }
+
                                     <div className="details--main__abouts--harakteristiki__all">
-                                        <div className="details--main__abouts--harakteristiki__all--title">
-                                            <p>Гарантия</p>
-                                            <span className='sDottes'></span>
-                                            <p className='details--main__abouts--harakteristiki__all--title__p'>1 год</p>
-                                        </div>
-                                        <div className="details--main__abouts--harakteristiki__all--title">
-                                            <p>Экран</p>
-                                            <span className='sDottes'></span>
-                                            <p className='details--main__abouts--harakteristiki__all--title__p'>6,1*/2532*1170Пикс</p>
-                                        </div>
-                                        <div className="details--main__abouts--harakteristiki__all--title">
-                                            <p>Технология экрана</p>
-                                            <span className='sDottes'></span>
-                                            <p className='details--main__abouts--harakteristiki__all--title__p'>OLED</p>
-                                        </div>
-                                        <div className="details--main__abouts--harakteristiki__all--title">
-                                            <p>Тип процессора</p>
-                                            <span className='sDottes'></span>
-                                            <p className='details--main__abouts--harakteristiki__all--title__p'>A15
-                                                Bionic</p>
-                                        </div>
-                                        <div className="details--main__abouts--harakteristiki__all--title">
-                                            <p>Встроенная память (ROM)</p>
-                                            <span className='sDottes'></span>
-                                            <p className='details--main__abouts--harakteristiki__all--title__p'>256gb</p>
-                                        </div>
-                                        <div className="details--main__abouts--harakteristiki__all--title">
-                                            <p>Основная камера</p>
-                                            <span className='sDottes'></span>
-                                            <p className='details--main__abouts--harakteristiki__all--title__p'>6</p>
-                                        </div>
-                                        <div className="details--main__abouts--harakteristiki__all--title">
-                                            <p>Разрешение видеосъемки</p>
-                                            <span className='sDottes'></span>
-                                            <p className='details--main__abouts--harakteristiki__all--title__p'>3840/2160
-                                                Пикс(4K)</p>
-                                        </div>
+                                        {
+                                            el?.characteristics?.garanty ?
+                                                <div className="details--main__abouts--harakteristiki__all--title">
+                                                    <p>Гарантия</p>
+                                                    <span className='sDottes'></span>
+                                                    <p className='details--main__abouts--harakteristiki__all--title__p'>{el?.characteristics?.garanty}</p>
+                                                </div>
+                                                : null
+                                        }
+                                        {
+                                            el?.characteristics?.display ?
+                                                <div className="details--main__abouts--harakteristiki__all--title">
+                                                    <p>Экран</p>
+                                                    <span className='sDottes'></span>
+                                                    <p className='details--main__abouts--harakteristiki__all--title__p'>{el?.characteristics?.display}</p>
+                                                </div>
+                                                : null
+                                        }
+                                        {
+                                            el?.characteristics?.type_display ?
+                                                <div className="details--main__abouts--harakteristiki__all--title">
+                                                    <p>Технология экрана</p>
+                                                    <span className='sDottes'></span>
+                                                    <p className='details--main__abouts--harakteristiki__all--title__p'>{el?.characteristics?.type_display}</p>
+                                                </div>
+                                                : null
+                                        }
+                                        {
+                                            el?.characteristics?.proses ?
+                                                <div className="details--main__abouts--harakteristiki__all--title">
+                                                    <p>Тип процессора</p>
+                                                    <span className='sDottes'></span>
+                                                    <p className='details--main__abouts--harakteristiki__all--title__p'>{el?.characteristics?.proses}</p>
+                                                </div>
+                                                : null
+                                        }
+                                        {
+                                            el?.characteristics?.memory ?
+                                                <div className="details--main__abouts--harakteristiki__all--title">
+                                                    <p>Встроенная память (ROM)</p>
+                                                    <span className='sDottes'></span>
+                                                    <p className='details--main__abouts--harakteristiki__all--title__p'>{el?.characteristics?.memory}</p>
+                                                </div>
+                                                : null
+                                        }
+                                        {/*<div className="details--main__abouts--harakteristiki__all--title">*/}
+                                        {/*    <p>Основная камера</p>*/}
+                                        {/*    <span className='sDottes'></span>*/}
+                                        {/*    <p className='details--main__abouts--harakteristiki__all--title__p'>6</p>*/}
+                                        {/*</div>*/}
+                                        {
+                                            el?.characteristics?.kamera ?
+                                                <div className="details--main__abouts--harakteristiki__all--title">
+                                                    <p>Разрешение видеосъемки</p>
+                                                    <span className='sDottes'></span>
+                                                    <p className='details--main__abouts--harakteristiki__all--title__p'>{el?.characteristics?.kamera}</p>
+                                                </div>
+                                                : null
+                                        }
                                     </div>
                                 </div>
                             </div>

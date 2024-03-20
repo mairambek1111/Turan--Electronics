@@ -12,7 +12,7 @@ function Cardhero() {
     <div>
       <div className="container">
         <section className="cards">
-          <Link to={'/brand/dyson'}><div
+          <Link to={'/brand/Dyson'}><div
             className="cards__wrap__dyson"
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
@@ -21,7 +21,7 @@ function Cardhero() {
             <button className="Button">Dyson</button>
           </div></Link>
           <div className="cards__wrap">
-            <Link to={'/brand/apple'}><div
+            <Link to={'/brand/Apple'}><div
               className="cards__wrap__apple"
               data-aos="zoom-in-up"
               data-aos-duration="1100"
@@ -29,7 +29,7 @@ function Cardhero() {
               <img src={apple} alt="" className="apple" />
               <button className="Button">Apple</button>
             </div></Link>
-            <Link to={'/brand/samsung'}><div
+            <Link to={'/brand/Samsung'}><div
               className="cards__wrap__samsung"
               data-aos="zoom-in-up"
               data-aos-duration="1100"
@@ -37,7 +37,7 @@ function Cardhero() {
               <img src={samsung} alt="" className="samsung" />
               <button className="Button">Samsung</button>
             </div></Link>{" "}
-            <Link to={'/brand/xiomi'}><div
+            <Link to={'/brand/Xiomi'}><div
               className="cards__wrap__xiomi"
               data-aos="zoom-in-up"
               data-aos-duration="1100"
@@ -46,7 +46,7 @@ function Cardhero() {
 
               <button className="Button">Xiomi</button>
             </div></Link>{" "}
-            <Link to={'/brand/sonyPlaystation'}><div
+            <Link to={'/brand/SonyPlaystation'}><div
               className="cards__wrap__sonyPlaystation"
               data-aos="zoom-in-up"
               data-aos-duration="1100"

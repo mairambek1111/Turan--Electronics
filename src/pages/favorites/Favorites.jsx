@@ -18,7 +18,7 @@ const Favorites = () => {
     useEffect(() => {
         const fetchFavorites = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/favorite/')
+                const response = await axios.get('https://oceanbackend.pythonanywhere.com/favorite/')
                 const {data} = response
                 setFavorite(data)
             } catch (error) {
