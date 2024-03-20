@@ -12,6 +12,7 @@ import Admin from "./components/Admin/Admin.jsx";
 import AdminDetails from "./components/Admin/AdminDetails/AdminDetails.jsx";
 import Apple from "./pages/apple/Apple.jsx";
 import Register from "./components/Register/index.jsx";
+import Authorization from "./components/Authorization/index.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,20 +51,11 @@ const router = createBrowserRouter([
     element: <AdminDetails />,
   },
   {
-    path: "/brand/:brandName",
-    element: <Apple/>,
-  },
-  {
-    path: "/register",
-    element: <Register/>,
-  },
-  {
     path: "/apple",
     element: <Apple />,
   },
-  {
-    path: "/register", element: <Register />
-  },
+  { path: "/register", element: <Register /> },
+  { path: "/Authorization", element: <Authorization /> },
 ]);
 
 function App() {

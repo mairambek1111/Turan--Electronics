@@ -1,0 +1,78 @@
+#admin .admin {
+  display: flex;
+  align-items: flex-start;
+  color: white;
+}
+#admin .admin--bar {
+  background: #172644;
+  min-height: 650px;
+  width: 300px;
+  min-width: 300px;
+  padding: 30px;
+}
+#admin .admin--bar__log {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#admin .admin--bar__log img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+#admin .admin--bar__log h1 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+#admin .admin--bar__catalog {
+  margin-top: 20px;
+}
+#admin .admin--bar__catalog h3 {
+  font-size: 18px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+#admin .admin--block {
+  margin: 20px 0 0 20px;
+}
+#admin .admin--block h1 {
+  text-align: center;
+  color: black;
+  padding: 0 0 20px 0;
+}
+#admin .admin--block__all {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#admin .admin--block__all a {
+  text-decoration: none;
+}
+#admin .admin--block__all--card {
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  width: 275px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.08), -4px -4px 10px 0 rgba(0, 0, 0, 0.08);
+  background: rgb(235, 242, 249);
+  transition: 0.3s;
+  display: flex;
+  color: black;
+  align-items: center;
+}
+#admin .admin--block__all--card img {
+  width: 150px;
+  height: 100px;
+  mix-blend-mode: darken;
+}
+#admin .admin--block__all--card__description h2 {
+  font-size: 16px;
+  color: black;
+}
+#admin .admin--block__all--card__description p {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px 0 0 0;
+  text-align: end;
+}/*# sourceMappingURL=admin.css.map */
