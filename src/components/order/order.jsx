@@ -5,7 +5,7 @@ import axios from "axios";
 function Order({setUserData,basket}) {
   const delAll =  () =>{
     basket.forEach( async (item)=>{
-      await axios.delete(`http://127.0.0.1:8000/basket/${item.id}`)
+      await axios.delete(`https://oceanbackend.pythonanywhere.com/basket/${item.id}`)
     })
     setUserData(false)
   }

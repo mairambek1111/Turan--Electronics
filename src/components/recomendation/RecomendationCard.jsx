@@ -1,79 +1,120 @@
 import {FaStar} from "react-icons/fa";
 import {IoMdHeart} from "react-icons/io";
-import {TbShoppingBag} from "react-icons/tb";
+import {TbShoppingBag, TbShoppingBagCheck} from "react-icons/tb";
 import axios from "axios";
 import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const RecomendationCard = ({el}) => {
     const [heart, setHeart] = useState(false)
+    const [bag, setBag] = useState(false)
+    const nav = useNavigate()
+    const user = 1
+    const data = {
+        product: el.id,
+        user: user
+    }
+    const data2 = {
+        product: el.id,
+        user: user,
+        summ_products: el.price
+    }
     const addFav = async () => {
-        const response = await axios.get(`http://localhost:3000/favorite`);
-        const existingItem = response.data.find(item => item.id === el.id);
-
+        const response = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`)
+        const every = response.data.map((el)=> el.product)
+        const existingItem = every.find(item => item.id === el.id);
         if (existingItem) {
-            await axios.delete(`http://localhost:3000/favorite/${existingItem.id}`);
-            setHeart(false)
+            nav('/headerFavorite')
         } else {
-            await axios.post(`http://localhost:3000/favorite`, el);
+            await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`,data);
             setHeart(true)
         }
     }
+    const addBasket = async () => {
+        const response = await axios.get(`https://oceanbackend.pythonanywhere.com/basket`)
+        const every = response.data.map((el)=> el.product)
+        const existingItem = every.find(item => item.id === el.id);
+        if (existingItem) {
+            nav('/headerBasket')
+        } else {
+            await axios.post(`https://oceanbackend.pythonanywhere.com/basket_post/`,data2);
+            setBag(true)
+        }
+    }
+
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get(`http://localhost:3000/favorite`);
-            const existingItem = res.data.find(item => item.id === el.id);
+            const res = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`);
+            const every = res.data.map((el)=> el.product)
+            const existingItem = every.find(item => item.id === el.id);
             if (existingItem) {
                 setHeart(true);
             } else {
                 setHeart(false);
             }
         };
+        fetchData()
+        const fetchData2 = async () => {
+            const res = await axios.get(`https://oceanbackend.pythonanywhere.com/basket`);
+            const every = res.data.map((el)=> el.product)
+            const existingItem = every.find(item => item.id === el.id);
+            if (existingItem) {
+                setBag(true);
+            } else {
+                setBag(false);
+            }
+        };
         fetchData();
-    }, []);
-    const newPrice = Math.round(el.price_old - (el.price_old * el.discount / 100))
+        fetchData2()
+    }, [el]);
+    const starsCount = el.stars
+    const maxStars = 5
+    const stars = [];
+    for (let i = 0; i < maxStars; i++) {
+        stars.push(<FaStar key={i} className={i < starsCount ? "starsYellow" : "starsNone"} />);
+    }
     return (
         <div className="newPostopleniya--all__card" data-aos="zoom-in-up" data-aos-duration="1100">
             <div className="newPostopleniya--all__card--h3">
                 <h3>Новое</h3>
                 <div className="newPostopleniya--all__card--h3__stars">
-                    <FaStar className="starsYellow"/>
-                    <FaStar className="starsYellow"/>
-                    <FaStar className="starsNone"/>
-                    <FaStar className="starsNone"/>
-                    <FaStar className="starsNone"/>
+                    {stars}
                 </div>
             </div>
             <center>
-                <img src={el.image} alt="no img"/>
+                <img src={el.first_photo} alt="no img"/>
                 <IoMdHeart onClick={addFav} style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}}
                            className="imgHeart"/>
             </center>
             <div className="newPostopleniya--all__card--price">
                 <h1>
-                    {newPrice} сом <span>{el.price_old} сом</span>
+                    {Math.round(el.price)} сом <span>{Math.round(el.price)} сом</span>
                 </h1>
             </div>
             <div className="newPostopleniya--all__card--discount">
-                <h4>-{el.discount}%</h4>
-                <h3>экономия {el.price_old - newPrice} сом</h3>
+                <h4>-{5}%</h4>
+                <h3>экономия 5210 сом</h3>
             </div>
             <div className="newPostopleniya--all__card--descrip">
-                <h1>{el.title}</h1>
+                <h1>{el.name}</h1>
                 <p>{el.description}</p>
             </div>
             <div className="newPostopleniya--all__card--btn">
                 <Link to={`/details/recomendation/${el.id}`}>
                 <button>Быстрый заказ</button>
                 </Link>
-                <TbShoppingBag className="btnBasket"/>
+                {
+                    bag ?  <TbShoppingBagCheck onClick={()=> nav('/headerBasket')} className="btnBasket"/> :  <TbShoppingBag onClick={addBasket} className="btnBasket"/>
+                }
             </div>
             <div className="newPostopleniya--all__card--colors">
                 <h4>Цвет</h4>
                 <div className="newPostopleniya--all__card--colors__color">
-                    <canvas></canvas>
-                    <canvas></canvas>
-                    <canvas></canvas>
+                    {
+                        el.color.map((el,inx)=>(
+                            <canvas key={inx} style={{background:el}}></canvas>
+                        ))
+                    }
                 </div>
             </div>
         </div>

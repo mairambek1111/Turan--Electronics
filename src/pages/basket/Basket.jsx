@@ -17,7 +17,7 @@ const Basket = () => {
     const [basket,setBasket] = useState([])
 
   const getBasket = async () =>{
-      const res = await axios.get(`http://127.0.0.1:8000/basket`)
+      const res = await axios.get(`https://oceanbackend.pythonanywhere.com/basket`)
       const {data} = await res
       setBasket(data)
   }

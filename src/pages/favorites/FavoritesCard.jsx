@@ -4,25 +4,26 @@ import {Link} from "react-router-dom";
 import {TbShoppingBag} from "react-icons/tb";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {FaRegTrashCan} from "react-icons/fa6";
 
 const FavoritesCard = ({el}) => {
     const [heart, setHeart] = useState(false)
     const {product} = el
     const delFav = async () => {
-        const response = await axios.get(`http://127.0.0.1:8000/favorite`);
+        const response = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`);
         const existingItem = response.data.find(item => item.id === el.id);
 
         if (existingItem) {
-            await axios.delete(`http://127.0.0.1:8000/favorite/${existingItem.id}`);
+            await axios.delete(`https://oceanbackend.pythonanywhere.com/favorite/${existingItem.id}`);
             setHeart(false)
         } else {
-            await axios.post(`http://127.0.0.1:8000/favorite_post/`,data);
+            await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`,data);
             setHeart(true)
         }
     }
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get(`http://127.0.0.1:8000/favorite/`);
+            const res = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite/`);
             const existingItem = res.data.find(item => item.id === el.id);
             if (existingItem) {
                 setHeart(true);
@@ -49,8 +50,10 @@ const FavoritesCard = ({el}) => {
             </div>
             <center>
                 <img src={product.first_photo} alt="no img"/>
-                <IoMdHeart onClick={delFav} style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}}
-                           className="imgHeart"/>
+                {/*<IoMdHeart onClick={delFav} style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}}*/}
+                {/*           className="imgHeart"/>*/}
+                <FaRegTrashCan onClick={delFav} style={{color: 'black',fontSize: '28px'}}
+                               className="imgHeart"/>
             </center>
             <div className="newPostopleniya--all__card--available">
                 <h2>

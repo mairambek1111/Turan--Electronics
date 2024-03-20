@@ -88,7 +88,7 @@ function Footer() {
                 data-aos-anchor-placement="center-bottom"
                 data-aos-duration="1100"
               >
-                <img src={instagramicon} alt="" className="footer-social-img" />
+                <Link to={'https://www.instagram.com/ggsomebody/'}><img src={instagramicon} alt="" className="footer-social-img" /></Link>
               </div>
             </div>
             <div className="footer-info__text">
@@ -220,7 +220,7 @@ function Footer() {
                 </h2>
                 <hr className="hr" />
                 <div className="footer-info-personal__block">
-                  <Link
+                  <Link to={'https://oceanbackend.pythonanywhere.com/admin/'}
                     className="footer-info__personal-text"
                     data-aos="fade-up"
                     data-aos-anchor-placement="center-bottom"

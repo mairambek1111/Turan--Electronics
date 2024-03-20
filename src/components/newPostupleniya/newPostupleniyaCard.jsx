@@ -4,11 +4,10 @@ import {Link, useNavigate} from "react-router-dom";
 import {TbShoppingBag, TbShoppingBagCheck} from "react-icons/tb";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {FaBagShopping} from "react-icons/fa6";
+import PropTypes from 'prop-types';
 
 
 const NewPostupleniyaCard = ({el}) => {
-    // qwertyui
     const [heart, setHeart] = useState(false)
     const [bag, setBag] = useState(false)
     const nav = useNavigate()
@@ -23,33 +22,31 @@ const NewPostupleniyaCard = ({el}) => {
         summ_products: el.price
     }
     const addFav = async () => {
-        const response = await axios.get(`http://127.0.0.1:8000/favorite`)
+        const response = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`)
         const every = response.data.map((el)=> el.product)
         const existingItem = every.find(item => item.id === el.id);
         if (existingItem) {
-            // await axios.delete(`http://127.0.0.1:8000/favorite/${existingItem.id}`);
-            // setHeart(false)
             nav('/headerFavorite')
         } else {
-            await axios.post(`http://127.0.0.1:8000/favorite_post/`,data);
+            await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`,data);
             setHeart(true)
         }
     }
     const addBasket = async () => {
-        const response = await axios.get(`http://127.0.0.1:8000/basket`)
+        const response = await axios.get(`https://oceanbackend.pythonanywhere.com/basket`)
         const every = response.data.map((el)=> el.product)
         const existingItem = every.find(item => item.id === el.id);
         if (existingItem) {
             nav('/headerBasket')
         } else {
-            await axios.post(`http://127.0.0.1:8000/basket_post/`,data2);
+            await axios.post(`https://oceanbackend.pythonanywhere.com/basket_post/`,data2);
             setBag(true)
         }
     }
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get(`http://127.0.0.1:8000/favorite`);
+            const res = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`);
             const every = res.data.map((el)=> el.product)
             const existingItem = every.find(item => item.id === el.id);
             if (existingItem) {
@@ -60,7 +57,7 @@ const NewPostupleniyaCard = ({el}) => {
         };
         fetchData()
         const fetchData2 = async () => {
-            const res = await axios.get(`http://127.0.0.1:8000/basket`);
+            const res = await axios.get(`https://oceanbackend.pythonanywhere.com/basket`);
             const every = res.data.map((el)=> el.product)
             const existingItem = every.find(item => item.id === el.id);
             if (existingItem) {
@@ -71,7 +68,7 @@ const NewPostupleniyaCard = ({el}) => {
         };
         fetchData();
         fetchData2()
-    }, []);
+    }, [el]);
     const starsCount = el.stars
     const maxStars = 5
     const stars = [];
@@ -132,7 +129,7 @@ const NewPostupleniyaCard = ({el}) => {
                 </h2>
             </div>
             <div className="newPostopleniya--all__card--price">
-                <h1>{el.price} сом</h1>
+                <h1>{Math.round(el.price)} сом</h1>
             </div>
             <div className="newPostopleniya--all__card--descrip">
                 <h1>{el.name}</h1>
@@ -145,7 +142,6 @@ const NewPostupleniyaCard = ({el}) => {
                 {
                     bag ?  <TbShoppingBagCheck onClick={()=> nav('/headerBasket')} className="btnBasket"/> :  <TbShoppingBag onClick={addBasket} className="btnBasket"/>
                 }
-
             </div>
             <div className="newPostopleniya--all__card--colors">
                 <h4>Цвет</h4>
@@ -159,6 +155,19 @@ const NewPostupleniyaCard = ({el}) => {
             </div>
         </div>
     );
+};
+
+NewPostupleniyaCard.propTypes = {
+    el: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        product: PropTypes.object.isRequired,
+        stars: PropTypes.number.isRequired,
+        first_photo: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        color: PropTypes.arrayOf(PropTypes.string).isRequired
+    }).isRequired
 };
 
 export default NewPostupleniyaCard;

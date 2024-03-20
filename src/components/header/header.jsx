@@ -19,8 +19,8 @@ function Header() {
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/favorite')
-        const response2 = await axios.get('http://127.0.0.1:8000/basket')
+        const response = await axios.get('https://oceanbackend.pythonanywhere.com/favorite')
+        const response2 = await axios.get('https://oceanbackend.pythonanywhere.com/basket')
         const count = response.data.length
         const count2 = response2.data.length
         setFavoriteCount(count)
