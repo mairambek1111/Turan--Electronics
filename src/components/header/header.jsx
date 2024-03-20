@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Headerlogo from "../../assets/header-logo.svg";
 import Logoimage from "../../assets/logo-image.svg";
 import iconfavorite from "../../assets/header-btn-help.svg";
@@ -7,13 +7,14 @@ import iconprofile from "../../assets/header-btn-profile.svg";
 import iconsearch from "../../assets/header-search.svg";
 import burgermenu from "../../assets/burger-menu.svg";
 import "./header.scss";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import axios from "axios";
 
 function Header() {
   const [nav, setNav] = useState(false);
   const [favoriteCount, setFavoriteCount] = useState(0);
+  // eslint-disable-next-line no-unused-vars
   const [basketCount, setBasketCount] = useState(0);
 
   useEffect(() => {
@@ -26,9 +27,9 @@ function Header() {
         setFavoriteCount(count)
         setBasketCount(count2)
       } catch (error) {
-        console.error('Ошибка при получении избранных элементов:', error)
+        console.error("Ошибка при получении избранных элементов:", error);
       }
-    }
+    };
     fetchFavorites();
   }, []);
   return (
@@ -69,9 +70,9 @@ function Header() {
                         alt=""
                         className="header__nav__icon__help"
                       />
-                      {
-                        favoriteCount !== 0 ? <p className='favCount'>{favoriteCount}</p> : null
-                      }
+                      {favoriteCount !== 0 ? (
+                        <p className="favCount">{favoriteCount}</p>
+                      ) : null}
                     </Link>
                   </button>
                   <button className="header__nav__btn">
@@ -81,9 +82,9 @@ function Header() {
                         alt=""
                         className="header__nav__icon__btn"
                       />
-                      {
-                        basketCount !== 0 ? <p className='basketCount'>{basketCount}</p> : null
-                      }
+                      {basketCount !== 0 ? (
+                        <p className="basketCount">{basketCount}</p>
+                      ) : null}
                     </Link>
                   </button>
                   <button className="header__nav__btn__profile">

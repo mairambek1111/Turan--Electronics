@@ -1,59 +1,79 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./Register.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import registerImage from "../../assets/register.png";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
 import Enter from "../Enter/Enter";
-import Header from "../header/header";
+import axios from "axios";
 
 export default function Register() {
   const [showEnter, setShowEnter] = useState(false);
   const [eye, setEye] = useState("password");
   const [active, setActive] = useState(false);
+  // const [register, setRegister] = useState(false);
+  const iNameRef = useRef(null);
+  const iPassRef = useRef(null);
+  const iPass2Ref = useRef(null);
+  const iEmailRef = useRef(null);
+
+  const navigate = useNavigate();
 
   const handleEye = () => {
-    if (eye === "password") {
-      setEye("text");
-    } else {
-      setEye("password");
-    }
+    setEye((prevEye) => (prevEye === "password" ? "text" : "password"));
   };
-  function iValue() {
-    const iName = document.querySelector(".iName");
-    const iPass = document.querySelector(".iPass");
-    const iPass2 = document.querySelector(".iPass2");
-    const iEmail = document.querySelector(".iEmail");
 
-    if (iName.value.trim() === "") {
-      iName.style.border = "1px solid red";
+  function iValue() {
+    if (iNameRef.current.value.trim() === "") {
+      iNameRef.current.style.border = "1px solid red";
     } else {
-      iName.style.border = "1px solid #a7c957";
+      iNameRef.current.style.border = "1px solid #a7c957";
     }
-    if (iPass.value.trim() === "") {
-      iPass.style.border = "1px solid red";
+    if (iPassRef.current.value.trim() === "") {
+      iPassRef.current.style.border = "1px solid red";
     } else {
-      iPass.style.border = "1px solid #a7c957";
+      iPassRef.current.style.border = "1px solid #a7c957";
     }
-    if (iPass2.value.trim() === "") {
-      iPass2.style.border = "1px solid red";
+    if (iPass2Ref.current.value.trim() === "") {
+      iPass2Ref.current.style.border = "1px solid red";
     } else {
-      iPass2.style.border = "1px solid #a7c957";
+      iPass2Ref.current.style.border = "1px solid #a7c957";
     }
-    if (iEmail.value.trim() === "") {
-      iEmail.style.border = "1px solid red";
+    if (iEmailRef.current.value.trim() === "") {
+      iEmailRef.current.style.border = "1px solid red";
     } else {
-      iEmail.style.border = "1px solid #a7c957";
+      iEmailRef.current.style.border = "1px solid #a7c957";
     }
   }
-  const btnActive = () => {
-    const iEmail = document.querySelector(".iEmail").value;
-    localStorage.setItem("email", iEmail);
 
+  const btnActive = () => {
+    const iEmail = iEmailRef.current.value;
+    localStorage.setItem("email", iEmail);
     setActive(true);
     iValue();
   };
+
+  function handlefunctions() {
+    btnActive();
+    handleSubmit();
+  }
+
+  const handleSubmit = () => {
+    axios
+      .post("https://oceanbackend.pythonanywhere.com/user/", {
+        username: iNameRef.current.value.trim(),
+        password: iPassRef.current.value.trim(),
+        email: iEmailRef.current.value.trim(),
+      })
+      .then((res) => {
+        console.log("успешно", res.data);
+        JSON.stringify(localStorage.setItem("user", res.data.email));
+        // setRegister(true);
+        navigate("/");
+      });
+  };
+
   const validation = () => {
     if (active === true) {
       iValue();
@@ -62,7 +82,6 @@ export default function Register() {
 
   return (
     <>
-      <Header />
       {showEnter && <Enter />}
       {showEnter === false && (
         <div id="register">
@@ -77,6 +96,7 @@ export default function Register() {
               </div>
               <div className="register__inputs">
                 <input
+                  ref={iNameRef}
                   className="iName"
                   type="text"
                   placeholder="Имя"
@@ -84,6 +104,7 @@ export default function Register() {
                 />
                 <div className="register__inputs--pass">
                   <input
+                    ref={iPassRef}
                     className="iPass"
                     type={eye}
                     placeholder="Пароль"
@@ -97,6 +118,7 @@ export default function Register() {
                 </div>
                 <div className="register__inputs--pass">
                   <input
+                    ref={iPass2Ref}
                     className="iPass2"
                     type={eye}
                     placeholder="Потвердить пароль"
@@ -109,6 +131,7 @@ export default function Register() {
                   )}
                 </div>
                 <input
+                  ref={iEmailRef}
                   className="iEmail"
                   type="text"
                   placeholder="Email или телефон ..."
@@ -125,7 +148,7 @@ export default function Register() {
                 </div>
               </div>
               <div className="register__button">
-                <button onClick={btnActive}>Регистрация</button>
+                <button onClick={handlefunctions}>Регистрация</button>
               </div>
               <div className="register__links">
                 <h2>Уже регистрировались? </h2>

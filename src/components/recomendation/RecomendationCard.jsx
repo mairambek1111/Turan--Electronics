@@ -117,8 +117,8 @@ const RecomendationCard = ({el}) => {
                     }
                 </div>
             </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default RecomendationCard;

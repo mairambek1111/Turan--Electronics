@@ -11,9 +11,12 @@ function Hero() {
   const [swipers, setSwiper] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/carusel/").then((res) => {
-      setSwiper(res.data);
-    });
+    axios
+      .get("https://oceanbackend.pythonanywhere.com/carusel/")
+      .then((res) => {
+        setSwiper(res.data);
+        console.log(res.data);
+      });
   }, []);
   return (
     <div>

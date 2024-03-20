@@ -86,8 +86,8 @@ export default function Enter() {
             <div className="enter__number">
               {Number(iEmail) ? (
                 <p>
-                  На номер телефон {iEmail} отправлено SMS-сообщение для подтверждения
-                  регистрации.
+                  На номер телефон {iEmail} отправлено SMS-сообщение для
+                  подтверждения регистрации.
                 </p>
               ) : (
                 <p>
@@ -117,7 +117,8 @@ export default function Enter() {
                 textUnderlineOffset: "4px",
                 textDecorationStyle: "dashed",
               }}
-              onClick={handlStart}>
+              onClick={handlStart}
+            >
               {timeLeft ? "Получить код" : "Не получили код?"}
             </p>
           </div>

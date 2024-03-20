@@ -1,8 +1,8 @@
-import {FaStar} from "react-icons/fa";
-import {IoMdHeart} from "react-icons/io";
-import {Link, useNavigate} from "react-router-dom";
-import {TbShoppingBag, TbShoppingBagCheck} from "react-icons/tb";
-import {useEffect, useState} from "react";
+import { FaStar } from "react-icons/fa";
+import { IoMdHeart } from "react-icons/io";
+import { Link, useNavigate } from "react-router-dom";
+import { TbShoppingBag, TbShoppingBagCheck } from "react-icons/tb";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import PropTypes from 'prop-types';
 
@@ -154,7 +154,7 @@ const NewPostupleniyaCard = ({el}) => {
                 </div>
             </div>
         </div>
-    );
+  );
 };
 
 NewPostupleniyaCard.propTypes = {
@@ -171,3 +171,4 @@ NewPostupleniyaCard.propTypes = {
 };
 
 export default NewPostupleniyaCard;
+
