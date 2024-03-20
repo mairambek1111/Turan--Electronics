@@ -49,30 +49,12 @@ const router = createBrowserRouter([
   {
     path: "/admin/:category/:id",
     element: <AdminDetails />,
-<<<<<<< Updated upstream
-  },
-  {
-    path: "/brand/:brandName",
-    element: <Apple/>,
-  },
-  {
-    path: "/register",
-    element: <Register/>,
-=======
->>>>>>> Stashed changes
   },
   {
     path: "/apple",
     element: <Apple />,
-<<<<<<< Updated upstream
-  },
-  {
-    path: "/register", element: <Register />
-=======
->>>>>>> Stashed changes
   },
   { path: "/register", element: <Register /> },
-  { path: "/authorization", element: <Authorization /> },
 ]);
 
 function App() {
