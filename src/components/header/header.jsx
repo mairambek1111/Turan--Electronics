@@ -14,6 +14,7 @@ import axios from "axios";
 function Header() {
   const [nav, setNav] = useState(false);
   const [favoriteCount, setFavoriteCount] = useState(0);
+  // eslint-disable-next-line no-unused-vars
   const [basketCount, setBasketCount] = useState(0);
 
   useEffect(() => {
