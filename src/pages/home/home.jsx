@@ -7,26 +7,39 @@ import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 import Brends from "../../components/Brends/Brends.jsx";
 import Navbtn from "../../components/navbtn/navbtn.jsx";
 import Recomendation from "../../components/recomendation/Recomendation.jsx";
-import {useLocation} from "react-router-dom";
-import {useEffect} from "react";
-
+import { useEffect, useState } from "react";
+import Register from "../../components/Register/index.jsx";
 
 function Home() {
-    const {pathname} = useLocation()
-    useEffect(() => {
-        window.scroll(0,0)
-    }, [pathname]);
+  const [login, setlogin] = useState(false);
+
+  useEffect(() => {
+    const email = localStorage.getItem("email");
+
+    if (email) {
+      setlogin(true);
+    } else {
+      setlogin(false);
+    }
+  }, []);
+
   return (
     <>
-      <Header />
-      <Navbtn />
-      <Hero />
-      <Cardhero />
-      <SwipeBasket />
-      <NewPostupleniya />
-      <Recomendation />
-      <Brends />
-      <Footer />
+      {login ? (
+        <>
+          <Header />
+          <Navbtn />
+          <Hero />
+          <Cardhero />
+          <SwipeBasket />
+          <NewPostupleniya />
+          <Recomendation />
+          <Brends />
+          <Footer />
+        </>
+      ) : (
+        <Register />
+      )}
     </>
   );
 }

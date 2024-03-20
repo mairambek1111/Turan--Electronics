@@ -51,23 +51,11 @@ const router = createBrowserRouter([
     element: <AdminDetails />,
   },
   {
-    path: "/brand/:brandName",
-    element: <Apple />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
     path: "/apple",
     element: <Apple />,
   },
-  {
-    path: "/register",
-    element: <Register />,
-  },
   { path: "/register", element: <Register /> },
-  { path: "/authorization", element: <Authorization /> },
+  { path: "/Authorization", element: <Authorization /> },
 ]);
 
 function App() {
