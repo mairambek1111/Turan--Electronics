@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { FaStar } from "react-icons/fa";
 import { IoMdHeart } from "react-icons/io";
-import { Link } from "react-router-dom";
-import { TbShoppingBag } from "react-icons/tb";
+import { Link, useNavigate } from "react-router-dom";
+import { TbShoppingBag, TbShoppingBagCheck } from "react-icons/tb";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FaBagShopping } from "react-icons/fa6";
 
 const NewPostupleniyaCard = ({ el }) => {
   const [heart, setHeart] = useState(false);

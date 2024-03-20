@@ -61,6 +61,23 @@
     background: none;
     cursor: pointer;
     border: none;
+    position: relative;
+    .basketCount{
+      position: absolute;
+      left: 35px;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: red;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 12px;
+    }
   }
   &__btn:hover {
     padding: 6px 14px;

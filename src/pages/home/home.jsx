@@ -7,12 +7,17 @@ import SwipeBasket from "../../components/swipeBasket/swipeBasket.jsx";
 import Brends from "../../components/Brends/Brends.jsx";
 import Navbtn from "../../components/navbtn/navbtn.jsx";
 import Recomendation from "../../components/recomendation/Recomendation.jsx";
+import {useLocation} from "react-router-dom";
+import {useEffect} from "react";
+
 
 function Home() {
+    const {pathname} = useLocation()
+    useEffect(() => {
+        window.scroll(0,0)
+    }, [pathname]);
   return (
     <>
-      {/* <Authorization /> */}
-      {/* <Register /> */}
       <Header />
       <Navbtn />
       <Hero />

@@ -9,13 +9,13 @@ import { useEffect } from "react";
 import NewPostupleniyaCard from "./newPostupleniyaCard.jsx";
 import axios from "axios";
 const NewPostopleniya = () => {
-  const {product} = useSelector(s=>s.main)
-  const dis = useDispatch()
-  const getData = async ()=>{
-    const url = await axios('http://127.0.0.1:8000/product')
-    const {data} = await url
-    dis({type: "GET_PRODUCT",payload: data})
-  }
+  const { product } = useSelector((s) => s.main);
+  const dis = useDispatch();
+  const getData = async () => {
+    const url = await axios("http://127.0.0.1:8000/product");
+    const { data } = await url;
+    dis({ type: "GET_PRODUCT", payload: data });
+  };
   useEffect(() => {
     getData();
   }, []);
