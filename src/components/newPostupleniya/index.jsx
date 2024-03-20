@@ -12,7 +12,8 @@ const NewPostopleniya = () => {
   const { product } = useSelector((s) => s.main);
   const dis = useDispatch();
   const getData = async () => {
-    const url = await axios("http://127.0.0.1:8000/product");
+    const url = await axios("https://oceanbackend.pythonanywhere.com/product/");
+    console.log(url);
     const { data } = await url;
     dis({ type: "GET_PRODUCT", payload: data });
   };

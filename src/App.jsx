@@ -12,6 +12,7 @@ import Admin from "./components/Admin/Admin.jsx";
 import AdminDetails from "./components/Admin/AdminDetails/AdminDetails.jsx";
 import Apple from "./pages/apple/Apple.jsx";
 import Register from "./components/Register/index.jsx";
+import Authorization from "./components/Authorization/index.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,6 +49,7 @@ const router = createBrowserRouter([
   {
     path: "/admin/:category/:id",
     element: <AdminDetails />,
+<<<<<<< Updated upstream
   },
   {
     path: "/brand/:brandName",
@@ -56,14 +58,21 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register/>,
+=======
+>>>>>>> Stashed changes
   },
   {
     path: "/apple",
     element: <Apple />,
+<<<<<<< Updated upstream
   },
   {
     path: "/register", element: <Register />
+=======
+>>>>>>> Stashed changes
   },
+  { path: "/register", element: <Register /> },
+  { path: "/authorization", element: <Authorization /> },
 ]);
 
 function App() {
