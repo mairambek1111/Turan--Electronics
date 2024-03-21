@@ -11,21 +11,21 @@ import NewPostupleniyaSlice from "../../components/newPostupleniya/newPostupleni
 import RecomendationSlice from "../../components/recomendation/RecomendationSlice.jsx";
 
 function Home() {
-  const [login, setlogin] = useState(false);
+  const [user, setUser] = useState(false);
 
   useEffect(() => {
     const email = localStorage.getItem("email");
 
     if (email) {
-      setlogin(true);
+      setUser(true);
     } else {
-      setlogin(false);
+      setUser(false);
     }
   }, []);
 
   return (
     <>
-      {login ? (
+      {user ? (
         <>
           <Header />
           <Navbtn />
