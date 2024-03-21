@@ -28,6 +28,7 @@
   max-width: 100%;
   height: 155px;
   margin-left: 40px;
+  mix-blend-mode: darken;
 }
 .basket {
   display: flex;
@@ -38,7 +39,8 @@
 
 .basketIcon {
   max-width: 100%;
-  height: 26px;
+  font-size: 30px;
+  cursor: pointer;
 }
 .btnBasket {
   font-family: "Montserrat", "sans-serif";
@@ -57,6 +59,9 @@
   font-weight: 400;
   font-size: 14px;
   text-align: center;
+  height: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .basketPrice {
   font-family: "Montserrat", "sans-serif";
@@ -75,6 +80,19 @@
 
 .stars {
   margin-left: 140px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.starsYellow {
+  color: rgba(255, 115, 0, 1);
+  width: 15px;
+  height: 15px;
+}
+.starsNone {
+  color: rgba(0, 0, 0, 0.35);
+  width: 15px;
+  height: 15px;
 }
 .content {
   display: flex;

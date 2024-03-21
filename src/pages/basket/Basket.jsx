@@ -1,5 +1,4 @@
 import "../basket/basket.scss";
-import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import Header from "../../components/header/header.jsx";
 import Order from "../../components/order/order.jsx";
 import UserData from "../../components/userData/userData.jsx";

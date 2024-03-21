@@ -11,6 +11,7 @@ function Order({setUserData,basket}) {
       await axios.delete(`https://oceanbackend.pythonanywhere.com/basket/${item.id}`)
     })
     setUserData(false)
+    localStorage.removeItem('data')
   }
   return (
     <div>
