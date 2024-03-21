@@ -199,3 +199,10 @@
       }
   }
 }
+
+@media (max-width: 1045px) {
+  #favorites .favorites {
+    justify-content: center;
+    gap: 50px;
+  }
+}

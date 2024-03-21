@@ -20,9 +20,12 @@ function Header() {
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/favorite");
-        const count = response.data.length;
-        setFavoriteCount(count);
+        const response = await axios.get('https://oceanbackend.pythonanywhere.com/favorite')
+        const response2 = await axios.get('https://oceanbackend.pythonanywhere.com/basket')
+        const count = response.data.length
+        const count2 = response2.data.length
+        setFavoriteCount(count)
+        setBasketCount(count2)
       } catch (error) {
         console.error("Ошибка при получении избранных элементов:", error);
       }

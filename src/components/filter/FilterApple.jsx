@@ -15,7 +15,7 @@ const FilterApple = () => {
     const [startPrice, setStartPrice] = useState(0)
     const [endPrice, setEndPrice] = useState(100000)
     const getFilter = async () => {
-        const res = await axios(`http://127.0.0.1:8000/product`)
+        const res = await axios(`https://oceanbackend.pythonanywhere.com/product/`)
         const data = await res.data
         setFilterData(data)
     }

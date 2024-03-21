@@ -3,6 +3,7 @@ import Header from "../components/header/header";
 import {useLocation} from "react-router-dom";
 import {useEffect} from "react";
 import NewPostupleniya from "../components/newPostupleniya/index.jsx";
+import Recomendation from "../components/recomendation/Recomendation.jsx";
 
 function Pageskategory() {
     const {pathname} = useLocation()
@@ -13,6 +14,7 @@ function Pageskategory() {
     <>
       <Header />
         <NewPostupleniya/>
+        <Recomendation/>
       <Footer />
     </>
   );
