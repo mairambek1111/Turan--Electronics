@@ -12,12 +12,10 @@ export default function Register() {
   const [showEnter, setShowEnter] = useState(false);
   const [eye, setEye] = useState("password");
   const [active, setActive] = useState(false);
-  // const [register, setRegister] = useState(false);
   const iNameRef = useRef(null);
   const iPassRef = useRef(null);
   const iPass2Ref = useRef(null);
   const iEmailRef = useRef(null);
-
   const navigate = useNavigate();
 
   const handleEye = () => {
@@ -69,8 +67,7 @@ export default function Register() {
       .then((res) => {
         console.log("успешно", res.data);
         JSON.stringify(localStorage.setItem("user", res.data.email));
-        // setRegister(true);
-        navigate("/");
+        navigate("/Authorization");
       });
   };
 
