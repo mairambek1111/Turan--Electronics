@@ -1,7 +1,5 @@
 import "./newPostupleniya.scss";
 import {useEffect, useState} from "react";
-import { GrLinkNext } from "react-icons/gr";
-import { useEffect, useState } from "react";
 import NewPostupleniyaCard from "./newPostupleniyaCard.jsx";
 import axios from "axios";
 import NewPosupleniyaMob from "./newPosupleniyaMob.jsx";
