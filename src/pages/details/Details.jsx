@@ -69,7 +69,7 @@ const Details = () => {
             <div id='details'>
                 <div className="container">
                     <div className="details">
-                        <h6>Главная | Каталог | Iphone | Ipnone 14 Pro max</h6>
+                        <h6>Главная | Каталог | {el.brand} | {el.name}</h6>
                         <div className="details--main">
                             <div className="details--main__slider">
                                 <div className="details--main__slider--imgs">
@@ -211,7 +211,7 @@ const Details = () => {
                     </div>
                 </div>
                 <Review/>
-                <PohojieTovary/>
+                <PohojieTovary brand={el.brand}/>
                 <Brends/>
             </div>
             <Footer/>
