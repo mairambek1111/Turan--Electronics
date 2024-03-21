@@ -42,9 +42,13 @@ const NewPostopleniya = () => {
             }
           </div>
           <div className="newPostopleniya--allMobile">
-            {product.map((el) => (
-                <NewPosupleniyaMob key={el.id} el={el} />
-            ))}
+            {
+              product.length > 0 ?
+                  product.map((el) => (
+                      <NewPosupleniyaMob key={el.id} el={el} />
+                  ))
+                  : <div className='newPostopleniya--allMobile__none'><h4>Нету новых поступлений</h4></div>
+            }
           </div>
         </div>
       </div>

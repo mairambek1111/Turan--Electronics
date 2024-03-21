@@ -1,4 +1,3 @@
-import tel from "../../assets/newPost--iphone.svg";
 import {IoMdHeart} from "react-icons/io";
 import {FaStar} from "react-icons/fa";
 import {TbShoppingBag, TbShoppingBagCheck} from "react-icons/tb";
@@ -54,7 +53,6 @@ const RecomendationMob = ({el}) => {
                 setHeart(false);
             }
         };
-        fetchData()
         const fetchData2 = async () => {
             const res = await axios.get(`https://oceanbackend.pythonanywhere.com/basket`);
             const every = res.data.map((el)=> el.product)
@@ -82,7 +80,8 @@ const RecomendationMob = ({el}) => {
                 </div>
                 <div className="newPostopleniya--allMobile__cardMobile--tel__imgs">
                     <img src={el.first_photo} alt="no img"/>
-                    <IoMdHeart className="imgsHeart"/>
+                    <IoMdHeart className="imgsHeart" onClick={addFav}
+                               style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}}/>
                     <div className="newPostopleniya--allMobile__cardMobile--tel__available">
                         <h2>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
