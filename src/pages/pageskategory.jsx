@@ -2,8 +2,9 @@ import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
 import {useLocation} from "react-router-dom";
 import {useEffect} from "react";
-import NewPostupleniya from "../components/newPostupleniya/index.jsx";
-import Recomendation from "../components/recomendation/Recomendation.jsx";
+import NewPostupleniyaSlice from "../components/newPostupleniya/newPostupleniyaSlice.jsx";
+import RecomendationSlice from "../components/recomendation/RecomendationSlice.jsx";
+import Hero from "../components/hero/hero.jsx";
 
 function Pageskategory() {
     const {pathname} = useLocation()
@@ -13,8 +14,12 @@ function Pageskategory() {
   return (
     <>
       <Header />
-        <NewPostupleniya/>
-        <Recomendation/>
+        <NewPostupleniyaSlice/>
+        <br/>
+        <br/>
+        <br/>
+        <Hero/>
+        <RecomendationSlice/>
       <Footer />
     </>
   );

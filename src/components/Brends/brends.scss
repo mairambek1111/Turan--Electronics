@@ -21,9 +21,16 @@
 
 .brends__image {
   max-width: 100%;
-  max-width: 100%;
-  padding: 0 0 10px 30px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  img{
+    max-width: 218px;
+    width: 100%;
+    height: 105px;
+    mix-blend-mode: darken;
+    border-radius: 20px;
+  }
 }
 .brends__adaptive__title {
   margin: 0 35px 0 0;

@@ -5,6 +5,8 @@ import {IoClose} from "react-icons/io5";
 
 const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,setMemory,setBrand}) => {
     const refOption = useRef(null)
+    const iChecked = useRef(null)
+    const iChecked2 = useRef(null)
     const refOptionModel = useRef(null)
     const refOptionObem = useRef(null)
     const refOptionPrice = useRef(null)
@@ -156,6 +158,16 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
     const uniqueMemory = [...new Set(allMemory)]
     const allBrands = filterData.flatMap(el => el.brand)
     const uniqueBrand = [...new Set(allBrands)]
+    const colorStop = (e,color)=>{
+        setColor(color)
+        e.stopPropagation()
+        iChecked.current.checked = false;
+    }
+    const colorStop2 = (e,color)=>{
+        setColor(color)
+        e.stopPropagation()
+        iChecked2.current.checked = false;
+    }
     return (
         <div id='filter'>
             <div className="container">
@@ -195,8 +207,8 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                                     </label>
                                 </div>
                                 {
-                                    brand.map((el) => (
-                                        <div className="filter--all__select--optionModel__inp">
+                                    brand.map((el,inx) => (
+                                        <div key={inx} className="filter--all__select--optionModel__inp">
                                             <label onClick={() => setModel(el.model)}>
                                                 <input name='Модель' type="radio"/>
                                                 <p>{el.model}</p>
@@ -252,14 +264,14 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                                  className="filter--all__select--optionColor">
                                 <div className="filter--all__select--optionColor__inp">
                                     <label onClick={() => setColor('')}>
-                                        <input name='Цвет' type="radio"/>
+                                        <input ref={iChecked} name='Цвет' type="radio"/>
                                         <p>Все</p>
                                     </label>
                                 </div>
                                 <div className="filter--all__select--optionColor__inp">
                                     {
                                         uniqueColors.map((color, index) => (
-                                            <canvas onClick={() => setColor(color)} key={index}
+                                            <canvas onClick={(e) => colorStop(e,color)} key={index}
                                                     style={{background: color}} color={color}></canvas>
                                         ))
                                     }
@@ -299,8 +311,9 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                             <FaAngleDown className='selectDown'/>}</h4>
                         <div ref={refAllOptionPrice} className="filterAll--card__select--optionPrice">
                             <div className="filterAll--card__select--optionPrice__inp">
-                                <input onInput={(e) => setStartPrice(e.target.value)} name='Цена' type="number"/>
+                                <input onClick={(e)=>e.stopPropagation()} onInput={(e) => setStartPrice(e.target.value)} name='Цена' type="number"/>
                                 <input
+                                    onClick={(e)=>e.stopPropagation()}
                                     onInput={(e) => e.target.value !== '' ? setEndPrice(e.target.value) : setEndPrice('10000000000000000000')}
                                     name='Цена' type="number"/>
                             </div>
@@ -381,15 +394,15 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                             <FaAngleDown className='selectDown'/>}</h4>
                         <div ref={refAllOptionColor} className="filterAll--card__select--optionColor">
                             <div className="filterAll--card__select--optionColor__inp">
-                                <label>
-                                    <input name='Цвет' type="radio"/>
+                                <label onClick={() => setColor('')}>
+                                    <input ref={iChecked2} name='Цвет' type="radio"/>
                                     <p>Все</p>
                                 </label>
                             </div>
                             <div className="filterAll--card__select--optionColor__inp">
                                 {
                                     uniqueColors.map((color, index) => (
-                                        <canvas  onClick={()=> setColor(color)} key={index} style={{ background: color }} color={color}></canvas>
+                                        <canvas onClick={(e)=> colorStop2(e,color)} key={index} style={{ background: color }} color={color}></canvas>
                                     ))
                                 }
                             </div>
