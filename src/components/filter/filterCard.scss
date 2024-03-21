@@ -304,3 +304,24 @@
     }
   }
 }
+
+@media (max-width: 1045px) {
+  #filterAll .filterAll {
+    gap: 50px 100px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 793px) {
+  #filterAll .filterAll {
+    gap: 40px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 726px) {
+  #filterAll .filterAll {
+    gap: 10px;
+    justify-content: center;
+  }
+}

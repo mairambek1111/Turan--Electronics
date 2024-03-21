@@ -1,7 +1,3 @@
-import { FaStar } from "react-icons/fa";
-import tel from "../../assets/newPost--iphone.svg";
-import { IoMdHeart } from "react-icons/io";
-import { TbShoppingBag } from "react-icons/tb";
 import "../newPostupleniya/newPostupleniya.scss";
 import { GrLinkNext } from "react-icons/gr";
 import axios from "axios";
@@ -40,7 +36,7 @@ const Recomendation = () => {
             {
               recom.some(el => el.stars >= 4) ?
                   recom.map(el=> el.stars >= 4 && <RecomendationMob key={el.id} el={el}/>)
-                  : <div className='newPostopleniya--all__none'> <h4>Нету рекомендации</h4></div>
+                  : <div className='newPostopleniya--allMobile__none'> <h4>Нету рекомендации</h4></div>
             }
           </div>
         </div>

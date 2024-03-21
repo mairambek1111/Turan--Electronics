@@ -3,7 +3,7 @@ import {FaStar} from "react-icons/fa";
 import {TbShoppingBag, TbShoppingBagCheck} from "react-icons/tb";
 import axios from "axios";
 import {useEffect, useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const NewPosupleniyaMob = ({el}) => {
     const [heart, setHeart] = useState(false)
@@ -81,7 +81,7 @@ const NewPosupleniyaMob = ({el}) => {
                     <h3>Новое</h3>
                 </div>
                 <div className="newPostopleniya--allMobile__cardMobile--tel__imgs">
-                    <img src={el.first_photo} alt="no img"/>
+                    <Link to={`/product/${el.id}`}><img src={el.first_photo} alt="no img"/></Link>
                     <IoMdHeart className="imgsHeart" onClick={addFav}
                                style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}}/>
                     <div className="newPostopleniya--allMobile__cardMobile--tel__available">
@@ -135,9 +135,9 @@ const NewPosupleniyaMob = ({el}) => {
                 <div className="newPostopleniya--allMobile__cardMobile--descript__stars">
                     {stars}
                 </div>
-                <div className="newPostopleniya--allMobile__cardMobile--descript__title">
+                <Link to={`/product/${el.id}`}><div className="newPostopleniya--allMobile__cardMobile--descript__title">
                     <h1>{el.name}</h1>
-                </div>
+                </div></Link>
                 <div className="newPostopleniya--allMobile__cardMobile--descript__colors">
                     <h4>Цвет</h4>
                     <div className="newPostopleniya--allMobile__cardMobile--descript__colors--col">

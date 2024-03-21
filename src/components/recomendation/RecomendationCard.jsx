@@ -100,7 +100,7 @@ const RecomendationCard = ({el}) => {
                 <p>{el.description}</p>
             </div>
             <div className="newPostopleniya--all__card--btn">
-                <Link to={`/details/recomendation/${el.id}`}>
+                <Link to={`/product/${el.id}`}>
                 <button>Быстрый заказ</button>
                 </Link>
                 {
