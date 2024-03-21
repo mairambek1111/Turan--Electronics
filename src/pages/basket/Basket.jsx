@@ -7,6 +7,7 @@ import Footer from "../../components/footer/footer.jsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useLocation} from "react-router-dom";
+import RecomendationSlice from "../../components/recomendation/RecomendationSlice.jsx";
 
 const Basket = () => {
     const {pathname} = useLocation()
@@ -39,7 +40,7 @@ const Basket = () => {
             ) : null}
           </div>
         </div>
-        <Recomendation />
+        <RecomendationSlice />
       </div>
       <Footer />
     </>
