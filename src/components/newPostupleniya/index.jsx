@@ -1,10 +1,16 @@
 import "./newPostupleniya.scss";
-import { GrLinkNext } from "react-icons/gr";
 import {useEffect, useState} from "react";
 import NewPostupleniyaCard from "./newPostupleniyaCard.jsx";
 import axios from "axios";
 import NewPosupleniyaMob from "./newPosupleniyaMob.jsx";
+import Header from "../header/header.jsx";
+import Footer from "../footer/footer.jsx";
+import {useLocation} from "react-router-dom";
 const NewPostopleniya = () => {
+  const {pathname} = useLocation()
+  useEffect(() => {
+    window.scroll(0,0)
+  }, [pathname]);
   const [product,setProduct] = useState([])
   const today = new Date().toLocaleDateString()
   const getData = async ()=>{
@@ -16,6 +22,8 @@ const NewPostopleniya = () => {
     getData();
   }, []);
   return (
+      <>
+        <Header/>
     <div id="newPostopleniya">
       <div className="container">
         <div className="newPostopleniya">
@@ -27,9 +35,9 @@ const NewPostopleniya = () => {
             <h1 data-aos="zoom-in-up" data-aos-duration="1100">
               Новое поступление
             </h1>
-            <button className="newPostopleniya--title__btn">
-              Смотреть все <GrLinkNext className="btnNext" />
-            </button>
+            {/*<button className="newPostopleniya--title__btn">*/}
+            {/*  Смотреть все <GrLinkNext className="btnNext" />*/}
+            {/*</button>*/}
           </div>
 
           <div className="newPostopleniya--all">
@@ -53,6 +61,8 @@ const NewPostopleniya = () => {
         </div>
       </div>
     </div>
+        <Footer/>
+      </>
   );
 };
 

@@ -4,7 +4,14 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import RecomendationCard from "./RecomendationCard.jsx";
 import RecomendationMob from "./RecomendationMob.jsx";
+import {useLocation} from "react-router-dom";
+import Header from "../header/header.jsx";
+import Footer from "../footer/footer.jsx";
 const Recomendation = () => {
+  const {pathname} = useLocation()
+  useEffect(() => {
+    window.scroll(0,0)
+  }, [pathname]);
   const [recom,setRecom] = useState([])
   const getData = async ()=>{
     const url = await axios('https://oceanbackend.pythonanywhere.com/product/')
@@ -15,14 +22,16 @@ const Recomendation = () => {
     getData()
   }, []);
   return (
+      <>
+        <Header/>
     <div id="newPostopleniya">
       <div className="container">
         <div className="newPostopleniya">
           <div className="newPostopleniya--title">
             <h1>Рекомендуемые</h1>
-            <button className="newPostopleniya--title__btn">
-              Смотреть все <GrLinkNext className="btnNext" />
-            </button>
+            {/*<button className="newPostopleniya--title__btn">*/}
+            {/*  Смотреть все <GrLinkNext className="btnNext" />*/}
+            {/*</button>*/}
           </div>
 
           <div className="newPostopleniya--all">
@@ -42,6 +51,8 @@ const Recomendation = () => {
         </div>
       </div>
     </div>
+        <Footer/>
+      </>
   );
 };
 
