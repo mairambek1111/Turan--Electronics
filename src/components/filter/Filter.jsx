@@ -162,18 +162,19 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                 <div className="filter">
                     <div className="filter--all">
                         <div onMouseEnter={hoverOption} className="filter--all__select">
-                            <h1><FaApple/> {brend !== '' ? brend : 'Все'} {down ? <FaAngleUp className='selectUp'/> : <FaAngleDown className='selectDown'/>}  </h1>
+                            <h1><FaApple/> {brend !== '' ? brend : 'Все'} {down ? <FaAngleUp className='selectUp'/> :
+                                <FaAngleDown className='selectDown'/>}  </h1>
                             <div onMouseLeave={hoverOption2} ref={refOption} className="filter--all__select--option">
                                 <div className="filter--all__select--option__inp">
-                                    <label onClick={()=> setBrand('')}>
+                                    <label onClick={() => setBrand('')}>
                                         <input name='Apple' type="radio"/>
                                         <p>Все</p>
                                     </label>
                                 </div>
                                 {
-                                    uniqueBrand.map((el,inx)=> (
+                                    uniqueBrand.map((el, inx) => (
                                         <div key={inx} className="filter--all__select--option__inp">
-                                            <label onClick={()=>setBrand(el)}>
+                                            <label onClick={() => setBrand(el)}>
                                                 <input name='Apple' type="radio"/>
                                                 <p>{el}</p>
                                             </label>
@@ -183,18 +184,20 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                             </div>
                         </div>
                         <div onMouseEnter={hoverOptionModel} className="filter--all__select">
-                            <h4>Модель {downM ? <FaAngleUp className='selectUp'/> : <FaAngleDown className='selectDown'/>}</h4>
-                            <div onMouseLeave={hoverOptionModel2} ref={refOptionModel} className="filter--all__select--optionModel">
+                            <h4>Модель {downM ? <FaAngleUp className='selectUp'/> :
+                                <FaAngleDown className='selectDown'/>}</h4>
+                            <div onMouseLeave={hoverOptionModel2} ref={refOptionModel}
+                                 className="filter--all__select--optionModel">
                                 <div className="filter--all__select--optionModel__inp">
-                                    <label onClick={()=>setModel('')}>
+                                    <label onClick={() => setModel('')}>
                                         <input name='Модель' type="radio"/>
                                         <p>Все</p>
                                     </label>
                                 </div>
                                 {
-                                    brand.map((el)=> (
+                                    brand.map((el) => (
                                         <div className="filter--all__select--optionModel__inp">
-                                            <label onClick={()=> setModel(el.model)}>
+                                            <label onClick={() => setModel(el.model)}>
                                                 <input name='Модель' type="radio"/>
                                                 <p>{el.model}</p>
                                             </label>
@@ -204,19 +207,21 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                             </div>
                         </div>
                         <div onMouseEnter={hoverOptionObem} className="filter--all__select">
-                            <h4>Обьем {downO ? <FaAngleUp className='selectUp'/> : <FaAngleDown className='selectDown'/>}</h4>
-                            <div onMouseLeave={hoverOptionObem2} ref={refOptionObem} className="filter--all__select--optionObem">
+                            <h4>Обьем {downO ? <FaAngleUp className='selectUp'/> :
+                                <FaAngleDown className='selectDown'/>}</h4>
+                            <div onMouseLeave={hoverOptionObem2} ref={refOptionObem}
+                                 className="filter--all__select--optionObem">
                                 <div className="filter--all__select--optionObem__inp">
-                                    <label onClick={()=>setMemory('')}>
+                                    <label onClick={() => setMemory('')}>
                                         <input name='Обьем' type="radio"/>
                                         <p>Все</p>
                                     </label>
                                 </div>
                                 {
-                                    uniqueMemory.map((el,inx)=> (
+                                    uniqueMemory.map((el, inx) => (
                                         <div key={inx} className="filter--all__select--optionObem__inp">
                                             <label>
-                                                <input name='Обьем' type="radio" onClick={()=>setMemory(el)}/>
+                                                <input name='Обьем' type="radio" onClick={() => setMemory(el)}/>
                                                 <p>{el}</p>
                                             </label>
                                         </div>
@@ -225,22 +230,28 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                             </div>
                         </div>
                         <div onMouseEnter={hoverOptionPrice} className="filter--all__select">
-                            <h4>Цена, Сом {downP ? <FaAngleUp className='selectUp'/> : <FaAngleDown className='selectDown'/>}</h4>
-                            <div onMouseLeave={hoverOptionPrice2} ref={refOptionPrice} className="filter--all__select--optionPrice">
+                            <h4>Цена, Сом {downP ? <FaAngleUp className='selectUp'/> :
+                                <FaAngleDown className='selectDown'/>}</h4>
+                            <div onMouseLeave={hoverOptionPrice2} ref={refOptionPrice}
+                                 className="filter--all__select--optionPrice">
                                 <div className="filter--all__select--optionPrice__inp">
-                                        <input onInput={(e)=> setStartPrice(e.target.value)} name='Цена' type="number"/>
-                                        <input onInput={(e)=> e.target.value !== '' ? setEndPrice(e.target.value) : setEndPrice('10000000000000000000')} name='Цена' type="number"/>
+                                    <input onInput={(e) => setStartPrice(e.target.value)} name='Цена' type="number"/>
+                                    <input
+                                        onInput={(e) => e.target.value !== '' ? setEndPrice(e.target.value) : setEndPrice('10000000000000000000')}
+                                        name='Цена' type="number"/>
                                 </div>
                                 <div className="filter--all__select--optionPrice__inp">
-                                        <input className='inpRange' name='Цена' type="range"/>
+                                    <input className='inpRange' name='Цена' type="range"/>
                                 </div>
                             </div>
                         </div>
                         <div onMouseEnter={hoverOptionColor} className="filter--all__select">
-                            <h4>Цвет {downC ? <FaAngleUp className='selectUp'/> : <FaAngleDown className='selectDown'/>}</h4>
-                            <div onMouseLeave={hoverOptionColor2} ref={refOptionColor} className="filter--all__select--optionColor">
+                            <h4>Цвет {downC ? <FaAngleUp className='selectUp'/> :
+                                <FaAngleDown className='selectDown'/>}</h4>
+                            <div onMouseLeave={hoverOptionColor2} ref={refOptionColor}
+                                 className="filter--all__select--optionColor">
                                 <div className="filter--all__select--optionColor__inp">
-                                    <label onClick={()=>setColor('')}>
+                                    <label onClick={() => setColor('')}>
                                         <input name='Цвет' type="radio"/>
                                         <p>Все</p>
                                     </label>
@@ -248,7 +259,8 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                                 <div className="filter--all__select--optionColor__inp">
                                     {
                                         uniqueColors.map((color, index) => (
-                                            <canvas onClick={()=> setColor(color)} key={index} style={{ background: color }} color={color}></canvas>
+                                            <canvas onClick={() => setColor(color)} key={index}
+                                                    style={{background: color}} color={color}></canvas>
                                         ))
                                     }
                                 </div>
@@ -256,14 +268,26 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                         </div>
                         <div onClick={hoverOptionAll} className="filter--all__select">
                             <h4>Все фильтры
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M26.5625 15H11.1188M5.6675 15H3.4375M5.6675 15C5.6675 14.2773 5.9546 13.5842 6.46563 13.0731C6.97667 12.5621 7.66979 12.275 8.3925 12.275C9.11522 12.275 9.80833 12.5621 10.3194 13.0731C10.8304 13.5842 11.1175 14.2773 11.1175 15C11.1175 15.7227 10.8304 16.4158 10.3194 16.9269C9.80833 17.4379 9.11522 17.725 8.3925 17.725C7.66979 17.725 6.97667 17.4379 6.46563 16.9269C5.9546 16.4158 5.6675 15.7227 5.6675 15ZM26.5625 23.2587H19.3775M19.3775 23.2587C19.3775 23.9816 19.0897 24.6755 18.5786 25.1867C18.0674 25.6978 17.3741 25.985 16.6513 25.985C15.9285 25.985 15.2354 25.6966 14.7244 25.1856C14.2133 24.6746 13.9262 23.9815 13.9262 23.2587M19.3775 23.2587C19.3775 22.5359 19.0897 21.8432 18.5786 21.3321C18.0674 20.8209 17.3741 20.5337 16.6513 20.5337C15.9285 20.5337 15.2354 20.8208 14.7244 21.3319C14.2133 21.8429 13.9262 22.536 13.9262 23.2587M13.9262 23.2587H3.4375M26.5625 6.74124H22.6813M17.23 6.74124H3.4375M17.23 6.74124C17.23 6.01852 17.5171 5.32541 18.0281 4.81437C18.5392 4.30333 19.2323 4.01624 19.955 4.01624C20.3129 4.01624 20.6672 4.08672 20.9978 4.22366C21.3284 4.36061 21.6288 4.56133 21.8819 4.81437C22.1349 5.06741 22.3356 5.36781 22.4726 5.69842C22.6095 6.02904 22.68 6.38338 22.68 6.74124C22.68 7.09909 22.6095 7.45344 22.4726 7.78405C22.3356 8.11466 22.1349 8.41506 21.8819 8.6681C21.6288 8.92114 21.3284 9.12186 20.9978 9.25881C20.6672 9.39575 20.3129 9.46623 19.955 9.46623C19.2323 9.46623 18.5392 9.17914 18.0281 8.6681C17.5171 8.15706 17.23 7.46395 17.23 6.74124Z"
+                                        stroke="#525252" strokeOpacity="0.5" strokeWidth="1.5" strokeMiterlimit="10"
+                                        strokeLinecap="round"/>
+                                </svg>
+                            </h4>
+                        </div>
+                    </div>
+                    <div onClick={hoverOptionAll} className="mobFilter filter--all__select">
+                        <h4>Все фильтры
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M26.5625 15H11.1188M5.6675 15H3.4375M5.6675 15C5.6675 14.2773 5.9546 13.5842 6.46563 13.0731C6.97667 12.5621 7.66979 12.275 8.3925 12.275C9.11522 12.275 9.80833 12.5621 10.3194 13.0731C10.8304 13.5842 11.1175 14.2773 11.1175 15C11.1175 15.7227 10.8304 16.4158 10.3194 16.9269C9.80833 17.4379 9.11522 17.725 8.3925 17.725C7.66979 17.725 6.97667 17.4379 6.46563 16.9269C5.9546 16.4158 5.6675 15.7227 5.6675 15ZM26.5625 23.2587H19.3775M19.3775 23.2587C19.3775 23.9816 19.0897 24.6755 18.5786 25.1867C18.0674 25.6978 17.3741 25.985 16.6513 25.985C15.9285 25.985 15.2354 25.6966 14.7244 25.1856C14.2133 24.6746 13.9262 23.9815 13.9262 23.2587M19.3775 23.2587C19.3775 22.5359 19.0897 21.8432 18.5786 21.3321C18.0674 20.8209 17.3741 20.5337 16.6513 20.5337C15.9285 20.5337 15.2354 20.8208 14.7244 21.3319C14.2133 21.8429 13.9262 22.536 13.9262 23.2587M13.9262 23.2587H3.4375M26.5625 6.74124H22.6813M17.23 6.74124H3.4375M17.23 6.74124C17.23 6.01852 17.5171 5.32541 18.0281 4.81437C18.5392 4.30333 19.2323 4.01624 19.955 4.01624C20.3129 4.01624 20.6672 4.08672 20.9978 4.22366C21.3284 4.36061 21.6288 4.56133 21.8819 4.81437C22.1349 5.06741 22.3356 5.36781 22.4726 5.69842C22.6095 6.02904 22.68 6.38338 22.68 6.74124C22.68 7.09909 22.6095 7.45344 22.4726 7.78405C22.3356 8.11466 22.1349 8.41506 21.8819 8.6681C21.6288 8.92114 21.3284 9.12186 20.9978 9.25881C20.6672 9.39575 20.3129 9.46623 19.955 9.46623C19.2323 9.46623 18.5392 9.17914 18.0281 8.6681C17.5171 8.15706 17.23 7.46395 17.23 6.74124Z"
                                     stroke="#525252" strokeOpacity="0.5" strokeWidth="1.5" strokeMiterlimit="10"
                                     strokeLinecap="round"/>
                             </svg>
-                            </h4>
-                        </div>
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -290,7 +314,7 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                             <FaAngleDown className='selectDown'/>}  </h4>
                         <div ref={refAllOption} className="filterAll--card__select--option">
                             <div className="filterAll--card__select--option__inp">
-                                <label onClick={()=>setBrand('')}>
+                                <label onClick={() => setBrand('')}>
                                     <input name='Apple' type="radio"/>
                                     <p>Все</p>
                                 </label>

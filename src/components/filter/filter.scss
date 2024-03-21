@@ -257,6 +257,18 @@
         }
       }
     }
+    .mobFilter{
+      background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+      border: 1px solid;
+      border-image-source: linear-gradient(123.5deg, #FFFFFF 38.36%, rgba(219, 230, 242, 0) 69.31%, #8F9FAE 131.91%);
+      box-shadow: 10px 10px 64px 0 rgba(18, 61, 101, 0.3), -16px -16px 40px 0px rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 10px;
+      transform: translateX(-200%);
+    }
   }
   .filterAll{
     transform: translateX(100%);
@@ -458,5 +470,14 @@
   #filter .filter--all__select--option {
     width: 170px;
     top: 40px;
+  }
+}
+
+@media (max-width: 720px) {
+  #filter .filter--all {
+    display: none;
+  }
+  #filter .filter .mobFilter{
+    transform: translateX(0);
   }
 }
