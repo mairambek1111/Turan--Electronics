@@ -48,7 +48,6 @@ function Brends() {
 
             <Link className="brends--title__info">Смотреть все</Link>
           </div>
-
           <Slider {...settings}>
             {brend.map((el) => (
               <button

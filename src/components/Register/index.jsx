@@ -46,8 +46,8 @@ export default function Register() {
   }
 
   const btnActive = () => {
-    const iEmail = iEmailRef.current.value;
-    localStorage.setItem("email", iEmail);
+    // const iEmail = iEmailRef.current.value;
+    // localStorage.setItem("email", iEmail);
     setActive(true);
     iValue();
   };
@@ -66,7 +66,8 @@ export default function Register() {
       })
       .then((res) => {
         console.log("успешно", res.data);
-        JSON.stringify(localStorage.setItem("user", res.data.email));
+        localStorage.setItem("email", JSON.stringify(res.data.email));
+        localStorage.setItem("pass", JSON.stringify(res.data.password));
         navigate("/Authorization");
       });
   };

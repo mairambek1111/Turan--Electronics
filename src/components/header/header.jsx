@@ -16,22 +16,32 @@ function Header() {
   const [favoriteCount, setFavoriteCount] = useState(0);
   // eslint-disable-next-line no-unused-vars
   const [basketCount, setBasketCount] = useState(0);
+  const [search, setsearch] = useState("");
 
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const response = await axios.get('https://oceanbackend.pythonanywhere.com/favorite')
-        const response2 = await axios.get('https://oceanbackend.pythonanywhere.com/basket')
-        const count = response.data.length
-        const count2 = response2.data.length
-        setFavoriteCount(count)
-        setBasketCount(count2)
+        const response = await axios.get(
+          "https://oceanbackend.pythonanywhere.com/favorite"
+        );
+        const response2 = await axios.get(
+          "https://oceanbackend.pythonanywhere.com/basket"
+        );
+        const count = response.data.length;
+        const count2 = response2.data.length;
+        setFavoriteCount(count);
+        setBasketCount(count2);
       } catch (error) {
         console.error("Ошибка при получении избранных элементов:", error);
       }
     };
     fetchFavorites();
   }, []);
+
+  function SearchProduct(e) {
+    setsearch(e.target.value);
+    console.log(search);
+  }
   return (
     <>
       <header className="header" data-aos="zoom-out" data-aos-duration="1100">
@@ -99,6 +109,7 @@ function Header() {
                 </div>
                 <div className="input__form">
                   <input
+                    onChange={SearchProduct}
                     type="text"
                     placeholder="search..."
                     className="input"
