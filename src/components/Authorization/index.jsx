@@ -23,6 +23,7 @@ const Authorization = () => {
       nav("/");
     } else {
       setlogin(false);
+      alert("Неверный пароль");
     }
   }
 
