@@ -8,6 +8,7 @@ const News = () => {
     photo: `https://cdn.cpdonline.co.uk/wp-content/uploads/2022/09/27091105/1-feature-image-Becoming-a-journalist-scaled.jpg`,
     info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit in molestias, labore autem expedita quia tempore veritatis ipsum neque aut saepe perferendis. Dolor id doloremque error fugit itaque labore cupiditate!",
   };
+
   return (
     <>
       {showDetail && <Detail />}

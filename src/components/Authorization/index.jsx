@@ -15,14 +15,15 @@ const Authorization = () => {
   const [password, setPassword] = useState("");
   const [login, setlogin] = useState(false);
   const nav = useNavigate();
-
-  const local = localStorage.getItem("email");
+  const localEmail = JSON.parse(localStorage.getItem("email"));
+  const localPass = JSON.parse(localStorage.getItem("pass"));
   function Userlogin() {
-    if (local) {
+    if (localEmail === email && localPass === password) {
       setlogin(true);
       nav("/");
     } else {
       setlogin(false);
+      alert("неверный пароль");
     }
   }
 
@@ -37,12 +38,12 @@ const Authorization = () => {
   function iValue() {
     const iPass = document.querySelector(".iPass");
     const iEmail = document.querySelector(".iEmail");
-    if (iPass.value.trim() === "" || local === null) {
+    if (iPass.value.trim() === "" || localEmail === null) {
       iPass.style.border = "1px solid red";
     } else {
       iPass.style.border = "1px solid #a7c957";
     }
-    if (iEmail.value.trim() === "" || local === null) {
+    if (iEmail.value.trim() === "" || localEmail === null) {
       iEmail.style.border = "1px solid red";
     } else {
       iEmail.style.border = "1px solid #a7c957";
