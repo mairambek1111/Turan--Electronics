@@ -3,7 +3,7 @@ import '../filter/filter.scss'
 import {useRef, useState} from "react";
 import {IoClose} from "react-icons/io5";
 
-const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,setMemory,setBrand}) => {
+const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,setMemory,setBrand,startPrice}) => {
     const refOption = useRef(null)
     const iChecked = useRef(null)
     const iChecked2 = useRef(null)
@@ -168,6 +168,12 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
         e.stopPropagation()
         iChecked2.current.checked = false;
     }
+    function handleRangeChange(e) {
+        setStartPrice(e.target.value);
+    }
+    function handleStartPriceChange(e) {
+        setStartPrice(e.target.value);
+    }
     return (
         <div id='filter'>
             <div className="container">
@@ -247,13 +253,14 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                             <div onMouseLeave={hoverOptionPrice2} ref={refOptionPrice}
                                  className="filter--all__select--optionPrice">
                                 <div className="filter--all__select--optionPrice__inp">
-                                    <input onInput={(e) => setStartPrice(e.target.value)} name='Цена' type="number"/>
+                                    <input value={startPrice} min={0} placeholder={'от'} onInput={(e) => setStartPrice(e.target.value)} name='Цена' type="number"/>
                                     <input
-                                        onInput={(e) => e.target.value !== '' ? setEndPrice(e.target.value) : setEndPrice('10000000000000000000')}
+                                        placeholder={'до'}
+                                        onInput={(e) => e.target.value !== '' ? setEndPrice(e.target.value) : setEndPrice('200000')}
                                         name='Цена' type="number"/>
                                 </div>
                                 <div className="filter--all__select--optionPrice__inp">
-                                    <input className='inpRange' name='Цена' type="range"/>
+                                    <input onChange={(e)=>handleRangeChange(e)} value={startPrice} min={0} max={200000} className='inpRange' name='Цена' type="range"/>
                                 </div>
                             </div>
                         </div>
@@ -311,14 +318,15 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                             <FaAngleDown className='selectDown'/>}</h4>
                         <div ref={refAllOptionPrice} className="filterAll--card__select--optionPrice">
                             <div className="filterAll--card__select--optionPrice__inp">
-                                <input onClick={(e)=>e.stopPropagation()} onInput={(e) => setStartPrice(e.target.value)} name='Цена' type="number"/>
+                                <input value={startPrice} placeholder={'от'} onClick={(e)=>e.stopPropagation()} onInput={(e) => setStartPrice(e.target.value)} name='Цена' type="number"/>
                                 <input
+                                    placeholder={'до'}
                                     onClick={(e)=>e.stopPropagation()}
-                                    onInput={(e) => e.target.value !== '' ? setEndPrice(e.target.value) : setEndPrice('10000000000000000000')}
+                                    onInput={(e) => e.target.value !== '' ? setEndPrice(e.target.value) : setEndPrice('200000')}
                                     name='Цена' type="number"/>
                             </div>
                             <div className="filterAll--card__select--optionPrice__inp">
-                                <input className='inpRange' name='Цена' type="range"/>
+                                <input onChange={(e)=>handleRangeChange(e)} value={startPrice} min={0} max={200000} className='inpRange' name='Цена' type="range"/>
                             </div>
                         </div>
                     </div>

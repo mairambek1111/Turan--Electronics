@@ -88,7 +88,7 @@ const FilterCard = ({el}) => {
             </center>
             <div className="newPostopleniya--all__card--price">
                 <h1>
-                    {el.price} сом <span>{el.price} сом</span>
+                    {Math.round(el.price)} сом <span> {Math.round(el.price)} сом</span>
                 </h1>
             </div>
             <div className="newPostopleniya--all__card--discount">
@@ -111,8 +111,8 @@ const FilterCard = ({el}) => {
                 <h4>Цвет</h4>
                 <div className="newPostopleniya--all__card--colors__color">
                     {
-                        el.color.map((el)=>(
-                            <canvas style={{background:el}}></canvas>
+                        el.color.map((el,inx)=>(
+                            <canvas key={inx} style={{background:el}}></canvas>
                         ))
                     }
                 </div>

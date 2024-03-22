@@ -169,10 +169,10 @@
               box-shadow: 3px 3px 7px 0 rgba(136, 165, 191, 0.48) inset,-3px -3px 7px 0px rgba(255, 255, 255, 1) inset;
             }
             .inpRange{
-              background: rgba(255, 115, 0, 1);
               box-shadow: none;
               margin-top: 20px;
               width: 180px;
+              accent-color: rgba(255, 115, 0, 1);
             }
           }
         }
@@ -399,6 +399,7 @@
               box-shadow: none;
               margin-top: 20px;
               width: 180px;
+              accent-color: rgba(255, 115, 0, 1);
             }
           }
         }

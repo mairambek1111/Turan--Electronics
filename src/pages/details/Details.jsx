@@ -4,7 +4,6 @@ import '../details/details.scss'
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper/modules";
 import Review from "../../components/review/review.jsx";
-import PohojieTovary from "../../components/pohojieTovary/pohojieTovary.jsx";
 import Brends from "../../components/Brends/Brends.jsx";
 import Header from "../../components/header/header.jsx";
 import Footer from "../../components/footer/footer.jsx";
@@ -28,6 +27,11 @@ const Details = () => {
         product: el.id,
         user: 1
     }
+    const data2 = {
+        product: el.id,
+        user: 1,
+        summ_products: el.price
+    }
     const getData = async ()=>{
         const url = await axios(`https://oceanbackend.pythonanywhere.com/product/${id}/`)
         const {data} = await url
@@ -43,6 +47,10 @@ const Details = () => {
             await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`,data);
             setHeart(true)
         }
+    }
+    const addBasket = async () => {
+        await axios.post(`https://oceanbackend.pythonanywhere.com/basket_post/`,data2);
+        nav('/headerBasket')
     }
     useEffect(() => {
         const fetchData = async () => {
@@ -136,7 +144,7 @@ const Details = () => {
                                     <h1>{Math.round(el.price)} сом</h1>
                                 </div>
                                 <div className="details--main__abouts--btn">
-                                    <button>В корзину</button>
+                                    <button onClick={addBasket}>В корзину</button>
                                     <IoMdHeart onClick={addFav} style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}} className="btnHeart" />
                                 </div>
 
@@ -211,7 +219,7 @@ const Details = () => {
                         </div>
                     </div>
                 </div>
-                <Review/>
+                <Review name={el.name}/>
                 <PohojieSlice brand={el.brand}/>
                 <Brends/>
             </div>

@@ -13,7 +13,7 @@ const FilterApple = () => {
     const [model, setModel] = useState('')
     const [memory, setMemory] = useState('')
     const [startPrice, setStartPrice] = useState(0)
-    const [endPrice, setEndPrice] = useState(100000)
+    const [endPrice, setEndPrice] = useState(200000)
     const getFilter = async () => {
         const res = await axios(`https://oceanbackend.pythonanywhere.com/product/`)
         const data = await res.data
@@ -34,7 +34,7 @@ const FilterApple = () => {
     });
     return (
         <>
-            <Filter setBrand={setBrend} brend={brend} filterData={filterData} setMemory={setMemory} setColor={setColor} setModel={setModel} setStartPrice={setStartPrice} setEndPrice={setEndPrice}/>
+            <Filter startPrice={startPrice} setBrand={setBrend} brend={brend} filterData={filterData} setMemory={setMemory} setColor={setColor} setModel={setModel} setStartPrice={setStartPrice} setEndPrice={setEndPrice}/>
             <div id="filterAll">
                 <div className="container">
                     <div className="filterAll">
