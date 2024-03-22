@@ -8,7 +8,7 @@ import Brends from "../../components/Brends/Brends.jsx";
 import Navbtn from "../../components/navbtn/navbtn.jsx";
 import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import { useEffect, useState } from "react";
-import Register from "../../components/Register/index.jsx";
+import Authorization from "../../components/Authorization/index.jsx";
 
 function Home() {
   const [user, setUser] = useState(false);
@@ -38,7 +38,7 @@ function Home() {
           <Footer />
         </>
       ) : (
-        <Register />
+        <Authorization />
       )}
     </>
   );
