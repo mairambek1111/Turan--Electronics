@@ -16,9 +16,9 @@ const Authorization = () => {
   const [login, setlogin] = useState(false);
   const nav = useNavigate();
 
+  const local = localStorage.getItem("email");
   function Userlogin() {
-    const email = localStorage.getItem("email");
-    if (email) {
+    if (local) {
       setlogin(true);
       nav("/");
     } else {
@@ -37,12 +37,12 @@ const Authorization = () => {
   function iValue() {
     const iPass = document.querySelector(".iPass");
     const iEmail = document.querySelector(".iEmail");
-    if (iPass.value.trim() === "") {
+    if (iPass.value.trim() === "" || local === null) {
       iPass.style.border = "1px solid red";
     } else {
       iPass.style.border = "1px solid #a7c957";
     }
-    if (iEmail.value.trim() === "") {
+    if (iEmail.value.trim() === "" || local === null) {
       iEmail.style.border = "1px solid red";
     } else {
       iEmail.style.border = "1px solid #a7c957";
