@@ -1,9 +1,20 @@
-import iconApple from "../../assets/apple.svg";
 import "./brends.scss";
 import Slider from "react-slick/lib/slider";
 import iconadaptive from "../../assets/adaptive-apple-icon.svg";
 import { Link } from "react-router-dom";
+import {useEffect, useState} from "react";
+import axios from "axios";
 function Brends() {
+  const [brend,setBrend] = useState([])
+
+  const getBrend = async ()=>{
+    const res = await axios(`https://oceanbackend.pythonanywhere.com/brand`)
+    const {data} = await  res
+    setBrend(data)
+  }
+  useEffect(() => {
+    getBrend()
+  }, []);
   const settings = {
     infinite: true,
     slidesToShow: 5,
@@ -38,71 +49,23 @@ function Brends() {
           </div>
 
           <Slider {...settings}>
-            <button
-              className="brends__card"
-              data-aos="zoom-in-up"
-              data-aos-duration="1100"
-            >
-              <Link className="brends__image">
-                <img src={iconApple} alt="" />
-              </Link>
-              <Link className="brends__adaptive-icon">
-                <img src={iconadaptive} alt="" />
-                <h4 className="brends__adaptive__title">Apple</h4>
-              </Link>
-            </button>
-            <button
-              className="brends__card"
-              data-aos="zoom-in-up"
-              data-aos-duration="1100"
-            >
-              <Link className="brends__image">
-                <img src={iconApple} alt="" />
-              </Link>
-              <Link className="brends__adaptive-icon">
-                <img src={iconadaptive} alt="" />
-                <h4 className="brends__adaptive__title">Apple</h4>
-              </Link>
-            </button>
-            <button
-              className="brends__card"
-              data-aos="zoom-in-up"
-              data-aos-duration="1100"
-            >
-              <Link className="brends__image">
-                <img src={iconApple} alt="" />
-              </Link>
-              <Link className="brends__adaptive-icon">
-                <img src={iconadaptive} alt="" />
-                <h4 className="brends__adaptive__title">Apple</h4>
-              </Link>
-            </button>
-            <button
-              className="brends__card"
-              data-aos="zoom-in-up"
-              data-aos-duration="1100"
-            >
-              <Link className="brends__image">
-                <img src={iconApple} alt="" />
-              </Link>
-              <Link className="brends__adaptive-icon">
-                <img src={iconadaptive} alt="" />
-                <h4 className="brends__adaptive__title">Apple</h4>
-              </Link>
-            </button>
-            <button
-              className="brends__card"
-              data-aos="zoom-in-up"
-              data-aos-duration="1100"
-            >
-              <Link className="brends__image">
-                <img src={iconApple} alt="" />
-              </Link>
-              <Link className="brends__adaptive-icon">
-                <img src={iconadaptive} alt="" />
-                <h4 className="brends__adaptive__title">Apple</h4>
-              </Link>
-            </button>
+            {
+              brend.map(el => (
+                  <button key={el.id}
+                      className="brends__card"
+                      data-aos="zoom-in-up"
+                      data-aos-duration="1100"
+                  >
+                    <Link to={`/brand/${el?.brand_name}`} className="brends__image">
+                      <img src={el?.photo} alt="no img"/>
+                    </Link>
+                    <Link className="brends__adaptive-icon">
+                      <img src={iconadaptive} alt=""/>
+                      <h4 className="brends__adaptive__title">Apple</h4>
+                    </Link>
+                  </button>
+              ))
+            }
           </Slider>
         </div>
       </div>

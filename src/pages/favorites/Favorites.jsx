@@ -1,11 +1,11 @@
 import "../favorites/favorites.scss";
-import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import Header from "../../components/header/header.jsx";
 import Footer from "../../components/footer/footer.jsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import FavoritesCard from "./FavoritesCard.jsx";
 import {useLocation} from "react-router-dom";
+import RecomendationSlice from "../../components/recomendation/RecomendationSlice.jsx";
 
 
 
@@ -43,7 +43,7 @@ const Favorites = () => {
                         }
                     </div>
                 </div>
-                <Recomendation/>
+                <RecomendationSlice/>
                 <Footer/>
             </div>
         </>

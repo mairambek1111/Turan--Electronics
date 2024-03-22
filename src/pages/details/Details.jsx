@@ -11,6 +11,7 @@ import Footer from "../../components/footer/footer.jsx";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import {useEffect, useState} from "react";
+import PohojieSlice from "../../components/pohojieTovary/pohojieSlice.jsx";
 
 
 const Details = () => {
@@ -211,7 +212,7 @@ const Details = () => {
                     </div>
                 </div>
                 <Review/>
-                <PohojieTovary brand={el.brand}/>
+                <PohojieSlice brand={el.brand}/>
                 <Brends/>
             </div>
             <Footer/>

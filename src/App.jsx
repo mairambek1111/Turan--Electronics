@@ -13,6 +13,9 @@ import AdminDetails from "./components/Admin/AdminDetails/AdminDetails.jsx";
 import Apple from "./pages/apple/Apple.jsx";
 import Register from "./components/Register/index.jsx";
 import Authorization from "./components/Authorization/index.jsx";
+import PohojieTovary from "./components/pohojieTovary/pohojieTovary.jsx";
+import NewPostupleniya from "./components/newPostupleniya/index.jsx";
+import Recomendation from "./components/recomendation/Recomendation.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -56,6 +59,18 @@ const router = createBrowserRouter([
   },
   { path: "/register", element: <Register /> },
   { path: "/Authorization", element: <Authorization /> },
+  {
+    path: "/pohojie-tovary/:brandName",
+    element: <PohojieTovary />,
+  },
+  {
+    path: "/new-postupleniya",
+    element: <NewPostupleniya/>,
+  },
+  {
+    path: "/recomendation",
+    element: <Recomendation/>,
+  },
 ]);
 
 function App() {

@@ -1,5 +1,4 @@
 import "../basket/basket.scss";
-import Recomendation from "../../components/recomendation/Recomendation.jsx";
 import Header from "../../components/header/header.jsx";
 import Order from "../../components/order/order.jsx";
 import UserData from "../../components/userData/userData.jsx";
@@ -7,6 +6,7 @@ import Footer from "../../components/footer/footer.jsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useLocation} from "react-router-dom";
+import RecomendationSlice from "../../components/recomendation/RecomendationSlice.jsx";
 
 const Basket = () => {
     const {pathname} = useLocation()
@@ -39,7 +39,7 @@ const Basket = () => {
             ) : null}
           </div>
         </div>
-        <Recomendation />
+        <RecomendationSlice />
       </div>
       <Footer />
     </>
