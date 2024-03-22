@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import {useState} from "react";
 import "./useReview.css";
-import { IoMdStar } from "react-icons/io";
-import { FaStar } from "react-icons/fa";
+import axios from "axios";
 
-function UseReview() {
+function UseReview({name}) {
     const [textValue, setTextValue] = useState("");
-    const [reviews, setReviews] = useState([]);
 
-    function handleReviewSubmit() {
+    async function handleReviewSubmit() {
         if (textValue.trim() !== "") {
             const currentDate = new Date();
             const year = currentDate.getFullYear();
@@ -15,13 +13,22 @@ function UseReview() {
                 .toString()
                 .padStart(2, "0");
             const day = currentDate.getDate().toString().padStart(2, "0");
-            const currentDateString = `${year}.${month}.${day}`;
-            const newReview = {
-                id: Date.now(),
+            const currentDateString = `${day}.${month}.${year}`;
+            // const newReview = {
+            //     id: Date.now(),
+            //     text: textValue,
+            //     date: currentDateString,
+            // };
+            // setReviews([...reviews, newReview]);
+
+            const dataPost = {
+                user: 1,
                 text: textValue,
-                date: currentDateString,
-            };
-            setReviews([...reviews, newReview]);
+                stars: 3,
+                product: name,
+                data: currentDateString
+            }
+            await axios.post(`https://oceanbackend.pythonanywhere.com/reviews/`,dataPost)
             setTextValue("");
         }
     }
@@ -43,30 +50,6 @@ function UseReview() {
                 <button className="btnReview" onClick={handleReviewSubmit}>
                     Отправить отзыв
                 </button>
-                {reviews.map((review) => (
-                    <div key={review.id} className="review--card">
-                        <div className="review--card__about">
-                            <div className="review--card__about--title">
-                                <h1 className="review--card__about--titleh1">
-                                    Айгерим Атамбекова
-                                </h1>
-                                <div className="review--cardabout--titlestars">
-                                    <FaStar className="starsYellow" />
-                                    <FaStar className="starsYellow" />
-                                    <FaStar className="starsYellow" />
-                                    <FaStar className="starsYellow" />
-                                    <FaStar className="starsYellow" />
-                                </div>
-                            </div>
-                            <div className="review--cardabout--titledate">
-                                {review.date}
-                            </div>
-                        </div>
-                        <h5 className="review--card__about--title__date">
-                            {review.text}
-                        </h5>
-                    </div>
-                ))}
             </div>
         </div>
     );

@@ -57,21 +57,22 @@
                         font-size: 20px;
                         font-weight: 600;
                     }
+                    .starsYellow {
+                        color: rgba(255, 115, 0, 1);
+                        width: 15px;
+                        height: 22px;
+                    }
+                    .starsNone {
+                        color: rgba(0, 0, 0, 0.35);
+                        width: 15px;
+                        height: 22px;
+                    }
                     &__stars {
                         margin-left: 30px;
                         display: flex;
                         align-items: center;
                         gap: 5px;
-                        .starsYellow {
-                            color: rgba(255, 115, 0, 1);
-                            width: 15px;
-                            height: 22px;
-                        }
-                        .starsNone {
-                            color: rgba(0, 0, 0, 0.35);
-                            width: 15px;
-                            height: 22px;
-                        }
+                        justify-content: center;
                     }
                     &__date {
                         span {
@@ -87,6 +88,20 @@
                 font-size: 20px;
                 line-height: 33px;
                 margin-top: 50px;
+            }
+        }
+        &--none{
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(210.55deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            h4{
+                font-size: 20px;
+                font-weight: 600;
             }
         }
     }
@@ -117,27 +132,8 @@
     font-size: 20px;
     margin-top: 30px;
 }
-.reviewTitled2 {
-    font-size: 19px;
-    margin-top: 30px;
-    display: none;
-}
-@media (max-width: 845px) {
-    .reviewTitled {
-        display: none;
-    }
-    .reviewTitled2 {
-        display: block;
-    }
-}
-@media (max-width: 486px) {
-    .reviewTitled {
-        display: none;
-    }
-    .reviewTitled2 {
-        display: block;
-    }
-}
+
+
 @media (max-width: 572px) {
     h1 {
         color: rgb(0, 0, 0);
