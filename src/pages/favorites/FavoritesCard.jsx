@@ -1,5 +1,4 @@
 import {FaStar} from "react-icons/fa";
-import {IoMdHeart} from "react-icons/io";
 import {Link} from "react-router-dom";
 import {TbShoppingBag} from "react-icons/tb";
 import {useEffect, useState} from "react";

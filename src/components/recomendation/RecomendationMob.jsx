@@ -9,14 +9,23 @@ const RecomendationMob = ({el}) => {
     const [heart, setHeart] = useState(false)
     const [bag, setBag] = useState(false)
     const nav = useNavigate()
-    const user = 1
+    const [user,setUser] = useState([])
+    useEffect(()=>{
+        const getUser = async ()=>{
+            const email = JSON.parse(localStorage.getItem("email"))
+            const res = await axios(`https://oceanbackend.pythonanywhere.com/user/`)
+            const {data} = await res
+            setUser(data.find(user => user.email === email))
+        }
+        getUser()
+    },[])
     const data = {
         product: el.id,
-        user: user
+        user: user.id
     }
     const data2 = {
         product: el.id,
-        user: user,
+        user: user.id,
         summ_products: el.price
     }
     const addFav = async () => {

@@ -2,7 +2,7 @@ import {useState} from "react";
 import "./useReview.css";
 import axios from "axios";
 
-function UseReview({name}) {
+function UseReview({name,user}) {
     const [textValue, setTextValue] = useState("");
 
     async function handleReviewSubmit() {
@@ -22,7 +22,7 @@ function UseReview({name}) {
             // setReviews([...reviews, newReview]);
 
             const dataPost = {
-                user: 1,
+                user: user.id,
                 text: textValue,
                 stars: 3,
                 product: name,
