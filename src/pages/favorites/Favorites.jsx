@@ -8,19 +8,29 @@ import {useLocation} from "react-router-dom";
 import RecomendationSlice from "../../components/recomendation/RecomendationSlice.jsx";
 
 
-
 const Favorites = () => {
     const {pathname} = useLocation()
+    const [favorite,setFavorite] = useState([])
+    const [user,setUser] = useState([])
     useEffect(() => {
         window.scroll(0,0)
     }, [pathname]);
-   const [favorite,setFavorite] = useState([])
+    useEffect(()=>{
+        const getUser = async ()=>{
+            const email = JSON.parse(localStorage.getItem("email"))
+            const res = await axios(`https://oceanbackend.pythonanywhere.com/user/`)
+            const {data} = await res
+            setUser(data.find(user => user.email === email))
+        }
+        getUser()
+    },[])
+
     useEffect(() => {
         const fetchFavorites = async () => {
             try {
                 const response = await axios.get('https://oceanbackend.pythonanywhere.com/favorite/')
                 const {data} = response
-                setFavorite(data)
+                setFavorite(data.filter(el => el.user === user.id))
             } catch (error) {
                 console.error('Ошибка при получении избранных:', error);
             }

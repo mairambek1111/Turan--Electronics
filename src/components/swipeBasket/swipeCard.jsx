@@ -1,18 +1,28 @@
 import {Link, useNavigate} from "react-router-dom";
 import {TbShoppingBag, TbShoppingBagCheck} from "react-icons/tb";
 import axios from "axios";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {FaStar} from "react-icons/fa";
 
 const SwipeCard = ({el}) => {
     const [bag, setBag] = useState(false)
     const nav = useNavigate()
-    const addBasket = async () => {
-        const data = {
-            product: el.id,
-            user: 1,
-            summ_products: el.price
+    const [user,setUser] = useState([])
+    useEffect(()=>{
+        const getUser = async ()=>{
+            const email = JSON.parse(localStorage.getItem("email"))
+            const res = await axios(`https://oceanbackend.pythonanywhere.com/user/`)
+            const {data} = await res
+            setUser(data.find(user => user.email === email))
         }
+        getUser()
+    },[])
+    const data = {
+        product: el.id,
+        user: user.id,
+        summ_products: el.price
+    }
+    const addBasket = async () => {
         const response = await axios.get(`https://oceanbackend.pythonanywhere.com/basket`)
         const every = response.data.map((el)=> el.product)
         const existingItem = every.find(item => item.id === el.id);

@@ -17,6 +17,17 @@ function Header() {
   // eslint-disable-next-line no-unused-vars
   const [basketCount, setBasketCount] = useState(0);
   const [search, setsearch] = useState("");
+  const [user, setUser] = useState([]);
+
+  useEffect(()=>{
+    const getUser = async ()=>{
+      const email = JSON.parse(localStorage.getItem("email"))
+      const res = await axios(`https://oceanbackend.pythonanywhere.com/user/`)
+      const {data} = await res
+      setUser(data.find(user => user.email === email))
+    }
+    getUser()
+  },[])
 
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -27,8 +38,8 @@ function Header() {
         const response2 = await axios.get(
           "https://oceanbackend.pythonanywhere.com/basket"
         );
-        const count = response.data.length;
-        const count2 = response2.data.length;
+        const count = response.data.filter(el => el.user === user.id).length
+        const count2 = response2.data.filter(el => el.user === user.id).length
         setFavoriteCount(count);
         setBasketCount(count2);
       } catch (error) {
@@ -36,7 +47,7 @@ function Header() {
       }
     };
     fetchFavorites();
-  }, []);
+  }, [user,favoriteCount,basketCount]);
 
   function SearchProduct(e) {
     setsearch(e.target.value);

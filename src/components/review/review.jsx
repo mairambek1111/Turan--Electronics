@@ -7,6 +7,17 @@ import axios from "axios";
 const Review = ({name}) => {
     const [showUserReview, setShowUserReview] = useState(false);
     const [reviews, setReviews] = useState([]);
+    const [user,setUser] = useState([])
+
+    useEffect(()=>{
+        const getUser = async ()=>{
+            const email = JSON.parse(localStorage.getItem("email"))
+            const res = await axios(`https://oceanbackend.pythonanywhere.com/user/`)
+            const {data} = await res
+            setUser(data.find(user => user.email === email))
+        }
+        getUser()
+    },[])
 
     function saveBtnReviewCard() {
         setShowUserReview(true);
@@ -20,13 +31,12 @@ const Review = ({name}) => {
     useEffect(() => {
         getReviews()
     }, [reviews]);
-
     return (
         <div id="review">
             <div className="container">
                 <div className="review">
                     {showUserReview ? (
-                        <UseReview name={name}/>
+                        <UseReview name={name} user={user}/>
                     ) : (
                         <button onClick={saveBtnReviewCard}>
                             <svg width="31" height="29" viewBox="0 0 31 29"
@@ -62,7 +72,7 @@ const Review = ({name}) => {
                                 <div className="review--cardsPerson">
                                     <div className="review--card__about">
                                         <div className="review--card__about--title">
-                                            <h1 className="aboutTitled">Айгерим Атамбекова</h1>
+                                            <h1 className="aboutTitled">{user.username}</h1>
                                             <div className="review--cardabout--titlestars">
                                                 {stars}
                                             </div>
