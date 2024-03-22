@@ -16,19 +16,30 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 function Footer() {
   const [favoriteCount, setFavoriteCount] = useState(0);
+  const [user, setUser] = useState([]);
+
+  useEffect(()=>{
+    const getUser = async ()=>{
+      const email = JSON.parse(localStorage.getItem("email"))
+      const res = await axios(`https://oceanbackend.pythonanywhere.com/user/`)
+      const {data} = await res
+      setUser(data.find(user => user.email === email))
+    }
+    getUser()
+  },[])
 
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
         const response = await axios.get('https://oceanbackend.pythonanywhere.com/favorite')
-        const count = response.data.length
+        const count = response.data.filter(el => el.user === user.id).length
         setFavoriteCount(count)
       } catch (error) {
         console.error("Ошибка при получении избранных элементов:", error);
       }
     };
     fetchFavorites();
-  }, []);
+  }, [user,favoriteCount]);
   return (
     <>
       <footer className="footer">

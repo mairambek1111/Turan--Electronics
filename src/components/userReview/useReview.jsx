@@ -32,7 +32,6 @@ function UseReview({name,user}) {
             setTextValue("");
         }
     }
-
     return (
         <div>
             <div className="container">

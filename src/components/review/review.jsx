@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import { FaStar } from "react-icons/fa";
 import "./review.scss";
 import UseReview from "../userReview/useReview";
@@ -31,6 +31,8 @@ const Review = ({name}) => {
     useEffect(() => {
         getReviews()
     }, [reviews]);
+    const reversedReviews = useMemo(() => reviews.slice().reverse(), [reviews]);
+
     return (
         <div id="review">
             <div className="container">
@@ -60,8 +62,8 @@ const Review = ({name}) => {
                         </button>
                     )}
                     {
-                        reviews.length > 0 ?
-                        reviews.reverse().map(el => {
+                        reversedReviews.length > 0 ?
+                            reversedReviews.map(el => {
                             const starsCount = el.stars
                             const maxStars = 5
                             const stars = [];
