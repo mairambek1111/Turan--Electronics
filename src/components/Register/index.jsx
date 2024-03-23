@@ -7,6 +7,7 @@ import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
 import axios from "axios";
 import Authorization from "../Authorization/index.jsx";
+import bcrypt from 'bcryptjs';
 
 export default function Register() {
   const [showEnter, setShowEnter] = useState(false);
@@ -60,16 +61,23 @@ export default function Register() {
   }
 
   const handleSubmit = () => {
+    const heshPass = iPassRef.current.value.trim()
+    const salt = 10
+    bcrypt.hash(heshPass,salt,(err,hashedPassword) =>{
+      if(err){
+        console.log('Ошибка хеширования пароля:', err)
+      }
     axios
       .post("https://oceanbackend.pythonanywhere.com/user/", {
         username: iNameRef.current.value.trim(),
-        password: iPassRef.current.value.trim(),
+        password: hashedPassword,
         email: iEmailRef.current.value.trim(),
       })
       .then((res) => {
         console.log("успешно", res.data);
         navigate("/Authorization");
       });
+    });
   };
 
   const validation = () => {
