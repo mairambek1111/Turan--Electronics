@@ -82,12 +82,12 @@ const SwipeCard = ({el}) => {
 
     return (
         <div className="card" data-aos="zoom-in-up" data-aos-duration="1100">
-            <div className="stars">
+            <Link to={`/product/${el.id}`}><div className="stars">
                 {stars}
-            </div>
-            <img src={el.first_photo} alt="no img" className="basketImage"/>
-            <h3 className="basketTitle">{el.name}</h3>
-            <p className="basketPrice">{formatPrice(Math.floor(el.price))} сом</p>
+            </div></Link>
+            <Link to={`/product/${el.id}`}><img src={el.first_photo} alt="no img" className="basketImage"/></Link>
+            <Link to={`/product/${el.id}`}><h3 className="basketTitle">{el.name}</h3></Link>
+            <Link to={`/product/${el.id}`}><p className="basketPrice">{formatPrice(Math.floor(el.price))} сом</p></Link>
             <div className="basket">
                 <Link to={`/product/${el.id}`}>
                     <button className="btnBasket">Быстрый заказ</button>

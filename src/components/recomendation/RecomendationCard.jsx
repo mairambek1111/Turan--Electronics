@@ -121,30 +121,30 @@ const RecomendationCard = ({el}) => {
     }
     return (
         <div className="newPostopleniya--all__card" data-aos="zoom-in-up" data-aos-duration="1100">
-            <div className="newPostopleniya--all__card--h3">
+            <Link to={`/product/${el.id}`}><div className="newPostopleniya--all__card--h3">
                 <h3>Новое</h3>
                 <div className="newPostopleniya--all__card--h3__stars">
                     {stars}
                 </div>
-            </div>
+            </div></Link>
             <center>
-                <img src={el.first_photo} alt="no img"/>
+                <Link to={`/product/${el.id}`}><img src={el.first_photo} alt="no img"/></Link>
                 <IoMdHeart onClick={addFav} style={{color: `${heart ? 'red' : 'rgba(0, 0, 0, 0.35)'}`}}
                            className="imgHeart"/>
             </center>
-            <div className="newPostopleniya--all__card--price">
+            <Link to={`/product/${el.id}`}><div className="newPostopleniya--all__card--price">
                 <h1>
                     {formatPrice(Math.round(el.price))} сом <span>{formatPrice(Math.round(el.price))} сом</span>
                 </h1>
-            </div>
-            <div className="newPostopleniya--all__card--discount">
+            </div></Link>
+            <Link to={`/product/${el.id}`}><div className="newPostopleniya--all__card--discount">
                 <h4>-{5}%</h4>
                 <h3>экономия 5210 сом</h3>
-            </div>
-            <div className="newPostopleniya--all__card--descrip">
+            </div></Link>
+            <Link to={`/product/${el.id}`}><div className="newPostopleniya--all__card--descrip">
                 <h1>{el.name}</h1>
                 <p>{el.description}</p>
-            </div>
+            </div></Link>
             <div className="newPostopleniya--all__card--btn">
                 <Link to={`/product/${el.id}`}>
                 <button>Быстрый заказ</button>

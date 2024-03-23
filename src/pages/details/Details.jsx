@@ -35,11 +35,11 @@ const Details = () => {
     }, [])
     const data1 = {
         product: el.id,
-        user: 1
+        user: user.id
     }
     const data2 = {
         product: el.id,
-        user: 1,
+        user: user.id,
         summ_products: el.price
     }
     const getData = async ()=>{
@@ -86,7 +86,7 @@ const Details = () => {
         };
         fetchData()
         getData()
-    }, [el]);
+    }, [user]);
     const starsCount = el.stars
     const maxStars = 5
     const stars = [];
