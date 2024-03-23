@@ -7,6 +7,7 @@ import { FaTelegram } from "react-icons/fa";
 import {useEffect, useState} from "react";
 import Register from "../Register";
 import axios from "axios";
+import bcrypt from "bcryptjs";
 
 const Authorization = () => {
   const [active, setActive] = useState(false);
@@ -26,21 +27,51 @@ const Authorization = () => {
     }
     getLogn()
   }, []);
+  // function Userlogin() {
+  //   const iPass = document.querySelector(".iPass");
+  //   const iEmail = document.querySelector(".iEmail");
+  //   const l = login.find(login => login.email === email)
+  //   const l2 = l.password
+  //   console.log(l2)
+  //   bcrypt.compare(password,l2,(err,hashedPassword) =>{
+  //     if(err){
+  //       console.log('Ошибка хеширования пароля:', err)
+  //     }
+  //   if(login.find(login => login.email === email) && login.find(pass => pass.password === hashedPassword)){
+  //     nav('/')
+  //     window.location.reload();
+  //     localStorage.setItem("email", JSON.stringify(email));
+  //     localStorage.setItem("pass", JSON.stringify(hashedPassword));
+  //   }else {
+  //     alert("Неверный логин или пароль");
+  //     iPass.style.border = "1px solid red";
+  //     iEmail.style.border = "1px solid red";
+  //   }
+  //   })
+  // }
+
   function Userlogin() {
     const iPass = document.querySelector(".iPass");
     const iEmail = document.querySelector(".iEmail");
-    if(login.find(login => login.email === email) && login.find(pass => pass.password === password)){
-      nav('/')
-      window.location.reload();
-      localStorage.setItem("email", JSON.stringify(email));
-      localStorage.setItem("pass", JSON.stringify(password));
-    }else {
-      alert("Неверный логин или пароль");
-      iPass.style.border = "1px solid red";
+    const user = login.find(login => login.email === email);
+
+    if (user) {
+      const hashedPassword = user.password;
+      if (bcrypt.compareSync(password, hashedPassword)) {
+        nav('/');
+        window.location.reload();
+        localStorage.setItem("email", JSON.stringify(email));
+        localStorage.setItem("pass", JSON.stringify(hashedPassword));
+      } else {
+        alert("Неверный логин или пароль");
+        iPass.style.border = "1px solid red";
+        iEmail.style.border = "1px solid red";
+      }
+    } else {
+      alert("Пользователь с таким email не найден");
       iEmail.style.border = "1px solid red";
     }
   }
-
   const handleEye = () => {
     if (eye === "password") {
       setEye("text");
