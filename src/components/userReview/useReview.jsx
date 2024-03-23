@@ -22,7 +22,8 @@ function UseReview({name,user}) {
             // setReviews([...reviews, newReview]);
 
             const dataPost = {
-                user: user.id,
+                id:user.id,
+                user: user.username,
                 text: textValue,
                 stars: 3,
                 product: name,

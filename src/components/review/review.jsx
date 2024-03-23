@@ -4,6 +4,7 @@ import "./review.scss";
 import UseReview from "../userReview/useReview";
 import axios from "axios";
 
+// eslint-disable-next-line react/prop-types
 const Review = ({name}) => {
     const [showUserReview, setShowUserReview] = useState(false);
     const [reviews, setReviews] = useState([]);
@@ -32,6 +33,7 @@ const Review = ({name}) => {
         getReviews()
     }, [reviews]);
     const reversedReviews = useMemo(() => reviews.slice().reverse(), [reviews]);
+    const reviewsFilter = reversedReviews.filter(el => el.product === name)
 
     return (
         <div id="review">
@@ -43,7 +45,7 @@ const Review = ({name}) => {
                         <button onClick={saveBtnReviewCard}>
                             <svg width="31" height="29" viewBox="0 0 31 29"
                                 fill="none" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                xmlnsXlink="http://www.w3.org/1999/xlink">
                                 <rect width="31" height="29"
                                     fill="url(#pattern0)"/>
                                 <defs>
@@ -62,8 +64,8 @@ const Review = ({name}) => {
                         </button>
                     )}
                     {
-                        reversedReviews.length > 0 ?
-                            reversedReviews.map(el => {
+                        reviewsFilter.length > 0 ?
+                            reviewsFilter.map(el => {
                             const starsCount = el.stars
                             const maxStars = 5
                             const stars = [];
@@ -71,10 +73,10 @@ const Review = ({name}) => {
                                 stars.push(<FaStar key={i} className={i < starsCount ? "starsYellow" : "starsNone"} />);
                             }
                             return (
-                                <div className="review--cardsPerson">
+                                <div key={el.id} className="review--cardsPerson">
                                     <div className="review--card__about">
                                         <div className="review--card__about--title">
-                                            <h1 className="aboutTitled">{user.username}</h1>
+                                            <h1 className="aboutTitled">{el.user}</h1>
                                             <div className="review--cardabout--titlestars">
                                                 {stars}
                                             </div>
