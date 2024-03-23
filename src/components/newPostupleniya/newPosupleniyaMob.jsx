@@ -4,6 +4,7 @@ import {TbShoppingBag, TbShoppingBagCheck} from "react-icons/tb";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
+import PropTypes from "prop-types";
 
 const NewPosupleniyaMob = ({el}) => {
     const [heart, setHeart] = useState(false)
@@ -19,7 +20,7 @@ const NewPosupleniyaMob = ({el}) => {
         }
         getUser()
     },[])
-    const data = {
+    const data1 = {
         product: el.id,
         user: user.id
     }
@@ -30,23 +31,38 @@ const NewPosupleniyaMob = ({el}) => {
     }
     const addFav = async () => {
         const response = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`)
-        const every = response.data.map((el) => el.product)
-        const existingItem = every.find(item => item.id === el.id);
-        if (existingItem) {
-            nav('/headerFavorite')
-        } else {
-            await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`, data);
+        const {data} = await response
+        const currentUser = data.filter(some => some.user === user.id)
+        if (currentUser) {
+            const every = currentUser.map((el) => el.product)
+            const existingItem = every.find(item => item.id === el.id);
+            if (existingItem) {
+                nav('/headerFavorite')
+            } else {
+                await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`, data1);
+                setHeart(true)
+            }
+        }else {
+            await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`, data1);
             setHeart(true)
         }
     }
     const addBasket = async () => {
         const response = await axios.get(`https://oceanbackend.pythonanywhere.com/basket`)
-        const every = response.data.map((el) => el.product)
-        const existingItem = every.find(item => item.id === el.id);
-        if (existingItem) {
-            nav('/headerBasket')
-        } else {
-            await axios.post(`https://oceanbackend.pythonanywhere.com/basket_post/`, data2);
+        const {data} = await response
+        const currentUser = data.filter(some => some.user === user.id)
+        console.log(currentUser.length)
+        if (currentUser.length > 0) {
+            const every = currentUser.map((el) => el.product)
+            const existingItem = every.find(item => item.name === el.name);
+            if (existingItem) {
+                nav('/headerBasket')
+            } else {
+                await axios.post(`https://oceanbackend.pythonanywhere.com/basket_post/`,data2);
+                setBag(true)
+            }
+        }else {
+            await axios.post(`https://oceanbackend.pythonanywhere.com/basket_post/`,data2);
             setBag(true)
         }
     }
@@ -54,33 +70,54 @@ const NewPosupleniyaMob = ({el}) => {
     useEffect(() => {
         const fetchData = async () => {
             const res = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`);
-            const every = res.data.map((el) => el.product)
-            const existingItem = every.find(item => item.id === el.id);
-            if (existingItem) {
-                setHeart(true);
-            } else {
-                setHeart(false);
+            const {data} = await res
+            const currentUser = data.filter(some => some.user === user.id)
+            if (currentUser) {
+                const every = currentUser.map((el) => el.product)
+                const existingItem = every.find(item => item.id === el.id);
+                if (existingItem) {
+                    setHeart(true);
+                } else {
+                    setHeart(false);
+                }
             }
         };
-        fetchData()
         const fetchData2 = async () => {
             const res = await axios.get(`https://oceanbackend.pythonanywhere.com/basket`);
-            const every = res.data.map((el) => el.product)
-            const existingItem = every.find(item => item.id === el.id);
-            if (existingItem) {
-                setBag(true);
-            } else {
-                setBag(false);
+            const {data} = await res
+            const currentUser = data.filter(some => some.user === user.id)
+            if (currentUser.length > 0) {
+                const every = currentUser.map((el) => el.product)
+                const existingItem = every.find(item => item.name === el.name);
+                if (existingItem) {
+                    setBag(true);
+                } else {
+                    setBag(false);
+                }
             }
         };
         fetchData();
         fetchData2()
-    }, []);
+    }, [user,el]);
     const starsCount = el.stars
     const maxStars = 5
     const stars = [];
     for (let i = 0; i < maxStars; i++) {
         stars.push(<FaStar key={i} className={i < starsCount ? "starsYellow" : "starsNone"}/>);
+    }
+
+    function formatPrice(price) {
+        if (typeof price !== 'string') {
+            price = String(price);
+        }
+
+        if (price.length === 5) {
+            return price.slice(0, 2) + '.' + price.slice(2);
+        } else if (price.length === 6) {
+            return price.slice(0, 3) + '.' + price.slice(3);
+        } else {
+            return price;
+        }
     }
 
     return (
@@ -158,7 +195,7 @@ const NewPosupleniyaMob = ({el}) => {
                     </div>
                 </div>
                 <div className="newPostopleniya--allMobile__cardMobile--descript__price">
-                    <h1>{el.price} сом</h1>
+                    <h1>{formatPrice(Math.floor(el.price))} сом</h1>
                     {
                         bag ? <TbShoppingBagCheck onClick={() => nav('/headerBasket')} className="priceBasket"/> :
                             <TbShoppingBag onClick={addBasket} className="priceBasket"/>
@@ -167,6 +204,19 @@ const NewPosupleniyaMob = ({el}) => {
             </div>
         </div>
     );
+};
+
+NewPosupleniyaMob.propTypes = {
+    el: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        product: PropTypes.object.isRequired,
+        stars: PropTypes.number.isRequired,
+        first_photo: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        color: PropTypes.arrayOf(PropTypes.string).isRequired
+    }).isRequired
 };
 
 export default NewPosupleniyaMob;

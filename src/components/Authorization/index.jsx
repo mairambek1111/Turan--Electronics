@@ -4,8 +4,9 @@ import registerImage from "../../assets/register.png";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import Register from "../Register";
+import axios from "axios";
 
 const Authorization = () => {
   const [active, setActive] = useState(false);
@@ -13,17 +14,30 @@ const Authorization = () => {
   const [showRegister, setShowRegister] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [login, setlogin] = useState(false);
+  const [login, setLogin] = useState([]);
   const nav = useNavigate();
-  const localEmail = JSON.parse(localStorage.getItem("email"));
-  const localPass = JSON.parse(localStorage.getItem("pass"));
+
+
+  useEffect(() => {
+    const getLogn = async () =>{
+      const res = await axios(`https://oceanbackend.pythonanywhere.com/user/`)
+      const {data} = await res
+      setLogin(data)
+    }
+    getLogn()
+  }, []);
   function Userlogin() {
-    if (localEmail === email && localPass === password) {
-      setlogin(true);
-      nav("/");
-    } else {
-      setlogin(false);
-      alert("Неверный пароль");
+    const iPass = document.querySelector(".iPass");
+    const iEmail = document.querySelector(".iEmail");
+    if(login.find(login => login.email === email) && login.find(pass => pass.password === password)){
+      nav('/')
+      window.location.reload();
+      localStorage.setItem("email", JSON.stringify(email));
+      localStorage.setItem("pass", JSON.stringify(password));
+    }else {
+      alert("Неверный логин или пароль");
+      iPass.style.border = "1px solid red";
+      iEmail.style.border = "1px solid red";
     }
   }
 
@@ -38,12 +52,12 @@ const Authorization = () => {
   function iValue() {
     const iPass = document.querySelector(".iPass");
     const iEmail = document.querySelector(".iEmail");
-    if (iPass.value.trim() === "" || localEmail === null) {
+    if (iPass.value.trim() === "") {
       iPass.style.border = "1px solid red";
     } else {
       iPass.style.border = "1px solid #a7c957";
     }
-    if (iEmail.value.trim() === "" || localEmail === null) {
+    if (iEmail.value.trim() === "") {
       iEmail.style.border = "1px solid red";
     } else {
       iEmail.style.border = "1px solid #a7c957";

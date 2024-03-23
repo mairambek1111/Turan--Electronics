@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 const PohojieSlice = ({brand}) => {
     const [product,setProduct] = useState([])
     const getData = async ()=>{

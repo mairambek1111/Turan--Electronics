@@ -5,8 +5,8 @@ import registerImage from "../../assets/register.png";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
-import Enter from "../Enter/Enter";
 import axios from "axios";
+import Authorization from "../Authorization/index.jsx";
 
 export default function Register() {
   const [showEnter, setShowEnter] = useState(false);
@@ -28,17 +28,17 @@ export default function Register() {
     } else {
       iNameRef.current.style.border = "1px solid #a7c957";
     }
-    if (iPassRef.current.value.trim() === "") {
+    if (iPassRef.current.value.trim() === "" || iPassRef.current.value.trim() !== iPass2Ref.current.value.trim()) {
       iPassRef.current.style.border = "1px solid red";
     } else {
       iPassRef.current.style.border = "1px solid #a7c957";
     }
-    if (iPass2Ref.current.value.trim() === "") {
+    if (iPass2Ref.current.value.trim() === "" || iPass2Ref.current.value.trim() !==iPassRef.current.value.trim()) {
       iPass2Ref.current.style.border = "1px solid red";
     } else {
       iPass2Ref.current.style.border = "1px solid #a7c957";
     }
-    if (iEmailRef.current.value.trim() === "") {
+    if (iEmailRef.current.value.trim() === "" || !iEmailRef.current.value.trim().endsWith("@gmail.com")) {
       iEmailRef.current.style.border = "1px solid red";
     } else {
       iEmailRef.current.style.border = "1px solid #a7c957";
@@ -54,7 +54,9 @@ export default function Register() {
 
   function handlefunctions() {
     btnActive();
-    handleSubmit();
+    if(iPassRef.current.value.trim() === iPass2Ref.current.value.trim()){
+      handleSubmit();
+    }
   }
 
   const handleSubmit = () => {
@@ -66,8 +68,6 @@ export default function Register() {
       })
       .then((res) => {
         console.log("успешно", res.data);
-        localStorage.setItem("email", JSON.stringify(res.data.email));
-        localStorage.setItem("pass", JSON.stringify(res.data.password));
         navigate("/Authorization");
       });
   };
@@ -80,7 +80,7 @@ export default function Register() {
 
   return (
     <>
-      {showEnter && <Enter />}
+      {showEnter && <Authorization />}
       {showEnter === false && (
         <div id="register">
           <div className="container">
@@ -131,7 +131,7 @@ export default function Register() {
                 <input
                   ref={iEmailRef}
                   className="iEmail"
-                  type="text"
+                  type="email"
                   placeholder="Email или телефон ..."
                   onInput={validation}
                 />
