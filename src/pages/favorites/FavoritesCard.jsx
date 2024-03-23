@@ -38,6 +38,19 @@ const FavoritesCard = ({el}) => {
     for (let i = 0; i < maxStars; i++) {
         stars.push(<FaStar key={i} className={i < starsCount ? "starsYellow" : "starsNone"} />);
     }
+    function formatPrice(price) {
+        if (typeof price !== 'string') {
+            price = String(price);
+        }
+
+        if (price.length === 5) {
+            return price.slice(0, 2) + '.' + price.slice(2);
+        } else if (price.length === 6) {
+            return price.slice(0, 3) + '.' + price.slice(3);
+        } else {
+            return price;
+        }
+    }
     return (
         <div className="newPostopleniya--all__card" data-aos="zoom-in-up"
              data-aos-duration="1100">
@@ -94,7 +107,7 @@ const FavoritesCard = ({el}) => {
                 </h2>
             </div>
             <div className="newPostopleniya--all__card--price">
-                <h1>{product.price} сом</h1>
+                <h1>{formatPrice(Math.floor(product.price))} сом</h1>
             </div>
             <div className="newPostopleniya--all__card--descrip">
                 <h1>{product.name}</h1>

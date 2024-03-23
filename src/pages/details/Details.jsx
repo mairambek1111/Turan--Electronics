@@ -23,7 +23,17 @@ const Details = () => {
     const [heart,setHeart] = useState(false)
     const [btnSlice,setBtnSlice] = useState(false)
     const nav = useNavigate()
-    const data = {
+    const [user, setUser] = useState([])
+    useEffect(() => {
+        const getUser = async () => {
+            const email = JSON.parse(localStorage.getItem("email"))
+            const res = await axios(`https://oceanbackend.pythonanywhere.com/user/`)
+            const {data} = await res
+            setUser(data.find(user => user.email === email))
+        }
+        getUser()
+    }, [])
+    const data1 = {
         product: el.id,
         user: 1
     }
@@ -39,12 +49,19 @@ const Details = () => {
     }
     const addFav = async () => {
         const response = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`)
-        const every = response.data.map((el)=> el.product)
-        const existingItem = every.find(item => item.id === el.id);
-        if (existingItem) {
-            nav('/headerFavorite')
-        } else {
-            await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`,data);
+        const {data} = await response
+        const currentUser = data.filter(some => some.user === user.id)
+        if (currentUser) {
+            const every = currentUser.map((el) => el.product)
+            const existingItem = every.find(item => item.id === el.id);
+            if (existingItem) {
+                nav('/headerFavorite')
+            } else {
+                await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`, data1);
+                setHeart(true)
+            }
+        }else {
+            await axios.post(`https://oceanbackend.pythonanywhere.com/favorite_post/`, data1);
             setHeart(true)
         }
     }
@@ -55,12 +72,16 @@ const Details = () => {
     useEffect(() => {
         const fetchData = async () => {
             const res = await axios.get(`https://oceanbackend.pythonanywhere.com/favorite`);
-            const every = res.data.map((el)=> el.product)
-            const existingItem = every.find(item => item.id === el.id);
-            if (existingItem) {
-                setHeart(true);
-            } else {
-                setHeart(false);
+            const {data} = await res
+            const currentUser = data.filter(some => some.user === user.id)
+            if (currentUser) {
+                const every = currentUser.map((el) => el.product)
+                const existingItem = every.find(item => item.id === el.id);
+                if (existingItem) {
+                    setHeart(true);
+                } else {
+                    setHeart(false);
+                }
             }
         };
         fetchData()
@@ -71,6 +92,19 @@ const Details = () => {
     const stars = [];
     for (let i = 0; i < maxStars; i++) {
         stars.push(<FaStar key={i} className={i < starsCount ? "starsYellow" : "starsNone"} />);
+    }
+    function formatPrice(price) {
+        if (typeof price !== 'string') {
+            price = String(price);
+        }
+
+        if (price.length === 5) {
+            return price.slice(0, 2) + '.' + price.slice(2);
+        } else if (price.length === 6) {
+            return price.slice(0, 3) + '.' + price.slice(3);
+        } else {
+            return price;
+        }
     }
     return (
         <>
@@ -141,7 +175,7 @@ const Details = () => {
                                 }
 
                                 <div className="details--main__abouts--price">
-                                    <h1>{Math.round(el.price)} сом</h1>
+                                    <h1>{formatPrice(Math.floor(el.price))} сом</h1>
                                 </div>
                                 <div className="details--main__abouts--btn">
                                     <button onClick={addBasket}>В корзину</button>
