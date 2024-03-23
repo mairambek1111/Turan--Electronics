@@ -8,7 +8,7 @@ import {useParams} from "react-router-dom";
 const FilterApple = () => {
     const {brandName} = useParams()
     const [filterData, setFilterData] = useState([])
-    const [brend, setBrend] = useState(brandName)
+    const [brend, setBrend] = useState(brandName || "")
     const [color, setColor] = useState('')
     const [model, setModel] = useState('')
     const [memory, setMemory] = useState('')

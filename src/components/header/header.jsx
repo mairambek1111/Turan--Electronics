@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import Headerlogo from "../../assets/header-logo.svg";
 import Logoimage from "../../assets/logo-image.svg";
 import iconfavorite from "../../assets/header-btn-help.svg";
@@ -79,13 +79,13 @@ function Header() {
               <Link to="/" className="logo">
                 <img src={Headerlogo} alt="" className="header__logo" />
               </Link>
-              <Link to="/headerBasket">
+              <NavLink to="/headerBasket">
                 <img src={iconbasket} alt="" className="logo__img__wrap" />
-              </Link>
+              </NavLink>
               <div className="header-info__btns">
                 <div className="header__nav__btns">
                   <button className="header__nav__btn__help">
-                    <Link to="/headerFavorite">
+                    <NavLink to="/headerFavorite">
                       <img
                         src={iconfavorite}
                         alt=""
@@ -94,10 +94,10 @@ function Header() {
                       {favoriteCount !== 0 ? (
                         <p className="favCount">{favoriteCount}</p>
                       ) : null}
-                    </Link>
+                    </NavLink>
                   </button>
                   <button className="header__nav__btn">
-                    <Link to="/headerBasket">
+                    <NavLink to="/headerBasket">
                       <img
                         src={iconbasket}
                         alt=""
@@ -106,16 +106,16 @@ function Header() {
                       {basketCount !== 0 ? (
                         <p className="basketCount">{basketCount}</p>
                       ) : null}
-                    </Link>
+                    </NavLink>
                   </button>
                   <button className="header__nav__btn__profile">
-                    <Link to="/register">
+                    <NavLink to="/register">
                       <img
                         src={iconprofile}
                         alt=""
                         className="header__nav__icon__profile"
                       />
-                    </Link>
+                    </NavLink>
                   </button>
                 </div>
                 <div className="input__form">
@@ -135,26 +135,26 @@ function Header() {
             <div className="header__info__link">
               <nav className={`header__nav ${nav ? "active" : ""}`}>
                 <button className="header__nav-btn">
-                  <Link to="/" className="header__nav__link">
+                  <NavLink to="/" className="header__nav__link">
                     Главная
-                  </Link>
+                  </NavLink>
                 </button>
 
                 <button className="header__nav-btn">
-                  <Link to="/pageskategory" className="header__nav__link">
+                  <NavLink to="/pageskategory" className="header__nav__link">
                     Категории
-                  </Link>
+                  </NavLink>
                 </button>
 
                 <button className="header__nav-btn">
-                  <Link to="/pagesNews" className="header__nav__link">
+                  <NavLink to="/pagesNews" className="header__nav__link">
                     Новости
-                  </Link>
+                  </NavLink>
                 </button>
                 <button className="header__nav-btn">
-                  <Link to="/pagesAboutus" className="header__nav__link">
+                  <NavLink to="/pagesAboutus" className="header__nav__link">
                     О нас
-                  </Link>
+                  </NavLink>
                 </button>
               </nav>
             </div>

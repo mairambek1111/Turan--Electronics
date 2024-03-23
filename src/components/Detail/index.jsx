@@ -1,8 +1,17 @@
 import "./Detail.scss";
+import Header from "../header/header.jsx";
+import Footer from "../footer/footer.jsx";
+import {useLocation} from "react-router-dom";
+import {useEffect} from "react";
 
-const Detail = () => {
+const DetailNews = () => {
+  const {pathname} = useLocation()
+  useEffect(() => {
+    window.scroll(0,0)
+  }, [pathname]);
   return (
     <>
+      <Header/>
       <div id="detail">
         <div className="container">
           <div className="detail">
@@ -65,8 +74,9 @@ const Detail = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
 
-export default Detail;
+export default DetailNews;
