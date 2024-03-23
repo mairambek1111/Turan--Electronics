@@ -16,6 +16,7 @@ import Authorization from "./components/Authorization/index.jsx";
 import PohojieTovary from "./components/pohojieTovary/pohojieTovary.jsx";
 import NewPostupleniya from "./components/newPostupleniya/index.jsx";
 import Recomendation from "./components/recomendation/Recomendation.jsx";
+import DetailNews from "./components/Detail/index.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
   {
     path: "/recomendation",
     element: <Recomendation/>,
+  },
+  {
+    path: "/pagesNews/details",
+    element: <DetailNews/>,
   },
 ]);
 

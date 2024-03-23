@@ -15,6 +15,7 @@ function PagesAboutus() {
             <div id="about">
                 <div className="container">
                     <div className="about">
+                        <h6 className='aboutH6'>Главная / О нас</h6>
                         <h1>О нас</h1>
                         <div className="about--all">
                             <h2>Добро пожаловать в Turan Electronics!</h2>

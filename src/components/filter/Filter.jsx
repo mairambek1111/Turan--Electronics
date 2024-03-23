@@ -177,6 +177,7 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
     return (
         <div id='filter'>
             <div className="container">
+                <h6 className="filterH6">Главная / Категории</h6>
                 <div className="filter">
                     <div className="filter--all">
                         <div onMouseEnter={hoverOption} className="filter--all__select">
@@ -213,7 +214,7 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                                     </label>
                                 </div>
                                 {
-                                    brand.map((el,inx) => (
+                                    brand.map((el, inx) => (
                                         <div key={inx} className="filter--all__select--optionModel__inp">
                                             <label onClick={() => setModel(el.model)}>
                                                 <input name='Модель' type="radio"/>
@@ -253,14 +254,16 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                             <div onMouseLeave={hoverOptionPrice2} ref={refOptionPrice}
                                  className="filter--all__select--optionPrice">
                                 <div className="filter--all__select--optionPrice__inp">
-                                    <input value={startPrice} min={0} placeholder={'от'} onInput={(e) => setStartPrice(e.target.value)} name='Цена' type="number"/>
+                                    <input value={startPrice} min={0} placeholder={'от'}
+                                           onInput={(e) => setStartPrice(e.target.value)} name='Цена' type="number"/>
                                     <input
                                         placeholder={'до'}
                                         onInput={(e) => e.target.value !== '' ? setEndPrice(e.target.value) : setEndPrice('200000')}
                                         name='Цена' type="number"/>
                                 </div>
                                 <div className="filter--all__select--optionPrice__inp">
-                                    <input onChange={(e)=>handleRangeChange(e)} value={startPrice} min={0} max={200000} className='inpRange' name='Цена' type="range"/>
+                                    <input onChange={(e) => handleRangeChange(e)} value={startPrice} min={0}
+                                           max={200000} className='inpRange' name='Цена' type="range"/>
                                 </div>
                             </div>
                         </div>
@@ -278,7 +281,7 @@ const Filter = ({setColor,setEndPrice,setStartPrice,setModel,filterData,brend,se
                                 <div className="filter--all__select--optionColor__inp">
                                     {
                                         uniqueColors.map((color, index) => (
-                                            <canvas onClick={(e) => colorStop(e,color)} key={index}
+                                            <canvas onClick={(e) => colorStop(e, color)} key={index}
                                                     style={{background: color}} color={color}></canvas>
                                         ))
                                     }
