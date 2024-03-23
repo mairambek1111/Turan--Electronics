@@ -123,9 +123,9 @@ const NewPosupleniyaMob = ({el}) => {
     return (
         <div className="newPostopleniya--allMobile__cardMobile">
             <div className="newPostopleniya--allMobile__cardMobile--tel">
-                <div className="newPostopleniya--allMobile__cardMobile--tel__h3">
+                <Link to={`/product/${el.id}`}><div className="newPostopleniya--allMobile__cardMobile--tel__h3">
                     <h3>Новое</h3>
-                </div>
+                </div></Link>
                 <div className="newPostopleniya--allMobile__cardMobile--tel__imgs">
                     <Link to={`/product/${el.id}`}><img src={el.first_photo} alt="no img"/></Link>
                     <IoMdHeart className="imgsHeart" onClick={addFav}
@@ -178,9 +178,9 @@ const NewPosupleniyaMob = ({el}) => {
                 </div>
             </div>
             <div className="newPostopleniya--allMobile__cardMobile--descript">
-                <div className="newPostopleniya--allMobile__cardMobile--descript__stars">
+                <Link to={`/product/${el.id}`}><div className="newPostopleniya--allMobile__cardMobile--descript__stars">
                     {stars}
-                </div>
+                </div></Link>
                 <Link to={`/product/${el.id}`}><div className="newPostopleniya--allMobile__cardMobile--descript__title">
                     <h1>{el.name}</h1>
                 </div></Link>
@@ -195,7 +195,7 @@ const NewPosupleniyaMob = ({el}) => {
                     </div>
                 </div>
                 <div className="newPostopleniya--allMobile__cardMobile--descript__price">
-                    <h1>{formatPrice(Math.floor(el.price))} сом</h1>
+                    <Link to={`/product/${el.id}`}><h1>{formatPrice(Math.floor(el.price))} сом</h1></Link>
                     {
                         bag ? <TbShoppingBagCheck onClick={() => nav('/headerBasket')} className="priceBasket"/> :
                             <TbShoppingBag onClick={addBasket} className="priceBasket"/>
