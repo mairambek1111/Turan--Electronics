@@ -47,16 +47,29 @@ export default function Register() {
   }
 
   const btnActive = () => {
-    // const iEmail = iEmailRef.current.value;
-    // localStorage.setItem("email", iEmail);
     setActive(true);
     iValue();
   };
 
-  function handlefunctions() {
+  async function handlefunctions() {
     btnActive();
     if(iPassRef.current.value.trim() === iPass2Ref.current.value.trim()){
-      handleSubmit();
+      const res = await axios(`https://oceanbackend.pythonanywhere.com/user/`)
+      const {data} = await res
+      const verification = data.some(some => some.email === iEmailRef.current.value.trim())
+      if(verification){
+        iEmailRef.current.style.border = "1px solid red";
+        alert("Такой пользователь уже существует !")
+      }else {
+        handleSubmit();
+      }
+      const verification2 = data.some(some => some.username === iNameRef.current.value.trim())
+      if(verification2){
+        iNameRef.current.style.border = "1px solid red";
+        alert("Такой пользователь уже существует !")
+      }else {
+        handleSubmit();
+      }
     }
   }
 
@@ -75,6 +88,7 @@ export default function Register() {
       })
       .then((res) => {
         console.log("успешно", res.data);
+        location.reload()
         navigate("/Authorization");
       });
     });
