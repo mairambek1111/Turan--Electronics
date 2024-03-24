@@ -164,15 +164,22 @@
   }
 }
 @media screen and (max-width: 420px) {
-  #authorization .authorization__inputs input {
-    width: 85%;
-  }
   #authorization .authorization__inputs a {
     margin: 5px 0 20px 150px;
+  }
+  #authorization .authorization__inputs input {
+    width: 250px;
   }
 }
 @media screen and (max-width: 380px) {
   #authorization .authorization__inputs a {
     margin: 5px 0 20px 130px;
+    font-size: 13px;
+  }
+  #authorization .authorization__inputs input {
+    width: 210px;
+  }
+  #authorization .authorization img {
+    height: 24px;
   }
 }
