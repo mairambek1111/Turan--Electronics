@@ -2,35 +2,33 @@ import {useState} from "react";
 import "./useReview.css";
 import axios from "axios";
 
+// eslint-disable-next-line react/prop-types
 function UseReview({name,user}) {
     const [textValue, setTextValue] = useState("");
 
     async function handleReviewSubmit() {
-        if (textValue.trim() !== "") {
-            const currentDate = new Date();
-            const year = currentDate.getFullYear();
-            const month = (currentDate.getMonth() + 1)
-                .toString()
-                .padStart(2, "0");
-            const day = currentDate.getDate().toString().padStart(2, "0");
-            const currentDateString = `${day}.${month}.${year}`;
-            // const newReview = {
-            //     id: Date.now(),
-            //     text: textValue,
-            //     date: currentDateString,
-            // };
-            // setReviews([...reviews, newReview]);
+        const star = prompt('Оцените товар от 1 до 5')
+        if(star !== "" && star <= 5) {
+            if (textValue.trim() !== "") {
+                const currentDate = new Date();
+                const year = currentDate.getFullYear();
+                const month = (currentDate.getMonth() + 1)
+                    .toString()
+                    .padStart(2, "0");
+                const day = currentDate.getDate().toString().padStart(2, "0");
+                const currentDateString = `${day}.${month}.${year}`;
 
-            const dataPost = {
-                id:user.id,
-                user: user.username,
-                text: textValue,
-                stars: 3,
-                product: name,
-                data: currentDateString
+                const dataPost = {
+                    id:user.id,
+                    user: user.username,
+                    text: textValue,
+                    stars: star,
+                    product: name,
+                    data: currentDateString
+                }
+                await axios.post(`https://oceanbackend.pythonanywhere.com/reviews/`,dataPost)
+                setTextValue("");
             }
-            await axios.post(`https://oceanbackend.pythonanywhere.com/reviews/`,dataPost)
-            setTextValue("");
         }
     }
     return (
