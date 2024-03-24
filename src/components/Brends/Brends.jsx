@@ -11,7 +11,6 @@ function Brends() {
     const res = await axios(`https://oceanbackend.pythonanywhere.com/brand/`);
     const { data } = await res;
     setBrend(data);
-    console.log(res);
   };
   useEffect(() => {
     getBrend();

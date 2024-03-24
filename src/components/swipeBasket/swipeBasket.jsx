@@ -67,7 +67,9 @@ function SwipeBasket() {
         </div>
         <Slider {...settings}>
           {
-            acses.map(el => <SwipeCard key={el.id} el={el}/>)
+            acses.length > 0 ?
+                acses?.map(el => <SwipeCard key={el.id} el={el}/>)
+                : <div className='swipeBaketNone'><h4>Нету товаров</h4></div>
           }
         </Slider>
       </div>

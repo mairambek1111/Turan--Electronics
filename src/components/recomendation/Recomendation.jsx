@@ -1,5 +1,4 @@
 import "../newPostupleniya/newPostupleniya.scss";
-import { GrLinkNext } from "react-icons/gr";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import RecomendationCard from "./RecomendationCard.jsx";

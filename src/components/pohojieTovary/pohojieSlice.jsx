@@ -39,7 +39,7 @@ const PohojieSlice = ({brand}) => {
                     <div className="newPostopleniya--allMobile">
                         {
                             product.length > 0 ?
-                                product.map((el) => (
+                                product?.map((el) => (
                                     <NewPosupleniyaMob key={el.id} el={el} />
                                 ))
                                 : <div className='newPostopleniya--allMobile__none'><h4>Нету похожих товаров</h4></div>

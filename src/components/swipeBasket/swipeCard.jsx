@@ -81,7 +81,7 @@ const SwipeCard = ({el}) => {
     }
 
     return (
-        <div className="card" data-aos="zoom-in-up" data-aos-duration="1100">
+        <div key={el.id} className="card" data-aos="zoom-in-up" data-aos-duration="1100">
             <Link to={`/product/${el.id}`}><div className="stars">
                 {stars}
             </div></Link>
@@ -105,10 +105,10 @@ const SwipeCard = ({el}) => {
 SwipeCard.propTypes = {
     el: PropTypes.shape({
         id: PropTypes.number.isRequired,
-        product: PropTypes.object.isRequired,
+        product: PropTypes.object,
         stars: PropTypes.number.isRequired,
         first_photo: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
+        price: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         color: PropTypes.arrayOf(PropTypes.string).isRequired
