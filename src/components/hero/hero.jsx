@@ -15,7 +15,6 @@ function Hero() {
       .get("https://oceanbackend.pythonanywhere.com/carusel/")
       .then((res) => {
         setSwiper(res.data);
-        console.log(res.data);
       });
   }, []);
   return (

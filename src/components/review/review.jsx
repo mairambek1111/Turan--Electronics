@@ -3,12 +3,15 @@ import { FaStar } from "react-icons/fa";
 import "./review.scss";
 import UseReview from "../userReview/useReview";
 import axios from "axios";
+import {useParams} from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Review = ({name}) => {
     const [showUserReview, setShowUserReview] = useState(false);
     const [reviews, setReviews] = useState([]);
     const [user,setUser] = useState([])
+    const [currentData,setCurrentData] = useState([])
+    const {id} = useParams()
 
     useEffect(()=>{
         const getUser = async ()=>{
@@ -32,15 +35,42 @@ const Review = ({name}) => {
     useEffect(() => {
         getReviews()
     }, [reviews]);
+    useEffect(() => {
+        const getData = async ()=>{
+            const url = await axios(`https://oceanbackend.pythonanywhere.com/product/${id}/`)
+            const {data} = await url
+            setCurrentData(data)
+        }
+        getData()
+    }, []);
     const reversedReviews = useMemo(() => reviews.slice().reverse(), [reviews]);
     const reviewsFilter = reversedReviews.filter(el => el.product === name)
-
+    const countStars = reviewsFilter.reduce((total,star) => total + star.stars,0)
+    const middle = countStars + currentData.stars
+    const allMiddle = reviewsFilter.length > 0 ? middle / reviewsFilter.length : 0
+    const updateData = {
+        photos: currentData.photos,
+        brand: currentData.brand,
+        model: currentData.model,
+        name: currentData.name,
+        description: currentData.description,
+        price: currentData.price,
+        stars: Math.round(allMiddle)
+    }
+    // console.log(Math.round(allMiddle))
+    const updateStars = async ()=>{
+        try {
+            await axios.patch(`https://oceanbackend.pythonanywhere.com/product/${id}/`,updateData)
+        }catch (err){
+            console.log(err,"не отправлено")
+        }
+    }
     return (
         <div id="review">
             <div className="container">
                 <div className="review">
                     {showUserReview ? (
-                        <UseReview name={name} user={user}/>
+                        <UseReview name={name} user={user} updateStars={updateStars}/>
                     ) : (
                         <button onClick={saveBtnReviewCard}>
                             <svg width="31" height="29" viewBox="0 0 31 29"

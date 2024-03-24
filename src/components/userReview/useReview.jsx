@@ -3,7 +3,7 @@ import "./useReview.css";
 import axios from "axios";
 
 // eslint-disable-next-line react/prop-types
-function UseReview({name,user}) {
+function UseReview({name,user,updateStars}) {
     const [textValue, setTextValue] = useState("");
 
     async function handleReviewSubmit() {
@@ -27,6 +27,7 @@ function UseReview({name,user}) {
                     data: currentDateString
                 }
                 await axios.post(`https://oceanbackend.pythonanywhere.com/reviews/`,dataPost)
+                updateStars()
                 setTextValue("");
             }
         }

@@ -36,7 +36,7 @@ const NewPostopleniyaSlice = () => {
                     <div className="newPostopleniya--all">
                         {
                             product.length > 0 ?
-                                product?.slice(0,4)?.map((el) => (
+                                product.slice(0,4)?.map((el) => (
                                     <NewPostupleniyaCard key={el.id} el={el} />
                                 ))
                                 : <div className='newPostopleniya--all__none'><h4>Нету новых поступлений</h4></div>
@@ -45,7 +45,7 @@ const NewPostopleniyaSlice = () => {
                     <div className="newPostopleniya--allMobile">
                         {
                             product.length > 0 ?
-                                product?.slice(0,4)?.map((el) => (
+                                product.slice(0,4)?.map((el) => (
                                     <NewPosupleniyaMob key={el.id} el={el} />
                                 ))
                                 : <div className='newPostopleniya--allMobile__none'><h4>Нету новых поступлений</h4></div>

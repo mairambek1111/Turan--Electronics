@@ -201,10 +201,10 @@ const RecomendationMob = ({el}) => {
 RecomendationMob.propTypes = {
     el: PropTypes.shape({
         id: PropTypes.number.isRequired,
-        product: PropTypes.object.isRequired,
+        product: PropTypes.object,
         stars: PropTypes.number.isRequired,
         first_photo: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
+        price: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         color: PropTypes.arrayOf(PropTypes.string).isRequired
